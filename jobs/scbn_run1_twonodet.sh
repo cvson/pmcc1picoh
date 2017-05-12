@@ -1,7 +1,7 @@
 #!/bin/bash 
 source /home/cvson/rootv5r34_raw.sh
-scriptFile=`printf "/home/cvson/scraid2/cc1picoh/FIT/pmcc1picoh_base4copy/bin/simpleTest2nodet.exe"`
-outputFile=`printf "/home/cvson/scraid2/cc1picoh/FIT/pmcc1picoh_base4copy/outputs/two/fittoy_result_1nodet.root"`
+scriptFile=`printf "/home/cvson/scraid2/cc1picoh/FIT/pmcc1picoh_git_swap_resfunc/bin/simpleTest2nodet.exe"`
+outputFile=`printf "/home/cvson/scraid2/cc1picoh/FIT/pmcc1picoh_git_swap_resfunc/outputs/two/fittoy_result_1nodet.root"`
 #cd /home/cvson/scraid2/cc1picoh/FIT/version04genieAllParaTSpline/bin
 echo ${scriptFile}
 echo ${outputFile}
