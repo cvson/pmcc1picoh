@@ -1,0 +1,429 @@
+/home/cvson/scraid2/cc1picoh/FIT/versionfsicombgenie/bin/simpleTest4.exe
+/home/cvson/scraid2/cc1picoh/FIT/versionfsicombgenie/outputs/four/fittoy_result_1.root
+file open
+0  0.9  0  5
+0.9  0.94  0  5
+0.94  0.98  0  0.97
+0.94  0.98  0.97  5
+0.98  0.99  0  0.97
+0.98  0.99  0.97  5
+0.99  0.995  0  0.97
+0.99  0.995  0.97  5
+0.995  1  0  0.97
+0.995  1  0.97  5
+ccqe bins defined
+10 bins inside MakeHistos
+MakeHistos called
+0  0.9  0  5
+0.9  0.94  0  5
+0.94  0.98  0  0.97
+0.94  0.98  0.97  5
+0.98  0.99  0  0.97
+0.98  0.99  0.97  5
+0.99  0.995  0  0.97
+0.99  0.995  0.97  5
+0.995  1  0  0.97
+0.995  1  0.97  5
+ccqe bins defined
+10 bins inside MakeHistos
+MakeHistos called
+0  0.9  0  5
+0.9  0.94  0  5
+0.94  0.98  0  0.97
+0.94  0.98  0.97  5
+0.98  0.99  0  0.97
+0.98  0.99  0.97  5
+0.99  0.995  0  0.97
+0.99  0.995  0.97  5
+0.995  1  0  0.97
+0.995  1  0.97  5
+ccqe bins defined
+10 bins inside MakeHistos
+MakeHistos called
+0  0.9  0  5
+0.9  0.94  0  5
+0.94  0.98  0  0.97
+0.94  0.98  0.97  5
+0.98  0.99  0  0.97
+0.98  0.99  0.97  5
+0.99  0.995  0  0.97
+0.99  0.995  0.97  5
+0.995  1  0  0.97
+0.995  1  0.97  5
+ccqe bins defined
+10 bins inside MakeHistos
+MakeHistos called
+total 3922569 iprint 39225
+Processing 0% of events
+Processing 0% of events
+Processing 1% of events
+Processing 2% of events
+Processing 3% of events
+Processing 4% of events
+Processing 5% of events
+Processing 6% of events
+Processing 7% of events
+Processing 8% of events
+Processing 9% of events
+Processing 10% of events
+Processing 11% of events
+Processing 12% of events
+Processing 13% of events
+Processing 14% of events
+Processing 15% of events
+Processing 16% of events
+Processing 17% of events
+Processing 18% of events
+Processing 19% of events
+Processing 20% of events
+Processing 21% of events
+Processing 22% of events
+Processing 23% of events
+Processing 24% of events
+Processing 25% of events
+Processing 26% of events
+Processing 27% of events
+Processing 28% of events
+Processing 29% of events
+Processing 30% of events
+Processing 31% of events
+Processing 32% of events
+Processing 33% of events
+Processing 34% of events
+Processing 35% of events
+Processing 36% of events
+Processing 37% of events
+Processing 38% of events
+Processing 39% of events
+Processing 40% of events
+Processing 41% of events
+Processing 42% of events
+Processing 43% of events
+Processing 44% of events
+Processing 45% of events
+Processing 46% of events
+Processing 47% of events
+Processing 48% of events
+Processing 49% of events
+Processing 50% of events
+Processing 51% of events
+Processing 52% of events
+Processing 53% of events
+Processing 54% of events
+Processing 55% of events
+Processing 56% of events
+Processing 57% of events
+Processing 58% of events
+Processing 59% of events
+Processing 60% of events
+Processing 61% of events
+Processing 62% of events
+Processing 63% of events
+Processing 64% of events
+Processing 65% of events
+Processing 66% of events
+Processing 67% of events
+Processing 68% of events
+Processing 69% of events
+Processing 70% of events
+Processing 71% of events
+Processing 72% of events
+Processing 73% of events
+Processing 74% of events
+Processing 75% of events
+Processing 76% of events
+Processing 77% of events
+Processing 78% of events
+Processing 79% of events
+Processing 80% of events
+Processing 81% of events
+Processing 82% of events
+Processing 83% of events
+Processing 84% of events
+Processing 85% of events
+Processing 86% of events
+Processing 87% of events
+Processing 88% of events
+Processing 89% of events
+Processing 90% of events
+Processing 91% of events
+Processing 92% of events
+Processing 93% of events
+Processing 94% of events
+Processing 95% of events
+Processing 96% of events
+Processing 97% of events
+Processing 98% of events
+Processing 99% of events
+Sample SIG id = 0
+   num of events = 45461
+   memory used   = 1091.06 kB
+Sample CRI id = 1
+   num of events = 136297
+   memory used   = 3271.13 kB
+Sample CRII id = 2
+   num of events = 49863
+   memory used   = 1196.71 kB
+Sample CRIII id = 3
+   num of events = 71553
+   memory used   = 1717.27 kB
+Number of Sample 4
+Sample size 45461 vs 45461
+============> Sample SIG <============
+       sig    0   245.695   66.4154%
+      ccqe    1   10.0106   2.70603%
+     cc1pi    2   62.5942   16.9203%
+   ccother    3   31.0164   8.38426%
+        nc    4   3.17902  0.859343%
+   numubar    5   15.5348   4.19931%
+       nue    6         0         0%
+    ingrid    7    1.9067  0.515411%
+      wall    8         0         0%
+Sample size 136297 vs 136297
+============> Sample CRI <============
+       sig    0   20.3413   2.20606%
+      ccqe    1   47.7877    5.1827%
+     cc1pi    2   505.219   54.7922%
+   ccother    3    310.44    33.668%
+        nc    4   11.0215   1.19531%
+   numubar    5    23.236   2.52001%
+       nue    6         0         0%
+    ingrid    7   3.23331  0.350661%
+      wall    8  0.783604 0.0849838%
+Sample size 49863 vs 49863
+============> Sample CRII <============
+       sig    0    11.485   3.34139%
+      ccqe    1   30.5137   8.87754%
+     cc1pi    2   181.917   52.9262%
+   ccother    3   96.0692     27.95%
+        nc    4    4.0381   1.17483%
+   numubar    5   14.6488   4.26185%
+       nue    6         0         0%
+    ingrid    7   2.85174  0.829673%
+      wall    8   2.19478   0.63854%
+Sample size 71553 vs 71553
+============> Sample CRIII <============
+       sig    0     2.871  0.538638%
+      ccqe    1   39.8673   7.47964%
+     cc1pi    2   275.106   51.6137%
+   ccother    3   196.367   36.8412%
+        nc    4   3.68187  0.690768%
+   numubar    5   12.0238   2.25582%
+       nue    6         0         0%
+    ingrid    7   2.61158  0.489968%
+      wall    8  0.481367  0.090311%
+nominal MC done
+
+CC1picoh binning:
+  0    0  0.9    0    5
+  1  0.9 0.94    0    5
+  2 0.94 0.98    0 0.97
+  3 0.94 0.98 0.97    5
+  4 0.98 0.99    0 0.97
+  5 0.98 0.99 0.97    5
+  6 0.990.995    0 0.97
+  7 0.990.995 0.97    5
+  80.995    1    0 0.97
+  90.995    1 0.97    5
+
+CC1picoh scale parameters DONE
+Number of parameters in covariance matrix for par_xsec 8
+reading response functions for topology 0  reaction 0
+reading response functions for topology 0  reaction 1
+reading response functions for topology 0  reaction 2
+reading response functions for topology 0  reaction 3
+reading response functions for topology 0  reaction 4
+reading response functions for topology 1  reaction 0
+reading response functions for topology 1  reaction 1
+reading response functions for topology 1  reaction 2
+reading response functions for topology 1  reaction 3
+reading response functions for topology 1  reaction 4
+reading response functions for topology 2  reaction 0
+reading response functions for topology 2  reaction 1
+reading response functions for topology 2  reaction 2
+reading response functions for topology 2  reaction 3
+reading response functions for topology 2  reaction 4
+reading response functions for topology 3  reaction 0
+reading response functions for topology 3  reaction 1
+reading response functions for topology 3  reaction 2
+reading response functions for topology 3  reaction 3
+reading response functions for topology 3  reaction 4
+===========================================
+           Initilizing fitter              
+    Number of parameters = 18
+===========================================
+ **********
+ **    1 **SET PRINT           1
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 par_scale0   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     2 par_scale1   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     3 par_scale2   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     4 par_scale3   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     5 par_scale4   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     6 par_scale5   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     7 par_scale6   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     8 par_scale7   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     9 par_scale8   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+    10 par_scale9   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+    11 par_xsec0MACCQE   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    12 par_xsec1MAres   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    13 par_xsec2CC1piE0   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    14 par_xsec3CC1piE1   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    15 par_xsec4CCoth   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    16 par_xsec5PilessDcy   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    17 par_xsec61piEnuShape   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+    18 par_xsec7AllElse   0.00000e+00  8.00000e-02   -3.00000e+00  3.00000e+00
+Starting to fit
+sample 0 Fake GENIE data286.882
+sample 1 Fake GENIE data1073.16
+sample 2 Fake GENIE data420.456
+sample 3 Fake GENIE data583.813
+ **********
+ **    2 **MIGRAD       1e+06       1e-05
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-08
+ FCN=71.2677 FROM MIGRAD    STATUS=INITIATE       54 CALLS          55 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  par_scale0   1.00000e+00   1.00000e-01   3.33726e-02   5.13796e+00
+   2  par_scale1   1.00000e+00   1.00000e-01   3.33726e-02   1.44730e+01
+   3  par_scale2   1.00000e+00   1.00000e-01   3.33726e-02   6.63658e+01
+   4  par_scale3   1.00000e+00   1.00000e-01   3.33726e-02   1.03418e+01
+   5  par_scale4   1.00000e+00   1.00000e-01   3.33726e-02   3.09909e+01
+   6  par_scale5   1.00000e+00   1.00000e-01   3.33726e-02   3.68420e+01
+   7  par_scale6   1.00000e+00   1.00000e-01   3.33726e-02   3.65802e+01
+   8  par_scale7   1.00000e+00   1.00000e-01   3.33726e-02   4.64043e+01
+   9  par_scale8   1.00000e+00   1.00000e-01   3.33726e-02   2.02992e+01
+  10  par_scale9   1.00000e+00   1.00000e-01   3.33726e-02   2.50499e+01
+  11  par_xsec0MACCQE   0.00000e+00   8.00000e-02   2.66698e-02  -1.39126e+01
+  12  par_xsec1MAres   0.00000e+00   8.00000e-02   2.66698e-02  -1.18628e+02
+  13  par_xsec2CC1piE0   0.00000e+00   8.00000e-02   2.66698e-02  -9.83836e+01
+  14  par_xsec3CC1piE1   0.00000e+00   8.00000e-02   2.66698e-02  -7.61207e+01
+  15  par_xsec4CCoth   0.00000e+00   8.00000e-02   2.66698e-02  -5.28915e+01
+  16  par_xsec5PilessDcy   0.00000e+00   8.00000e-02   2.66698e-02   2.17196e+02
+  17  par_xsec61piEnuShape   0.00000e+00   8.00000e-02   2.66698e-02  -2.84881e+02
+  18  par_xsec7AllElse   0.00000e+00   8.00000e-02   2.66698e-02  -3.54043e+00
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ MIGRAD WILL VERIFY CONVERGENCE AND ERROR MATRIX.
+ COVARIANCE MATRIX CALCULATED SUCCESSFULLY
+ FCN=5.28205 FROM MIGRAD    STATUS=CONVERGED    1115 CALLS        1116 TOTAL
+                     EDM=3.08344e-11    STRATEGY= 1      ERROR MATRIX ACCURATE 
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  par_scale0   1.87777e-01   5.89511e-01   5.46689e-04  -1.95949e-06
+   2  par_scale1   4.83299e-01   3.11367e-01   1.76472e-04  -1.01798e-05
+   3  par_scale2   4.59232e-01   1.64139e-01   9.47411e-05  -2.96362e-05
+   4  par_scale3   5.60315e-01   2.90266e-01   1.51814e-04  -9.33701e-06
+   5  par_scale4   5.85561e-01   2.12723e-01   1.10740e-04   1.67965e-05
+   6  par_scale5   4.62647e-01   2.14200e-01   1.22072e-04   1.43917e-05
+   7  par_scale6   4.70379e-01   2.17886e-01   1.24257e-04  -2.03052e-05
+   8  par_scale7   4.91926e-01   1.92156e-01   1.08129e-04  -7.35918e-06
+   9  par_scale8   6.72541e-01   1.99891e-01   9.61042e-05   2.19285e-06
+  10  par_scale9   7.14322e-01   1.84710e-01   8.68647e-05  -6.23460e-06
+  11  par_xsec0MACCQE  -1.72465e-01   9.57059e-01   3.52426e-04   1.03038e-06
+  12  par_xsec1MAres  -5.08335e-02   5.62669e-01   8.79035e-05  -1.85518e-05
+  13  par_xsec2CC1piE0   4.74918e-01   6.74648e-01   1.18014e-04  -2.14721e-05
+  14  par_xsec3CC1piE1   4.76983e-01   6.15627e-01   1.40647e-04  -3.10039e-06
+  15  par_xsec4CCoth   1.25490e-02   8.95097e-01   2.25442e-04   8.96669e-07
+  16  par_xsec5PilessDcy  -5.56388e-01   4.86266e-01   1.67707e-04  -7.78558e-06
+  17  par_xsec61piEnuShape   4.13613e-01   5.36504e-01   8.45657e-05   1.35765e-05
+  18  par_xsec7AllElse  -5.71441e-02   1.00866e+00   4.13079e-04   1.81284e-07
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR= 18    ERR DEF=1
+ ELEMENTS ABOVE DIAGONAL ARE NOT PRINTED.
+  3.719e-01 
+  2.429e-03  9.764e-02 
+  1.369e-03  1.190e-03  2.700e-02 
+  4.750e-04  5.336e-04  3.467e-04  8.471e-02 
+  6.345e-04  4.042e-04  2.335e-04  6.164e-04  4.538e-02 
+  2.374e-04  2.127e-04  1.856e-04  2.596e-03  4.718e-04  4.604e-02 
+  2.634e-04  2.414e-04  1.921e-04  2.118e-03  3.929e-04  1.745e-03  4.764e-02 
+  4.656e-04  2.427e-04  1.476e-04  1.015e-03  3.197e-04  8.317e-04  6.816e-04  3.702e-02 
+  2.044e-04  5.745e-05  9.630e-05  1.170e-03  3.944e-04  1.074e-03  8.380e-04  6.735e-04  4.004e-02 
+  6.646e-05 -9.823e-05 -1.954e-05  8.469e-04  2.813e-04  7.885e-04  6.065e-04  5.114e-04  9.899e-04  3.418e-02 
+ -2.300e-02 -5.888e-04  3.062e-03 -5.807e-03 -6.710e-03 -4.492e-03 -4.796e-03 -1.034e-02 -3.226e-03 -4.731e-03  9.490e-01 
+  1.367e-03 -2.269e-03 -2.199e-03 -2.166e-02 -6.451e-04 -1.724e-02 -1.449e-02 -1.713e-03  2.397e-03  2.205e-03 -1.225e-01 
+  1.367e-03 -2.269e-03 -2.199e-03 -2.166e-02 -6.451e-04 -1.724e-02 -1.449e-02 -1.713e-03  2.397e-03  2.205e-03 -1.225e-01  3.204e-01 
+ -1.852e-02 -1.524e-02 -1.001e-02  1.978e-02 -5.161e-04  1.574e-02  1.187e-02  2.224e-03  3.956e-03  3.152e-03  2.376e-02 
+ -1.852e-02 -1.524e-02 -1.001e-02  1.978e-02 -5.161e-04  1.574e-02  1.187e-02  2.224e-03  3.956e-03  3.152e-03  2.376e-02 -1.804e-01  4.632e-01 
+  1.279e-02  7.250e-03  2.650e-03 -9.668e-03 -2.426e-03 -1.083e-02 -8.536e-03 -6.927e-03 -1.421e-02 -1.185e-02  1.972e-02 
+  1.279e-02  7.250e-03  2.650e-03 -9.668e-03 -2.426e-03 -1.083e-02 -8.536e-03 -6.927e-03 -1.421e-02 -1.185e-02  1.972e-02 -3.791e-02  6.161e-02  3.846e-01 
+  1.658e-02  1.014e-02  9.011e-03 -7.726e-04  2.340e-03  4.317e-03  5.209e-03  2.951e-03  4.775e-03  1.333e-03 -1.673e-02 
+  1.658e-02  1.014e-02  9.011e-03 -7.726e-04  2.340e-03  4.317e-03  5.209e-03  2.951e-03  4.775e-03  1.333e-03 -1.673e-02 -7.250e-02 -2.084e-01  1.505e-02  8.262e-01 
+  1.226e-02  1.025e-02  5.640e-03  5.462e-03  3.392e-03  3.725e-03  3.218e-03  2.856e-03  7.552e-03  3.440e-03 -2.105e-03 
+  1.226e-02  1.025e-02  5.640e-03  5.462e-03  3.392e-03  3.725e-03  3.218e-03  2.856e-03  7.552e-03  3.440e-03 -2.105e-03  4.485e-02  7.358e-03  1.674e-02 -1.444e-02  2.386e-01 
+ -1.141e-03  3.132e-03  2.694e-03  6.792e-03  6.496e-04  6.245e-03  5.799e-03  1.486e-03 -3.003e-04  1.114e-04 -2.998e-03 
+ -1.141e-03  3.132e-03  2.694e-03  6.792e-03  6.496e-04  6.245e-03  5.799e-03  1.486e-03 -3.003e-04  1.114e-04 -2.998e-03 -9.353e-02 -1.044e-01 -1.913e-01 -4.692e-02  1.291e-02  2.910e-01 
+ -2.302e-02  2.595e-03  1.072e-03  6.988e-03  1.041e-03  3.703e-04  1.519e-03  2.667e-03 -1.076e-03 -2.400e-03  1.851e-03 
+ -2.302e-02  2.595e-03  1.072e-03  6.988e-03  1.041e-03  3.703e-04  1.519e-03  2.667e-03 -1.076e-03 -2.400e-03  1.851e-03  2.874e-02 -1.911e-02 -4.208e-02 -1.742e-02 -1.028e-02 -2.166e-02  1.058e+00 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16
+        1  0.10669   1.000  0.013  0.014  0.003  0.005  0.002  0.002  0.004  0.002  0.001 -0.039  0.004 -0.045  0.034  0.030  0.041
+        2  0.14328   0.013  1.000  0.023  0.006  0.006  0.003  0.004  0.004  0.001 -0.002 -0.002 -0.013 -0.072  0.037  0.036  0.067
+        3  0.16550   0.014  0.023  1.000  0.007  0.007  0.005  0.005  0.005  0.003 -0.001  0.019 -0.024 -0.089  0.026  0.060  0.070
+        4  0.19784   0.003  0.006  0.007  1.000  0.010  0.042  0.033  0.018  0.020  0.016 -0.020 -0.131  0.100 -0.054 -0.003  0.038
+        5  0.07252   0.005  0.006  0.007  0.010  1.000  0.010  0.008  0.008  0.009  0.007 -0.032 -0.005 -0.004 -0.018  0.012  0.033
+        6  0.21564   0.002  0.003  0.005  0.042  0.010  1.000  0.037  0.020  0.025  0.020 -0.021 -0.142  0.108 -0.081  0.022  0.036
+        7  0.17347   0.002  0.004  0.005  0.033  0.008  0.037  1.000  0.016  0.019  0.015 -0.023 -0.117  0.080 -0.063  0.026  0.030
+        8  0.11730   0.004  0.004  0.005  0.018  0.008  0.020  0.016  1.000  0.017  0.014 -0.055 -0.016  0.017 -0.058  0.017  0.030
+        9  0.18415   0.002  0.001  0.003  0.020  0.009  0.025  0.019  0.017  1.000  0.027 -0.017  0.021  0.029 -0.114  0.026  0.077
+       10  0.14919   0.001 -0.002 -0.001  0.016  0.007  0.020  0.015  0.014  0.027  1.000 -0.026  0.021  0.025 -0.103  0.008  0.038
+       11  0.46488  -0.039 -0.002  0.019 -0.020 -0.032 -0.021 -0.023 -0.055 -0.017 -0.026  1.000 -0.222  0.036  0.033 -0.019 -0.004
+       12  0.92472   0.004 -0.013 -0.024 -0.131 -0.005 -0.142 -0.117 -0.016  0.021  0.021 -0.222  1.000 -0.468 -0.108 -0.141  0.162
+       13  0.90767  -0.045 -0.072 -0.089  0.100 -0.004  0.108  0.080  0.017  0.029  0.025  0.036 -0.468  1.000  0.146 -0.337  0.022
+       14  0.83590   0.034  0.037  0.026 -0.054 -0.018 -0.081 -0.063 -0.058 -0.114 -0.103  0.033 -0.108  0.146  1.000  0.027  0.055
+       15  0.79394   0.030  0.036  0.060 -0.003  0.012  0.022  0.026  0.017  0.026  0.008 -0.019 -0.141 -0.337  0.027  1.000 -0.033
+       16  0.56225   0.041  0.067  0.070  0.038  0.033  0.036  0.030  0.030  0.077  0.038 -0.004  0.162  0.022  0.055 -0.033  1.000
+       17  0.92474  -0.003  0.019  0.030  0.043  0.006  0.054  0.049  0.014 -0.003  0.001 -0.006 -0.306 -0.284 -0.572 -0.096  0.049
+                     1.000 -0.039
+       18  0.17737  -0.037  0.008  0.006  0.023  0.005  0.002  0.007  0.013 -0.005 -0.013  0.002  0.049 -0.027 -0.066 -0.019 -0.020
+                    -0.039  1.000
+ ELEMENTS ABOVE DIAGONAL ARE NOT PRINTED.
+Sample size 45461 vs 45461
+============> Sample SIG <============
+       sig    0   135.395   47.0819%
+      ccqe    1   9.50257   3.30441%
+     cc1pi    2   89.9397   31.2755%
+   ccother    3   31.0157   10.7854%
+        nc    4    3.3803   1.17546%
+   numubar    5   16.3846   5.69756%
+       nue    6         0         0%
+    ingrid    7   1.95474  0.679739%
+      wall    8         0         0%
+Sample size 136297 vs 136297
+============> Sample CRI <============
+       sig    0   11.4674   1.08881%
+      ccqe    1   46.6902   4.43315%
+     cc1pi    2   645.205   61.2611%
+   ccother    3   310.681   29.4987%
+        nc    4   11.4484   1.08701%
+   numubar    5   23.6213    2.2428%
+       nue    6         0         0%
+    ingrid    7   3.29356  0.312718%
+      wall    8  0.798204 0.0757881%
+Sample size 49863 vs 49863
+============> Sample CRII <============
+       sig    0    5.7069   1.37943%
+      ccqe    1   29.2089   7.06014%
+     cc1pi    2   257.817   62.3174%
+   ccother    3   96.1305   23.2359%
+        nc    4   4.22724   1.02177%
+   numubar    5   15.3339   3.70639%
+       nue    6         0         0%
+    ingrid    7   2.98999  0.722717%
+      wall    8   2.30118  0.556223%
+Sample size 71553 vs 71553
+============> Sample CRIII <============
+       sig    0   1.48047  0.244733%
+      ccqe    1   38.6082   6.38223%
+     cc1pi    2   349.364   57.7525%
+   ccother    3   196.558   32.4925%
+        nc    4   3.77119  0.623406%
+   numubar    5    12.046    1.9913%
+       nue    6         0         0%
+    ingrid    7   2.62203   0.43344%
+      wall    8  0.483292 0.0798918%
+Processing successfully

@@ -1,0 +1,384 @@
+/home/cvson/scraid2/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/bin/simpleTest2noflux.exe
+/home/cvson/scraid2/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/outputs/two/fittoy_result_1noflux.root
+file open
+0  0.96  0  5
+0.96  0.99  0  0.97
+0.96  0.99  0.97  5
+0.99  1  0  0.97
+0.99  1  0.97  5
+ccqe bins defined
+5 bins inside MakeHistos
+MakeHistos called
+0  0.96  0  5
+0.96  0.99  0  0.97
+0.96  0.99  0.97  5
+0.99  1  0  0.97
+0.99  1  0.97  5
+ccqe bins defined
+5 bins inside MakeHistos
+MakeHistos called
+total 4238702 iprint 42387
+Processing 0% of events
+Processing 0% of events
+Processing 1% of events
+Processing 2% of events
+Processing 3% of events
+Processing 4% of events
+Processing 5% of events
+Processing 6% of events
+Processing 7% of events
+Processing 8% of events
+Processing 9% of events
+Processing 10% of events
+Processing 11% of events
+Processing 12% of events
+Processing 13% of events
+Processing 14% of events
+Processing 15% of events
+Processing 16% of events
+Processing 17% of events
+Processing 18% of events
+Processing 19% of events
+Processing 20% of events
+Processing 21% of events
+Processing 22% of events
+Processing 23% of events
+Processing 24% of events
+Processing 25% of events
+Processing 26% of events
+Processing 27% of events
+Processing 28% of events
+Processing 29% of events
+Processing 30% of events
+Processing 31% of events
+Processing 32% of events
+Processing 33% of events
+Processing 34% of events
+Processing 35% of events
+Processing 36% of events
+Processing 37% of events
+Processing 38% of events
+Processing 39% of events
+Processing 40% of events
+Processing 41% of events
+Processing 42% of events
+Processing 43% of events
+Processing 44% of events
+Processing 45% of events
+Processing 46% of events
+Processing 47% of events
+Processing 48% of events
+Processing 49% of events
+Processing 50% of events
+Processing 51% of events
+Processing 52% of events
+Processing 53% of events
+Processing 54% of events
+Processing 55% of events
+Processing 56% of events
+Processing 57% of events
+Processing 58% of events
+Processing 59% of events
+Processing 60% of events
+Processing 61% of events
+Processing 62% of events
+Processing 63% of events
+Processing 64% of events
+Processing 65% of events
+Processing 66% of events
+Processing 67% of events
+Processing 68% of events
+Processing 69% of events
+Processing 70% of events
+Processing 71% of events
+Processing 72% of events
+Processing 73% of events
+Processing 74% of events
+Processing 75% of events
+Processing 76% of events
+Processing 77% of events
+Processing 78% of events
+Processing 79% of events
+Processing 80% of events
+Processing 81% of events
+Processing 82% of events
+Processing 83% of events
+Processing 84% of events
+Processing 85% of events
+Processing 86% of events
+Processing 87% of events
+Processing 88% of events
+Processing 89% of events
+Processing 90% of events
+Processing 91% of events
+Processing 92% of events
+Processing 93% of events
+Processing 94% of events
+Processing 95% of events
+Processing 96% of events
+Processing 97% of events
+Processing 98% of events
+Processing 99% of events
+Sample SIG id = 0
+   num of events = 76886
+   memory used   = 1845.26 kB
+Sample CRI id = 1
+   num of events = 59025
+   memory used   = 1416.6 kB
+Number of Sample 2
+Sample size 76886 vs 76886
+============> Sample SIG <============
+       sig    0   336.163   54.8838%
+      ccqe    1   49.0885   8.01446%
+     cc1pi    2   156.524    25.555%
+   ccother    3    32.409   5.29128%
+        nc    4   8.00997   1.30775%
+   numubar    5   27.5207   4.49319%
+       nue    6  0.693248  0.113183%
+    ingrid    7   1.91603  0.312822%
+      wall    8  0.174892 0.0285539%
+Sample size 59025 vs 59025
+============> Sample CRI <============
+       sig    0   20.5174   4.81161%
+      ccqe    1   103.047   24.1658%
+     cc1pi    2   238.466   55.9235%
+   ccother    3    45.721   10.7222%
+        nc    4   6.64815   1.55908%
+   numubar    5   10.3162   2.41928%
+       nue    6  0.849258  0.199162%
+    ingrid    7   0.55309  0.129707%
+      wall    8  0.296944 0.0696372%
+nominal MC done
+
+CC1picoh binning:
+  0    0 0.96    0    5
+  1 0.96 0.99    0 0.97
+  2 0.96 0.99 0.97    5
+  3 0.99    1    0 0.97
+  4 0.99    1 0.97    5
+
+CC1picoh scale parameters DONE
+Number of parameters in covariance matrix for par_xsec 7
+reading response functions for topology 0  reaction 0
+reading response functions for topology 0  reaction 1
+reading response functions for topology 0  reaction 2
+reading response functions for topology 0  reaction 3
+reading response functions for topology 0  reaction 4
+reading response functions for topology 1  reaction 0
+reading response functions for topology 1  reaction 1
+reading response functions for topology 1  reaction 2
+reading response functions for topology 1  reaction 3
+reading response functions for topology 1  reaction 4
+reading response functions for topology 2  reaction 0
+reading response functions for topology 2  reaction 1
+reading response functions for topology 2  reaction 2
+reading response functions for topology 2  reaction 3
+reading response functions for topology 2  reaction 4
+
+Det Syst binning:
+  0    0    0 0.96    0    5
+  1    0 0.96 0.99    0 0.97
+  2    0 0.96 0.99 0.97    5
+  3    0 0.99    1    0 0.97
+  4    0 0.99    1 0.97    5
+  5    1    0 0.96    0    5
+  6    1 0.96 0.99    0 0.97
+  7    1 0.96 0.99 0.97    5
+  8    1 0.99    1    0 0.97
+  9    1 0.99    1 0.97    5
+
+Det Syst # parameters: 10
+
+Det weight starting values 
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+9 0
+Number of parameters in covariance matrix for par_det 10
+===========================================
+           Initilizing fitter              
+    Number of parameters = 22
+===========================================
+ **********
+ **    1 **SET PRINT           1
+ **********
+ PARAMETER DEFINITIONS:
+    NO.   NAME         VALUE      STEP SIZE      LIMITS
+     1 par_scale0   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     2 par_scale1   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     3 par_scale2   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     4 par_scale3   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     5 par_scale4   1.00000e+00  1.00000e-01    0.00000e+00  1.00000e+01
+     6 par_xsec0MACCQE   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+     7 par_xsec1MAres   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+     8 par_xsec2CC1piE0   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+     9 par_xsec3CC1piE1   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+    10 par_xsec4CCoth   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+    11 par_xsec5PilessDcy   0.00000e+00  8.00000e-02   -1.00000e+00  1.00000e+00
+    12 par_xsec6AllElse   0.00000e+00  8.00000e-02   -5.00000e+00  5.00000e+00
+    13 par_det0     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    14 par_det1     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    15 par_det2     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    16 par_det3     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    17 par_det4     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    18 par_det5     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    19 par_det6     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    20 par_det7     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    21 par_det8     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+    22 par_det9     0.00000e+00  5.00000e-02   -1.00000e+00  1.00000e+00
+Starting to fit
+sample 0 Fake GENIE data531.006
+sample 1 Fake GENIE data513.067
+ **********
+ **    2 **MIGRAD       1e+06       1e-05
+ **********
+ FIRST CALL TO USER FUNCTION AT NEW START POINT, WITH IFLAG=4.
+ START MIGRAD MINIMIZATION.  STRATEGY  1.  CONVERGENCE WHEN EDM .LT. 1.00e-08
+ FCN=30.6926 FROM MIGRAD    STATUS=INITIATE       84 CALLS          85 TOTAL
+                     EDM= unknown      STRATEGY= 1      NO ERROR MATRIX       
+  EXT PARAMETER               CURRENT GUESS       STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  par_scale0   1.00000e+00   1.00000e-01   3.33726e-02   3.11027e+01
+   2  par_scale1   1.00000e+00   1.00000e-01   3.33726e-02   6.59564e+01
+   3  par_scale2   1.00000e+00   1.00000e-01   3.33726e-02   5.16986e+01
+   4  par_scale3   1.00000e+00   1.00000e-01   3.33726e-02   3.95226e+01
+   5  par_scale4   1.00000e+00   1.00000e-01   3.33726e-02   5.99756e+01
+   6  par_xsec0MACCQE   0.00000e+00   8.00000e-02   1.60007e-02  -1.78446e+00
+   7  par_xsec1MAres   0.00000e+00   8.00000e-02   1.60007e-02  -2.49964e+01
+   8  par_xsec2CC1piE0   0.00000e+00   8.00000e-02   1.60007e-02  -5.32643e+01
+   9  par_xsec3CC1piE1   0.00000e+00   8.00000e-02   1.60007e-02  -2.28596e+01
+  10  par_xsec4CCoth   0.00000e+00   8.00000e-02   1.60007e-02  -9.16441e+00
+  11  par_xsec5PilessDcy   0.00000e+00   8.00000e-02   8.00856e-02   4.81072e-01
+  12  par_xsec6AllElse   0.00000e+00   8.00000e-02   1.60007e-02   4.78186e-01
+  13  par_det0     0.00000e+00   5.00000e-02   5.00209e-02   2.33218e+01
+  14  par_det1     0.00000e+00   5.00000e-02   5.00209e-02   4.02853e+01
+  15  par_det2     0.00000e+00   5.00000e-02   5.00209e-02   3.47200e+01
+  16  par_det3     0.00000e+00   5.00000e-02   5.00209e-02   2.68470e+01
+  17  par_det4     0.00000e+00   5.00000e-02   5.00209e-02   3.78126e+01
+  18  par_det5     0.00000e+00   5.00000e-02   5.00209e-02  -5.08231e+01
+  19  par_det6     0.00000e+00   5.00000e-02   5.00209e-02  -2.93964e+01
+  20  par_det7     0.00000e+00   5.00000e-02   5.00209e-02  -4.69398e+01
+  21  par_det8     0.00000e+00   5.00000e-02   5.00209e-02  -2.77468e+01
+  22  par_det9     0.00000e+00   5.00000e-02   5.00209e-02  -1.83975e+01
+ MIGRAD MINIMIZATION HAS CONVERGED.
+ FCN=2.49434 FROM MIGRAD    STATUS=CONVERGED     912 CALLS         913 TOTAL
+                     EDM=4.59894e-10    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   6.1 per cent
+  EXT PARAMETER                                   STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  par_scale0   5.27541e-01   3.27178e-01   1.13537e-06  -1.71564e-04
+   2  par_scale1   5.55133e-01   2.19418e-01  -6.03935e-07   1.40733e-04
+   3  par_scale2   5.59166e-01   2.35886e-01  -1.13516e-06   2.23932e-05
+   4  par_scale3   6.99852e-01   2.37675e-01  -2.89334e-06  -5.65939e-05
+   5  par_scale4   6.66332e-01   1.80312e-01  -1.78186e-07  -1.84063e-05
+   6  par_xsec0MACCQE   1.22554e-01   9.84108e-01  -1.72749e-06   6.63857e-06
+   7  par_xsec1MAres   4.44917e-01   7.01981e-01   2.63302e-06  -2.06341e-04
+   8  par_xsec2CC1piE0   7.89072e-01   5.00808e-01  -1.16585e-06  -7.56080e-05
+   9  par_xsec3CC1piE1   5.33913e-01   7.01912e-01   6.84235e-06  -1.41772e-04
+  10  par_xsec4CCoth   1.92852e-01   9.80372e-01   1.60328e-08  -4.40766e-05
+  11  par_xsec5PilessDcy  -5.30277e-01   6.78509e-01   2.20598e-05   1.52757e-05
+  12  par_xsec6AllElse  -2.43306e-02   1.00397e+00   1.84178e-06   8.54492e-06
+  13  par_det0    -1.64797e-03   1.24381e-01  -8.63580e-07  -8.11091e-05
+  14  par_det1    -3.86892e-03   1.21641e-01   1.33292e-06   1.95300e-04
+  15  par_det2    -2.98963e-03   1.09847e-01   1.67455e-07   9.03627e-05
+  16  par_det3    -2.17642e-03   1.04985e-01   2.31994e-06  -3.96694e-05
+  17  par_det4     1.31242e-04   7.99851e-02  -7.47466e-07  -5.55874e-05
+  18  par_det5     6.50256e-02   8.63791e-02  -1.06730e-06  -1.94471e-04
+  19  par_det6     3.34184e-02   8.58377e-02  -7.81188e-07  -9.87399e-06
+  20  par_det7     7.36407e-02   9.52995e-02  -2.39234e-06  -1.23752e-04
+  21  par_det8     2.69229e-02   8.29276e-02  -3.51892e-06  -2.37469e-04
+  22  par_det9    -2.66961e-03   8.24317e-02  -1.94480e-06   1.71399e-04
+ EXTERNAL ERROR MATRIX.    NDIM=  25    NPAR= 22    ERR DEF=1
+ ELEMENTS ABOVE DIAGONAL ARE NOT PRINTED.
+  1.078e-01 
+  1.357e-02  4.829e-02 
+  4.504e-03  3.646e-02  5.584e-02 
+  8.883e-03  6.632e-03  8.136e-03  5.665e-02 
+  1.052e-02  7.217e-03  8.130e-03  2.195e-03  3.257e-02 
+ -8.237e-03 -1.398e-02 -2.083e-02 -1.518e-02 -1.125e-02  9.812e-01 
+ -6.243e-02 -4.516e-02 -4.186e-02  2.460e-03  2.514e-02 -4.219e-02  4.961e-01 
+ -6.679e-03  1.842e-02  1.968e-02 -5.241e-03 -3.065e-02 -8.653e-03 -1.489e-01  2.517e-01 
+  2.698e-02 -5.680e-03 -1.840e-02 -3.892e-02 -3.368e-02 -3.847e-02 -1.125e-02  3.545e-03  4.960e-01 
+ -1.864e-02 -9.654e-03 -7.537e-03 -1.518e-03 -1.471e-03 -9.440e-03 -4.011e-02 -6.107e-02 -3.420e-02  9.737e-01 
+  7.460e-02  4.850e-02  4.349e-02  3.270e-02  2.227e-02  5.996e-02  1.159e-01 -4.501e-03  8.831e-02  4.427e-02  6.187e-01 
+  6.908e-03  4.887e-03  4.187e-03  1.411e-03  1.139e-03 -8.287e-05  8.663e-03  8.321e-03  1.220e-02  4.371e-03  1.064e-02 
+  6.908e-03  4.887e-03  4.187e-03  1.411e-03  1.139e-03 -8.287e-05  8.663e-03  8.321e-03  1.220e-02  4.371e-03  1.064e-02  1.022e+00 
+ -2.957e-02 -1.289e-03  1.915e-03 -1.176e-03 -2.430e-03  4.305e-04  2.024e-02 -4.435e-04 -1.176e-02 -1.910e-04 -6.143e-04 
+ -2.957e-02 -1.289e-03  1.915e-03 -1.176e-03 -2.430e-03  4.305e-04  2.024e-02 -4.435e-04 -1.176e-02 -1.910e-04 -6.143e-04 -7.274e-04  1.555e-02 
+ -1.459e-03 -1.855e-02 -1.767e-02 -1.358e-03 -2.027e-03  3.598e-03  2.481e-02 -1.376e-02  2.860e-04  5.528e-04 -3.790e-04 
+ -1.459e-03 -1.855e-02 -1.767e-02 -1.358e-03 -2.027e-03  3.598e-03  2.481e-02 -1.376e-02  2.860e-04  5.528e-04 -3.790e-04 -1.697e-03  9.509e-06  1.487e-02 
+  4.116e-03 -1.291e-02 -1.656e-02 -1.091e-03 -2.650e-03 -2.809e-03  6.382e-03 -5.929e-03 -3.884e-03  1.231e-04 -3.544e-03 
+  4.116e-03 -1.291e-02 -1.656e-02 -1.091e-03 -2.650e-03 -2.809e-03  6.382e-03 -5.929e-03 -3.884e-03  1.231e-04 -3.544e-03 -1.399e-03 -1.819e-03  7.185e-03  1.212e-02 
+ -4.691e-04  1.500e-04 -4.196e-04 -1.793e-02  7.743e-04 -4.513e-05 -5.801e-03  2.701e-03  3.546e-03 -2.155e-04  1.107e-03 
+ -4.691e-04  1.500e-04 -4.196e-04 -1.793e-02  7.743e-04 -4.513e-05 -5.801e-03  2.701e-03  3.546e-03 -2.155e-04  1.107e-03 -3.887e-04  3.750e-04  2.440e-05  4.012e-04  1.106e-02 
+ -1.385e-03 -3.974e-04 -7.126e-04  1.359e-03 -8.685e-03 -1.153e-03 -1.512e-02  1.357e-02  2.932e-03 -3.059e-04  4.583e-03 
+ -1.385e-03 -3.974e-04 -7.126e-04  1.359e-03 -8.685e-03 -1.153e-03 -1.512e-02  1.357e-02  2.932e-03 -3.059e-04  4.583e-03 -2.506e-04  8.730e-04  3.610e-04  1.075e-03 -3.204e-04  6.411e-03 
+  5.757e-03  3.025e-03  2.910e-03  2.728e-03  3.423e-03 -6.712e-04  2.036e-04 -6.479e-03 -7.404e-03 -9.107e-03  2.190e-02 
+  5.757e-03  3.025e-03  2.910e-03  2.728e-03  3.423e-03 -6.712e-04  2.036e-04 -6.479e-03 -7.404e-03 -9.107e-03  2.190e-02  2.216e-03 -9.415e-04 -6.352e-05  7.989e-05  3.845e-05 -3.707e-04  7.480e-03 
+  3.606e-03  3.342e-04  4.785e-04  1.967e-03  2.602e-03  9.329e-05 -1.219e-04 -5.723e-03 -1.055e-02 -4.006e-03  8.731e-03 
+  3.606e-03  3.342e-04  4.785e-04  1.967e-03  2.602e-03  9.329e-05 -1.219e-04 -5.723e-03 -1.055e-02 -4.006e-03  8.731e-03  1.399e-03 -5.186e-04  3.919e-04  6.639e-04  4.469e-07 -3.665e-04  6.094e-04  7.386e-03 
+  5.834e-03  3.802e-03  3.776e-03  3.655e-03  2.811e-03 -2.848e-03 -8.010e-03 -2.326e-03 -1.961e-02 -2.196e-03  1.741e-02 
+  5.834e-03  3.802e-03  3.776e-03  3.655e-03  2.811e-03 -2.848e-03 -8.010e-03 -2.326e-03 -1.961e-02 -2.196e-03  1.741e-02  1.311e-04 -5.902e-04 -5.255e-04  1.014e-04  1.554e-05  2.301e-04  1.370e-03  1.016e-03  9.110e-03 
+  6.168e-04  1.220e-03  1.588e-03  9.076e-04  2.485e-03 -1.363e-03 -6.568e-03 -2.061e-03 -2.169e-02 -1.405e-05 -8.500e-04 
+  6.168e-04  1.220e-03  1.588e-03  9.076e-04  2.485e-03 -1.363e-03 -6.568e-03 -2.061e-03 -2.169e-02 -1.405e-05 -8.500e-04  1.173e-03  2.799e-04  1.044e-04  4.863e-04  4.230e-04 -2.353e-04  5.916e-04  7.400e-04  1.336e-03  6.893e-03 
+  1.461e-03  1.755e-03  2.196e-03  2.903e-03  1.678e-03 -4.096e-03 -7.540e-03 -6.604e-04 -2.211e-02  2.706e-04  9.972e-04 
+  1.461e-03  1.755e-03  2.196e-03  2.903e-03  1.678e-03 -4.096e-03 -7.540e-03 -6.604e-04 -2.211e-02  2.706e-04  9.972e-04  2.971e-04  2.869e-04 -3.319e-04  2.947e-04 -1.578e-04  1.241e-04  8.753e-04  7.913e-04  1.580e-03  1.344e-03  6.810e-03 
+ PARAMETER  CORRELATION COEFFICIENTS  
+       NO.  GLOBAL      1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16
+        1  0.82252   1.000  0.188  0.058  0.114  0.177 -0.025 -0.270 -0.041  0.117 -0.058  0.289  0.021 -0.722 -0.036  0.114 -0.014
+        2  0.82105   0.188  1.000  0.702  0.127  0.182 -0.064 -0.292  0.167 -0.037 -0.045  0.281  0.022 -0.047 -0.692 -0.534  0.006
+        3  0.81374   0.058  0.702  1.000  0.145  0.191 -0.089 -0.251  0.166 -0.111 -0.032  0.234  0.018  0.065 -0.613 -0.637 -0.017
+        4  0.79353   0.114  0.127  0.145  1.000  0.051 -0.064  0.015 -0.044 -0.232 -0.006  0.175  0.006 -0.040 -0.047 -0.042 -0.716
+        5  0.73558   0.177  0.182  0.191  0.051  1.000 -0.063  0.198 -0.339 -0.265 -0.008  0.157  0.006 -0.108 -0.092 -0.133  0.041
+        6  0.42903  -0.025 -0.064 -0.089 -0.064 -0.063  1.000 -0.060 -0.017 -0.055 -0.010  0.077 -0.000  0.003  0.030 -0.026 -0.000
+        7  0.78289  -0.270 -0.292 -0.251  0.015  0.198 -0.060  1.000 -0.422 -0.023 -0.058  0.209  0.012  0.230  0.289  0.082 -0.078
+        8  0.66443  -0.041  0.167  0.166 -0.044 -0.339 -0.017 -0.422  1.000  0.010 -0.123 -0.011  0.016 -0.007 -0.225 -0.107  0.051
+        9  0.75051   0.117 -0.037 -0.111 -0.232 -0.265 -0.055 -0.023  0.010  1.000 -0.049  0.159  0.017 -0.134  0.003 -0.050  0.048
+       10  0.42954  -0.058 -0.045 -0.032 -0.006 -0.008 -0.010 -0.058 -0.123 -0.049  1.000  0.057  0.004 -0.002  0.005  0.001 -0.002
+       11  0.81274   0.289  0.281  0.234  0.175  0.157  0.077  0.209 -0.011  0.159  0.057  1.000  0.013 -0.006 -0.004 -0.041  0.013
+       12  0.08331   0.021  0.022  0.018  0.006  0.006 -0.000  0.012  0.016  0.017  0.004  0.013  1.000 -0.006 -0.014 -0.013 -0.004
+       13  0.77149  -0.722 -0.047  0.065 -0.040 -0.108  0.003  0.230 -0.007 -0.134 -0.002 -0.006 -0.006  1.000  0.001 -0.133  0.029
+       14  0.76359  -0.036 -0.692 -0.613 -0.047 -0.092  0.030  0.289 -0.225  0.003  0.005 -0.004 -0.014  0.001  1.000  0.535  0.002
+       15  0.73014   0.114 -0.534 -0.637 -0.042 -0.133 -0.026  0.082 -0.107 -0.050  0.001 -0.041 -0.013 -0.133  0.535  1.000  0.035
+       16  0.76156  -0.014  0.006 -0.017 -0.716  0.041 -0.000 -0.078  0.051  0.048 -0.002  0.013 -0.004  0.029  0.002  0.035  1.000
+       17  0.68679  -0.053 -0.023 -0.038  0.071 -0.601 -0.015 -0.268  0.338  0.052 -0.004  0.073 -0.003  0.087  0.037  0.122 -0.038
+                     1.000 -0.054 -0.053  0.030 -0.035  0.019
+       18  0.47896   0.203  0.159  0.142  0.133  0.219 -0.008  0.003 -0.149 -0.122 -0.107  0.322  0.025 -0.087 -0.006  0.008  0.004
+                    -0.054  1.000  0.082  0.166  0.082  0.123
+       19  0.33296   0.128  0.018  0.024  0.096  0.168  0.001 -0.002 -0.133 -0.174 -0.047  0.129  0.016 -0.048  0.037  0.070  0.000
+                    -0.053  0.082  1.000  0.124  0.104  0.112
+       20  0.49258   0.186  0.181  0.167  0.161  0.163 -0.030 -0.119 -0.049 -0.292 -0.023  0.232  0.001 -0.050 -0.045  0.010  0.002
+                     0.030  0.166  0.124  1.000  0.169  0.201
+       21  0.43725   0.023  0.067  0.081  0.046  0.166 -0.017 -0.112 -0.049 -0.371 -0.000 -0.013  0.014  0.027  0.010  0.053  0.048
+                    -0.035  0.082  0.104  0.169  1.000  0.196
+       22  0.44558   0.054  0.097  0.113  0.148  0.113 -0.050 -0.130 -0.016 -0.381  0.003  0.015  0.004  0.028 -0.033  0.032 -0.018
+                     0.019  0.123  0.112  0.201  0.196  1.000
+ ELEMENTS ABOVE DIAGONAL ARE NOT PRINTED.
+Sample size 76886 vs 76886
+============> Sample SIG <============
+       sig    0    205.88   38.7299%
+      ccqe    1    48.832    9.1862%
+     cc1pi    2   205.326   38.6257%
+   ccother    3   33.2964   6.26368%
+        nc    4   7.99042   1.50315%
+   numubar    5    27.472     5.168%
+       nue    6  0.691932  0.130165%
+    ingrid    7   1.91583  0.360404%
+      wall    8    0.1746 0.0328455%
+Sample size 59025 vs 59025
+============> Sample CRI <============
+       sig    0   13.1809   2.62451%
+      ccqe    1   96.0489   19.1247%
+     cc1pi    2   324.035   64.5201%
+   ccother    3   49.5767   9.87143%
+        nc    4   6.96896   1.38762%
+   numubar    5   10.6423   2.11904%
+       nue    6  0.890011  0.177214%
+    ingrid    7  0.565164  0.112532%
+      wall    8  0.315543 0.0628293%
+Processing successfully

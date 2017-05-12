@@ -1,0 +1,22 @@
+#!/bin/sh
+#condor_submit condor_process_run1_five
+#condor_submit condor_process_run1_fiveallpara
+#condor_submit condor_process_run1_fivenodet
+#condor_submit condor_process_run1_fivenoflux
+condor_submit condor_process_run1_four
+#condor_submit condor_process_run1_fourallpara
+condor_submit condor_process_run1_fournodet
+#condor_submit condor_process_run1_fournoflux
+
+condor_submit condor_process_run1_three
+#condor_submit condor_process_run1_threeallpara
+condor_submit condor_process_run1_threenodet
+#condor_submit condor_process_run1_threenoflux
+
+condor_submit condor_process_run1_two
+condor_submit condor_process_run1_twoallpara
+condor_submit condor_process_run1_twonocor
+condor_submit condor_process_run1_twonodet
+condor_submit condor_process_run1_twonoflux
+
+

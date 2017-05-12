@@ -1,0 +1,14 @@
+INGangle 1.91552
+INGpos 3.35208
+INGmatch 2.53343
+vertexxy 0.654603
+vertexz 4.49506
+timing 0
+veto 2.90928
+fv 4.59807
+noise 0.778932
+hiteff 5.14292
+pe 21.2151
+****Total****
+23.4244
+
