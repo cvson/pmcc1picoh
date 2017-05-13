@@ -12,6 +12,7 @@ This is to test using response function from signal for sideband
 3. response function: 
 -- use v1r19piless02 cor: tot_merged_ccqe_forResponseFunction_pionFS_v1r19piless02cor.root
 -- fix float issue
+-- 7 parameters: 1-MACCQE, 2-MAres, 3-CC1piE0, 4-CC1piE1, 5-CCoth, 6-PilessDcy, 7-allelse
 
 4. included obervable information of vertex activity, other angles, Qsq
 
