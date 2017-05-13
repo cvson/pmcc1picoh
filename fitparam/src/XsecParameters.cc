@@ -130,11 +130,10 @@ void XsecParameters::StoreResponseFunctions(vector<TFile*> respfuncs, std::vecto
                     //if(fabs(br-bt)<21) {  //save memory if reco bin and true bin very far away
                         for(uint i=0; i<Npar; i++){
                             char name[200];
-                            //sprintf(name,"topology_%d/RecBin_%d_trueBin_%d_topology_%d_reac_%d",stInt,br,bt,stInt,rtInt);
-                            //sprintf(name,"sample_%d/RecBin_%d_sample_%d_reac_%d",stInt,br,stInt,rtInt);
                             //in the response function file, signal included
-                            sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt+1,br);
-                            //cout<<respfuncs[i]->GetName()<<" "<<name<<endl;
+                            //sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt+1,br);//this normal
+                            //hack here for fake use response function in signal for sideband
+                            sprintf(name,"response_sample%d_reaction%d_bin%d",s_SIG,rtInt+1,br);
                             TGraph* g=(TGraph*)respfuncs[i]->Get(name);
                             //cout<<g<<endl;
                             g->SetName(name);
