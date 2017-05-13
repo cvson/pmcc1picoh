@@ -680,34 +680,44 @@ void FitSample::GetSampleBreakdown(TDirectory *dirout, string tag)
                                 Form("%s_Veract_%s_%s",
                                      m_name.c_str(),names[i],tag.c_str()),
                                 200,0,400);
-
+	hveract[i]->SetDirectory(0);
+	hveract[i]->GetXaxis()->SetTitle("Energy deposit at vertex [MeV]");
 	//add20170511
         hrecang1trk[i] = new TH1D(Form("%s_recang1trk_%s_%s",
                                    m_name.c_str(),names[i],tag.c_str()),
                               Form("%s_recang1trk_%s_%s",
                                    m_name.c_str(),names[i],tag.c_str()),
                               90,0,90);
-
+	hrecang1trk[i]->SetDirectory(0);
+	hrecang1trk[i]->GetXaxis()->SetTitle("#mu-like track angle");
         hrecang2trk[i] = new TH1D(Form("%s_recang2trk_%s_%s",
                                        m_name.c_str(),names[i],tag.c_str()),
                                   Form("%s_recang2trk_%s_%s",
                                        m_name.c_str(),names[i],tag.c_str()),
                                   90,0,90);
+	hrecang2trk[i]->SetDirectory(0);
+	hrecang2trk[i]->GetXaxis()->SetTitle("#pi-like track angle");
         hrecangopening[i] = new TH1D(Form("%s_recangopening_%s_%s",
                                        m_name.c_str(),names[i],tag.c_str()),
                                   Form("%s_recangopening_%s_%s",
                                        m_name.c_str(),names[i],tag.c_str()),
                                   180,0,180);
+	hrecangopening[i]->SetDirectory(0);
+	hrecangopening[i]->GetXaxis()->SetTitle("Track opening angle");
         hrecangcoplanarity[i] = new TH1D(Form("%s_angcoplanarity_%s_%s",
                                           m_name.c_str(),names[i],tag.c_str()),
                                      Form("%s_angcoplanarity_%s_%s",
                                           m_name.c_str(),names[i],tag.c_str()),
                                      180,0,180);
+	hrecangcoplanarity[i]->SetDirectory(0);
+	hrecangcoplanarity[i]->GetXaxis()->SetTitle("Track coplanarity angle");
         hrecqsq[i] = new TH1D(Form("%s_recqsq_%s_%s",
                                    m_name.c_str(),names[i],tag.c_str()),
                               Form("%s_recqsq_%s_%s",
                                    m_name.c_str(),names[i],tag.c_str()),
                               100,0,1);
+	hrecqsq[i]->SetDirectory(0);
+	hrecqsq[i]->GetXaxis()->SetTitle("Reconstructed Q^{2}");
     }
     
     //loop over the events & fill histogram
@@ -731,6 +741,13 @@ void FitSample::GetSampleBreakdown(TDirectory *dirout, string tag)
        //20170205
 	double veract_rec;
 	veract_rec = m_events[i].GetVeract(); 
+	//add20170511
+        double recang1trk, recang2trk, recangopening, recangcoplanarity, recqsq;
+        recang1trk = m_events[i].GetRecAng1trk();
+        recang2trk = m_events[i].GetRecAng2trk();
+        recangopening = m_events[i].GetRecAngOpening();
+        recangcoplanarity = m_events[i].GetRecAngCoplanarity();
+        recqsq = m_events[i].GetRecQsq();
         //fill histogram
         compos[rtype]++;
         henu_true[rtype]->Fill(enu_true, wght);//newadd
@@ -742,13 +759,6 @@ void FitSample::GetSampleBreakdown(TDirectory *dirout, string tag)
         hpmucth_rec[rtype]->Fill(pmu_rec, cth_rec, wght); 
 	hveract[rtype]->Fill(veract_rec,wght);//20170205
 	//add20170511
-        double recang1trk, recang2trk, recangopening, recangcoplanarity, recqsq;
-        recang1trk = m_events[i].GetRecAng1trk();
-        recang2trk = m_events[i].GetRecAng2trk();
-        recangopening = m_events[i].GetRecAngOpening();
-        recangcoplanarity = m_events[i].GetRecAngCoplanarity();
-        recqsq = m_events[i].GetRecQsq();
-
         hrecang1trk[rtype]->Fill(recang1trk,wght);
         hrecang2trk[rtype]->Fill(recang2trk,wght);
         hrecangopening[rtype]->Fill(recangopening,wght);
