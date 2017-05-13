@@ -15,6 +15,12 @@ This is to test using response function from signal for sideband
 
 4. included obervable information of vertex activity, other angles, Qsq
 
+5. use response function for signal sample to apply for sideband
+XsecParameters::StoreResponseFunctions
+sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt+1,br);//this normal
+—>sprintf(name,"response_sample%d_reaction%d_bin%d",s_SIG,rtInt+1,br);
+
+
 
 
 
