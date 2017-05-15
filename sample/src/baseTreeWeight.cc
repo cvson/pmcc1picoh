@@ -106,20 +106,19 @@ void baseTreeWeight::MakeResponseFunctionAllElse(TString ipFile, char* treeName,
         }
         //fill histogram
         for (Int_t isam=0; isam<NSAMPLE; ++isam) {
-            if (CutSamplebyID(ientry,isam)<0) continue;
+            if (CutSamplebyID(ientry,isam)>0){
             for (Int_t ivari=0; ivari<NVARIATION; ++ivari) {
                 for (Int_t ipara=0; ipara<NPARAMETER; ++ipara) {
                     //ignore used parameter
-                    if (ipara==0 || ipara==1 || ipara==13 || ipara==14 || ipara==16 || ipara==22 || ipara==23 || ipara==15) continue;
-                    paraIndex = ipara*7+ivari;
-                    if (!((reweight[paraIndex]>0&&reweight[paraIndex]<100))) {
-                        continue;
-                    }
+                    if (!(ipara==0 || ipara==1 || ipara==13 || ipara==14 || ipara==16 || ipara==22 || ipara==23 || ipara==15)) {
+                    	paraIndex = ipara*7+ivari;
+                    if (((reweight[paraIndex]>0&&reweight[paraIndex]<100))) {
+                        
                     totReweight = totweight*reweight[paraIndex];
                     for (Int_t iinttype=0; iinttype<NINTERACTION; ++iinttype) {
-                        if (iinttype==5) {
+                        if (iinttype==5) {//HACK here for ingrid, wall background
                             for(int j=0; j<nccqebins; j++){
-                                hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,1000);//NEED TO CHANGE HERE
+                                hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,1000);
                             }
                         }
                         else {
@@ -132,13 +131,16 @@ void baseTreeWeight::MakeResponseFunctionAllElse(TString ipFile, char* treeName,
                                         hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,totReweight);
                                         break;
                                     }
-                                }
-                            }
+                                }//end for j
+                            }//end if CutInteractionbyIDnew
                         }//end else
                         
                     }//end iintype
+		    }//end if reweight 
+		    }//end if ipara
                 }//end ipara
             }//en ivari
+	    }//end if CutSamplebyID
         }//end isam
         
     }//end jentry
@@ -159,7 +161,7 @@ void baseTreeWeight::MakeResponseFunctionAllElse(TString ipFile, char* treeName,
                     //There is no event of CCQE in CRIIA sample
                     //HACK HERE
                     else nevtbyBin[ivari] = 1.0;
-                    //for wall-ingrid (inttype=5) assign 1.
+                    //for wall-ingrid (inttype=5) and NC (inttype=4) assign 1.
                     if(iinttype==5 || iinttype==4) nevtbyBin[ivari] = 1.0;
                 }
                 pgrccqe[isam][iinttype][ibin] = new TGraph(NVARIATION,xsigma,nevtbyBin);
@@ -270,17 +272,16 @@ void baseTreeWeight::MakeResponseFunction(TString ipFile, char* treeName, TStrin
         }
         //fill histogram
         for (Int_t isam=0; isam<NSAMPLE; ++isam) {
-            if (CutSamplebyID(ientry,isam)<0) continue;
+            if (CutSamplebyID(ientry,isam)>0){
             for (Int_t ivari=0; ivari<NVARIATION; ++ivari) {
                 paraIndex = ithParameter*7+ivari;
-                if (!(reweight[paraIndex]>0&&reweight[paraIndex]<100)) {
-                    continue;
-                }
+                if ((reweight[paraIndex]>0&&reweight[paraIndex]<100)) {
+                    
                 totReweight = totweight*reweight[paraIndex];
                 for (Int_t iinttype=0; iinttype<NINTERACTION; ++iinttype) {
                     if (iinttype==5) {
                         for(int j=0; j<nccqebins; j++){
-                            hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,1000);//NEED TO CHANGE HERE
+                            hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,1000);//HACK here for ingrid, wall background
                         }
                     }
                     else {
@@ -293,12 +294,14 @@ void baseTreeWeight::MakeResponseFunction(TString ipFile, char* treeName, TStrin
                                     hbinccqe[isam][ivari][iinttype]->Fill(j+0.5,totReweight);
                                     break;
                                 }
-                            }
-                        }
+                            }//end for j
+                        }//end if CutInteractionbyIDnew
                     }//end else
                     
                 }//end iintype
             }//en ivari
+	    }//end if reweight 
+	    }//end if CutSamplebyID
         }//end isam
         
     }//end jentry
@@ -319,7 +322,7 @@ void baseTreeWeight::MakeResponseFunction(TString ipFile, char* treeName, TStrin
                     //There is no event of CCQE in CRIIA sample
                     //HACK HERE
                     else nevtbyBin[ivari] = 1.0;
-                    //for wall-ingrid (inttype=5) assign 1.
+                    //for wall-ingrid (inttype=5)  and for NC (inttype==4) assign 1.
                     if(iinttype==5 || iinttype==4) nevtbyBin[ivari] = 1.0;
                 }
                 pgrccqe[isam][iinttype][ibin] = new TGraph(NVARIATION,xsigma,nevtbyBin);
