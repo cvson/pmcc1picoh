@@ -62,6 +62,9 @@ void baseTreeTrueInfo::MakeBasicHistoBySample(TString ipFile, char* treeName, TS
     TH2F* hmcpidvspidres[NINTERACTION];
     TH2F* hmcpidvspidccqe[NINTERACTION];
     
+     //phase space
+        TH2F* hmcpthetatrue[NINTERACTION];
+        TH2F* hmcqsqpiangletrue[NINTERACTION];	
     
     //binining and limit
     //NEED to rebin for the last 
@@ -129,6 +132,9 @@ void baseTreeTrueInfo::MakeBasicHistoBySample(TString ipFile, char* treeName, TS
         hmcpidvsVeract[iint] = new TH2F(Form("hmcpidvsVeract_int%d",iint),"",NBINHIST[36],XMIN[36],XMAX[36],NBINHIST[39],XMIN[39],XMAX[39]);
         hmcpidvspidres[iint] = new TH2F(Form("hmcpidvspidres_int%d",iint),"",NBINHIST[40],XMIN[40],XMAX[40],NBINHIST[39],XMIN[39],XMAX[39]);
         hmcpidvspidccqe[iint] = new TH2F(Form("hmcpidvspidccqe_int%d",iint),"",NBINHIST[41],XMIN[41],XMAX[41],NBINHIST[39],XMIN[39],XMAX[39]);
+	    
+	     hmcpthetatrue[iint] = new TH2F(Form("hmcpthetatrue_int%d", iint),"",200,0,5,90,0,90);
+        hmcqsqpiangletrue[iint] = new TH2F(Form("hmcqsqpiangletrue_int%d", iint),"",100,0,1,90,0,90);
     }
     
     
@@ -265,6 +271,9 @@ void baseTreeTrueInfo::MakeBasicHistoBySample(TString ipFile, char* treeName, TS
                     hmcpidvsVeract[iint]->Fill(value2fill[36],value2fill[39],totweight);
                     hmcpidvspidres[iint]->Fill(value2fill[40],value2fill[39],totweight);
                     hmcpidvspidccqe[iint]->Fill(value2fill[41],value2fill[39],totweight);
+			
+			hmcpthetatrue[iint]->Fill(value2fill[48],value2fill[56],totweight);
+                        hmcqsqpiangletrue[iint]->Fill(value2fill[51],value2fill[58],totweight);
                 }//end if
             }//end for iint
             
