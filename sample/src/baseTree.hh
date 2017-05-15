@@ -1499,15 +1499,15 @@ Int_t    baseTree::CutVetobyIndex(Long64_t entry, Int_t index){
 }
 //this can be removed
 Int_t    baseTree::GetSampleType(Long64_t entry){
-    if (CutSignalR(entry)>0) return 0;
+    if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 0;
 
     //else if (CutCR1(entry)>0 || CutCR23Comb(entry)>0) return 1;
     
-    else if (CutCR1(entry)>0) return 1;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
     //else if (CutCR23Comb(entry)>0) return 2;
-    else if (CutPreselection(entry)>0 && pidfsi<0.0 && pidfsi1prescor>0.1) return 2;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<=0.25) return 2;
 
-    else if (CutPreselection(entry)>0 && pidfsi<0.0 && pidfsiccqecor>0.1) return 3;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl<=0.6) return 3;
     else return -1;
     
 }
