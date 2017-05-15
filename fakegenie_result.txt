@@ -1,0 +1,27 @@
+With one-bin; it's quite close to 5bins --> what's the advance of using 5 bins?
+W/ correlation
+============> Sample SIG <============
+       sig    0   195.776   36.8037%
+      ccqe    1   49.4518   9.29638%
+     cc1pi    2   214.942   40.4066%
+   ccother    3   33.4624   6.29055%
+        nc    4   8.00997   1.50578%
+   numubar    5   27.5207   5.17359%
+       nue    6  0.693248  0.130323%
+    ingrid    7   1.91603  0.360192%
+      wall    8  0.174892 0.0328778%
+Sample size 59025 vs 59025
+============> Sample CRI <============
+       sig    0    11.949    2.3964%
+      ccqe    1   94.9253   19.0374%
+     cc1pi    2   325.338   65.2469%
+   ccother    3   47.7497   9.57627%
+        nc    4   6.64815   1.33329%
+   numubar    5   10.3162   2.06893%
+       nue    6  0.849258   0.17032%
+    ingrid    7   0.55309  0.110923%
+      wall    8  0.296944 0.0595524%
+      
+WO/ correlation
+
+Xsec + flux:
