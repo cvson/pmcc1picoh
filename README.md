@@ -1,6 +1,7 @@
 2017-05-12
 this is based version to be managed by GIT
 This is to test using response function from signal for sideband
+0. pull at /home/cvson/cc1picoh/FIT/pmcc1picoh_git_swap_resfunc
 1. fit on 5 bins of p-theta
 
 2. Four sample maximum
