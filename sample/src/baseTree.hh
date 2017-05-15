@@ -656,7 +656,7 @@ Int_t baseTree::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //signal region
     if (myid==0){
-        if (CutSignalR(entry)>0) return 1;
+        if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 1;
         else return -1;
     }
     //CR1
@@ -667,19 +667,19 @@ Int_t baseTree::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //CR1
     else if (myid==1){
-        if (CutCR1(entry)>0) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
         else return -1;
     }
     //CR2
     else if (myid==2){
         //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<0.0 && pidfsi1prescor>0.1) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<=0.25) return 1;
 	else return -1;
     }
    
      else if (myid==3){
         //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<0.0 && pidfsiccqecor>0.1) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl<=0.6) return 1;
         else return -1;
     } 
     
