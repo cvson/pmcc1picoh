@@ -85,7 +85,7 @@ const int markerStyleBin[] = {20, 21, 22, 24, 25};
                 tlx->Draw();
                 leg0->Draw("same");
                 gPad->Modified();
-                gPad->Print(Form("plots/res_ana1x50mevff_5bptheta_sam%d_int%d_bin%d_compSyst.eps",isam,iinttype,ibin));
+                gPad->Print(Form("plots/res_noveract_1bptheta_sam%d_int%d_bin%d_compSyst.eps",isam,iinttype,ibin));
             }
         }
     }
@@ -115,7 +115,7 @@ for (Int_t iinttype=0; iinttype<NINTERACTION; ++iinttype) {
                 tlx->SetTextAlign(21);
                 tlx->Draw();
       gPad->Modified();
-      gPad->Print(Form("plots/res_ana1x50mevff_5bptheta_para%d_int%d_compsigvssb.eps",ipara,iinttype));
+      gPad->Print(Form("plots/res_noveract_1bptheta_para%d_int%d_compsigvssb.eps",ipara,iinttype));
 */
 }
 }
@@ -155,7 +155,7 @@ titleStyle(pgrccqe[ipara][0][iinttype][ibin]);pgrccqe[ipara][0][iinttype][ibin]-
                 tlx->Draw();
       leg0bin->Draw("same");
       gPad->Modified();
-      gPad->Print(Form("plots/res_ana1x50mevff_5bptheta_para%d_int%d_compsigvssb.eps",ipara,iinttype));
+      gPad->Print(Form("plots/res_noveract_1bptheta_para%d_int%d_compsigvssb.eps",ipara,iinttype));
 }
 }
 
