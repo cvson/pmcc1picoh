@@ -22,16 +22,16 @@
     const Int_t NINTERACTION = 6;
     const char *nameInteraction[NINTERACTION] ={"cccoh#pi","cc0#pi","cc1#pi","ccother","nc-antinu","wall-ingrid"};
     
-    const Int_t NBINCCQE = 5;//need to be consistent w/ inputs/cc1picohbins.txt
+    const Int_t NBINCCQE = 1;//need to be consistent w/ inputs/cc1picohbins.txt
    
-    const char *colorbin[NBINCCQE] = {
+    const char *colorbin[] = {
         "#000000",
 "#E69F00",
 "#009E73",
 "#0072B2",
 "#D55E00"
         };
-const int markerStyleBin[NBINCCQE] = {20, 21, 22, 24, 25};
+const int markerStyleBin[] = {20, 21, 22, 24, 25};
 
     TFile *pFile[NPARAMETER];
     for (Int_t ipara=0; ipara<NPARAMETER; ++ipara){
