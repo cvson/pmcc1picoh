@@ -1,4 +1,4 @@
-Fake genie result test. this is with correlation is taken into account
+Fake genie result test. this is with correlation is taken into account --> Nothing changes. script is just fine.
 ============> Sample SIG <============
        sig    0   193.139   36.3393%
       ccqe    1   48.7955   9.18092%
