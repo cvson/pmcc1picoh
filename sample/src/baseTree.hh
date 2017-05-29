@@ -1057,6 +1057,37 @@ Int_t baseTree::CutTopologybyID(Long64_t entry, Int_t topoID)
         else return -1;
     }
 
+
+	//add20170515
+else if (topoID==140) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08) return 1;
+        else return -1;
+    }
+else if (topoID==141) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08) return 1;
+        else return -1;
+    }
+else if (topoID==142) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && pidfsi1prescor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==143) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && pidfsiccqecor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==144) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==145) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==146) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<0.25) return 1;
+        else return -1;
+    }
+
     else return -1;
     
     
