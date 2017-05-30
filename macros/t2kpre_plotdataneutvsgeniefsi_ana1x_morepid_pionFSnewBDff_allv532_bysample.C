@@ -1,8 +1,8 @@
 {
     gROOT->ProcessLine(".x ../../rootlogon.C");
-    gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-    
-   Int_t isample = 144;
+    gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
+    //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
+   Int_t isample = 1;
    TString subname = Form("basicdataneutvsgenie_allv532_sam%d",isample);
    //for sample smaller than 100
    /*TFile *pfile = new TFile(Form("../outputs/basicHisto_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_all_sam%d.root",isample));
@@ -11,10 +11,10 @@
    */
 
    //for sample larger than 100
-   TString subname = Form("basicdataneutvsgenie_allv532_20170307_sam%d",isample);
-   TFile *pfile = new TFile(Form("../outputs/basicHisto_20170307_sam%d.root",isample));
-   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_20170307_sam%d.root",isample));
-   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170307_sam%d.root",isample));
+   TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
+   TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));//neut532.
+   TFile *pfilegenie = new TFile(Form("/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/outputs/basicHisto_genie_20170307_sam%d.root",isample));
+   TFile *pfilev532 = new TFile(Form("/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/outputs/basicHisto_20170307_sam%d.root",isample));
    
 	//to check genie composition
     /*TString subname = Form("basicdataneutvsgenie_allv532_20170307_tmpgenie_sam%d",isample);
@@ -361,20 +361,21 @@ Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
            
 		if(!((ivar>7 && ivar<16)||(ivar>20 && ivar<25) )){
                 if (ivar==17 || ivar==18){
-                    /*plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 }
-                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 
-                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                */
-		plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
+                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                
+	       /*plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
                 }
-                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
+                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
+                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
                 
-                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][8],hmc[ivar][9],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-            }
+                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
+           */
+	 }
         }//end ivar
         //energy plots
     
