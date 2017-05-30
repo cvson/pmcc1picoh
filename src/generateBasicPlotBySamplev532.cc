@@ -39,7 +39,7 @@ int isample;
 	//datamc_neut5d3d2_20170307.root only change on numu
        //pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_20170307.root","../outputs/basicHisto_neut5d3d2_20170307",isample);
       //datamc_neut5d3d2_20170529.root --> include change in numubar, nue, ingrid as well, except wall
-	pbaseTree->MakeBasicHistoBySample("../../datafsipionFS/datamc_neut5d3d2_20170529.root","../outputs/basicHisto_neut5d3d2_20170529",isample);
+	pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_20170529.root","../outputs/basicHisto_neut5d3d2_20170529",isample);
     
     std::cout<<"Processing successfully"<<std::endl;
     return 0;

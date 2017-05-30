@@ -36,7 +36,7 @@ int isample;
 
 //for anti-pid check
     //pbaseTree->MakeBasicHistoBySampleGENIE("../../datafsipionFS/datamc_genie_pionFSpm_merged_ccqe_addpidFFnew_addnue.root","../outputs/basicHisto_genie_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_all",isample);//50mev no ntrk cut for signal
-    pbaseTree->MakeBasicHistoBySampleGENIE("../../datafsipionFS/datamc_genie_20170307.root","../outputs/basicHisto_genie_20170307",isample);
+    pbaseTree->MakeBasicHistoBySampleGENIE("../../datafsipionFS/datamc_genie_20170529.root","../outputs/basicHisto_genie_20170529",isample);
     std::cout<<"Processing successfully"<<std::endl;
     return 0;
 }
