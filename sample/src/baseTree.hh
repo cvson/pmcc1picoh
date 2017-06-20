@@ -1175,6 +1175,20 @@ else if (topoID==157) {
         else return -1;
     }
 
+   else if (topoID==168) {
+        if (Ntrack==2 && pang<90 && (mufc==0 && pene<9)) return 1;
+        else return -1;
+    }
+   else if (topoID==169) {
+        if (Ntrack==2) return 1;
+        else return -1;
+    }
+
+//for analysis II
+    else if (topoID==170) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08 && veract*7.6634e-2<36) return 1;
+        else return -1;
+    }
 
     else return -1;
     
