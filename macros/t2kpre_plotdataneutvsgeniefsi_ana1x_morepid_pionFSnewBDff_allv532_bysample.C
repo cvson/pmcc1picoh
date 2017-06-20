@@ -2,26 +2,29 @@
     gROOT->ProcessLine(".x ../../rootlogon.C");
     gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
     //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-   Int_t isample = 1;
-   TString subname = Form("basicdataneutvsgenie_allv532_sam%d",isample);
-   //for sample smaller than 100
-   /*TFile *pfile = new TFile(Form("../outputs/basicHisto_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_all_sam%d.root",isample));
-   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_all_sam%d.root",isample));
-   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_neut5d3d2_all_sam%d.root",isample));   
-   */
+   Int_t isample = 167;
+   TString subname = Form("basicdataneutvsgeniewrat_allv532_sam%d",isample);
 
    //for sample larger than 100
-   TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
+  /* TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
    TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));//neut532.
-   TFile *pfilegenie = new TFile(Form("/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/outputs/basicHisto_genie_20170307_sam%d.root",isample));
-   TFile *pfilev532 = new TFile(Form("/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/outputs/basicHisto_20170307_sam%d.root",isample));
-   
-	//to check genie composition
-    /*TString subname = Form("basicdataneutvsgenie_allv532_20170307_tmpgenie_sam%d",isample);
-   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_20170307_sam%d.root",isample));
-   TFile *pfile = new TFile(Form("../outputs/basicHisto_genie_20170307_sam%d.root",isample));
-   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170307_sam%d.root",isample));
+   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));//genie.
+   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));//neut5.14.2.  
     */
+
+	//to check genie composition
+   /* TString subname = Form("tmp_sam%d",isample);
+   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));
+   TFile *pfile = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));
+   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));
+    */
+
+	//to check neut 5.1.4.2 composition
+	TString subname = Form("tmp_sam%d",isample);
+   TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));
+   TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));
+   TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));
+
 
     const int NVARIABLES = 47;//48;//all variables//update to convert vertex activity
     //0 all, 1: cc1picoh, 2 ccqe, 3: cc 1pi, 4: cc other , 5nc
@@ -32,7 +35,7 @@
     
     
     //if cut is not specific
-    /*atitle[0] = "Number of tracks";
+    atitle[0] = "Number of tracks";
     atitle[1] = "Number of INGRID-penetrated track";
     atitle[2] = "1st track angle";
     atitle[3] = "2nd track angle";
@@ -85,14 +88,15 @@
     atitle[44] = "Discriminant parameter (COH, no #mu-range)";
     atitle[45] = "Discriminant parameter (CCQE, no #mu-range)";
     atitle[46] = "Discriminant parameter (RES, no #mu-range)";
-    */
+   
+
     //if cut is sepecified
-    atitle[0] = "Number of tracks";
+    /*atitle[0] = "Number of tracks";
     atitle[1] = "Number of INGRID-penetrated track";
     atitle[2] = "#mu-like track angle";
     atitle[3] = "#pi-like track angle";
     
-    atitle[4] = "Mean of 2nd track light yield";
+    atitle[4] = "Mean of #pi-like track light yield";
     atitle[5] = "Mean of #mu-like track light yield";
     atitle[6] = "Opening angle btw 2 tracks";
     atitle[7] = "Coplanarity btw 2 tracks";
@@ -138,7 +142,8 @@
     atitle[44] = "Discriminant parameter (COH, no #mu-range)";
     atitle[45] = "Discriminant parameter (CCQE, no #mu-range)";
     atitle[46] = "Discriminant parameter (RES, no #mu-range)";
-    
+    */
+
     Double_t MINVAR[NVARIABLES] =    {0,0,0,0,0,0
         ,0,0,0,0,0,0
         ,0,0,0,0,0,0
@@ -198,7 +203,7 @@
         ,0.3,0.4,0.4
         ,0.4,0.2,0.4,0.4,0.4
     };*/
-    /*Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
+    Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
         ,180,180,500,20,60,10
         ,2,2,2500,2500,3000,1
         ,1,45,90,60,60,-60
@@ -211,7 +216,7 @@
        Double_t XLEGSHIFT[NVARIABLES] =    {0.05,0.0,0.07,0.0,0.0,0.0
         ,0.05,-0.3,0.0,0.0,0.0,0.0
         ,0.0,0.0,0.0,0.0,0.0,-0.2
-        ,-0.15,0.07,0.13,0.0,0.0,0.0
+        ,-0.15,0.07,0.07,0.0,0.0,0.0
         ,0.0,0.0,0.0,-0.32,-0.32,-0.3
         ,-0.3,0.0,0.0,-0.3,-0.3,-0.3, 0.05,0.0,0.0
         ,-0.3,-0.3,-0.3
@@ -226,7 +231,7 @@
         ,0,0,0
         ,0,0,0,0,0
     };
-    */
+    
 //anti-pid CCQE-enhanced
 /*Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
         ,180,180,500,20,60,10
@@ -260,7 +265,7 @@
 */
 
 //anti-pid CC1pi-enhanced
-Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
+    /*Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
         ,180,180,500,20,60,10
         ,2,2,2500,2500,3000,1
         ,1,90,90,60,60,-60
@@ -273,7 +278,7 @@ Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
     Double_t XLEGSHIFT[NVARIABLES] =    {0.05,0.0,0.07,0.0,0.0,0.0
         ,0.05,-0.3,0.0,0.0,0.0,0.0
         ,0.0,0.0,0.0,0.0,0.0,-0.2
-        ,-0.15,0.13,-0.3,0.0,0.0,0.0
+        ,-0.15,0.13,0.13,0.0,0.0,0.0
         ,0.0,0.0,0.0,-0.32,-0.32,-0.3
         ,-0.3,0.0,0.0,-0.3,-0.3,-0.3, 0.05,0.0,0.0
         ,-0.3,-0.3,-0.3
@@ -288,7 +293,7 @@ Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
         ,0,0,0
         ,0,0,0,0,0
     };
-    
+    */
 
     
     //if preselection
@@ -361,12 +366,12 @@ Double_t MAXCUTVAR[NVARIABLES] =   {0,10,45,180,200,150
            
 		if(!((ivar>7 && ivar<16)||(ivar>20 && ivar<25) )){
                 if (ivar==17 || ivar==18){
-                plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                plotbasicdataneutvsgenievsv532wratzoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 }
-                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                else if (ivar==39) plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                else if (ivar==36) plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 
-                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
+                else plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 
 	       /*plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
                 }

@@ -44,7 +44,7 @@ float syst[2],tot[2];
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1x/macros/t2kreweight_cccoh/nevent%d_cccoh.txt",i*7+j);
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/macros/t2kreweight_nomcheck/nevent%d_cccoh.txt",i*7+j);
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/macros/t2kreweight_nom_v1r19allmepiless02fixpotscale/nevent%d_cccoh.txt",i*7+j);
-      sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/macros/t2kreweight_mva_v1r25/nevent%d_cccoh.txt",i*7+j);
+      sprintf(FileName,"/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532/macros/t2kreweight_mva_v1r25/nevent%d_cccoh.txt",i*7+j);
       ifstream data(FileName);
       data>>nint[i][j]>>ndet_sig[i][j]>>ndet_bg[i][j];
     }

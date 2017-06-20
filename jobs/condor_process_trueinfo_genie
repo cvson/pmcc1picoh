@@ -1,0 +1,50 @@
+######################################################################
+# A sample of condor script
+#  usage :
+#   condor_submit condor_process_PMCCQEAnaRev_ingrid
+#   simple run process_PMCCQEAnaRev_addTrue.sh
+#
+######################################################################
+
+#Executable      = /home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/bin/basicTrueInfoGENIE.exe
+Executable      = /home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/bin/basicTrueInfoGENIE_nominal.exe
+
+Universe        = vanilla
+Rank            = kflops
+Requirements    = CpuIsBusy == FALSE && \
+                  (machine != "scbn00" && \
+                   machine != "scbn01.hepnet.scphys.kyoto-u.ac.jp" )
+Getenv          = True
+#Arguments      =  $(Process)
+Arguments      =  $(RUN1)
+Output          = ./outfile/test_trueinfo_$(Process).out
+#Error           = /dev/null
+Error           = ./outfile/test_trueinfo_$(Process).err
+Notification	= Never 
+
+RUN1 = 0
+QUEUE
+
+#QUEUE 5
+#RUN1 = 28
+#QUEUE
+
+#RUN1 = 29
+#QUEUE
+
+#RUN1 = 144
+#QUEUE
+
+#RUN1 = 147
+#QUEUE
+#QUEUE 100
+
+#RUN1 = 0
+#QUEUE
+
+#RUN1 = 1
+#QUEUE
+#RUN1 = 2
+#QUEUE
+
+

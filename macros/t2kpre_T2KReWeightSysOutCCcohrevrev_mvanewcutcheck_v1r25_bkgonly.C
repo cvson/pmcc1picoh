@@ -1,6 +1,6 @@
 #include <math.h>
 
-#include "cccoh_ana1x.h"
+#include "cccoh_ana1x_newcut.h"
 
 
 float x[7],ndet_sig[100][7],ndet_bg[100][7],nint[100][7],ndet_tot[100];
@@ -27,14 +27,14 @@ void maxdif(float &a, float &b){
 };
 
 
-void t2kpre_T2KReWeightSysOutCCcohrevrev_nomcheck_v1r25_bkgonly(){
+void t2kpre_T2KReWeightSysOutCCcohrevrev_mvanewcutcheck_v1r25_bkgonly(){
   int nw = 0;
   char FileName[300];
  // ofstream ofile("output_ccqe_revrev.txt");
 //ofstream ofile("output_cccoh_revrev_ana1x_data.txt");  
 //ofstream ofile("output_cccoh_revrev_nomcheck_bkgonly.txt");
 //ofstream ofile("output_cccoh_revrev_nom_bkgonly_v1r19allmepiless02fixpotscale.txt");
-ofstream ofile("output_cccoh_revrev_nom_bkgonly_v1r25.txt");
+ofstream ofile("output_cccoh_revrev_mvanewcut_bkgonly_v1r25.txt");
 float syst[2],tot[2];
   memset(tot,0,sizeof(tot));
 
@@ -44,7 +44,7 @@ float syst[2],tot[2];
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1x/macros/t2kreweight_cccoh/nevent%d_cccoh.txt",i*7+j);
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/macros/t2kreweight_nomcheck/nevent%d_cccoh.txt",i*7+j);
       //sprintf(FileName,"/home/cvson/cc1picoh/FIT/versionfsicombgenieana1xpionFS2trksb100mev/macros/t2kreweight_nom_v1r19allmepiless02fixpotscale/nevent%d_cccoh.txt",i*7+j);
-      sprintf(FileName,"/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532/macros/t2kreweight_nom_v1r25/nevent%d_cccoh.txt",i*7+j);
+      sprintf(FileName,"/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532/macros/t2kreweight_mva_v1r25_newcut/nevent%d_cccoh.txt",i*7+j);
       ifstream data(FileName);
       data>>nint[i][j]>>ndet_sig[i][j]>>ndet_bg[i][j];
     }
