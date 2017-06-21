@@ -1,0 +1,59 @@
+### App script
+
+basicTrueInfo.cc --> to get true info for NEUt 5.1.4.3
+basicTrueInfoGENIE.cc --> get true info for GENIE 
+basicTrueInfoGENIE_nominal.cc --> get true info for GENIE but with all events, need fiducial cuts, using sample 0 only
+basicTrueInfo_neut532.cc --> get true info for NEUt 5.3.2
+basicTrueInfo_neut532_nominal.cc --> get true info for NEUT 5.3.2 but with all events, need fiducial cuts, using sample 0 only
+basicTrueInfo_nominal.cc --> get true info for NEUT 5.1.4.2 but with all events, need fiducial cuts, using sample 0 only
+cc1picohfit.cc
+checkFSI.cc
+checkT2KReweight.cc
+checkVeract.cc
+dataPlot.cc
+dataPlotfake.cc
+generateBasicPlotBySample.cc --> for make basic plots with NEUT 5.1.4.2
+generateBasicPlotBySampleGENIE.cc --> for make basic plots with GENIE
+generateBasicPlotBySamplev532.cc --> for make basic plots with NEUT 5.3.2
+generateBasicPlot.cc
+generateDetectorResponseBirk.cc
+generateDetectorResponse.cc
+generateDetectorResponseFVTime.cc
+generateDetectorResponseHitEff.cc
+generateDetectorResponseNoise.cc
+generateDetectorResponsePEvar.cc
+generateDetectorResponseReco.cc
+generateResponseFunction.cc
+genievsneutPlot.cc
+genievsneutPlot_x10stat.cc
+neut532vsneutPlot.cc
+neut532vsneutPlot_x10stat.cc
+optimizeCutFSI.cc
+simpleTest1AllSyst.cc
+simpleTest1DetOnly.cc
+simpleTest1FluxOnly.cc
+simpleTest1StatUn.cc
+simpleTest1XsecFlux.cc
+simpleTest1XsecOnly.cc
+simpleTest2allpara.cc
+simpleTest2AllSyst.cc
+simpleTest2.cc
+simpleTest2DetOnly.cc
+simpleTest2FluxOnly.cc
+simpleTest2nocor.cc
+simpleTest2nodet.cc
+simpleTest2noflux.cc
+simpleTest2ScaleOnly.cc
+simpleTest2StatUn.cc
+simpleTest2_x10stat.cc
+simpleTest2XsecFlux.cc
+simpleTest2XsecOnly.cc
+simpleTest3allpara.cc
+simpleTest3.cc
+simpleTest3nodet.cc
+simpleTest3noflux.cc
+simpleTest4allpara.cc
+simpleTest4.cc
+simpleTest4nodet.cc
+simpleTest4noflux.cc
+testFluxCovariance.cc
