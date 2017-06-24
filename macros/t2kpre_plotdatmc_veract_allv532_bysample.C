@@ -1,11 +1,14 @@
 {
+/*
+To plot veract vs. angle
+*/
     gROOT->ProcessLine(".x ../../rootlogon.C");
     gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
     //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-   Int_t isample = 215;
-   //TString subname = Form("basicdataneutvsgeniewrat_allv532_sam%d",isample);
+   Int_t isample = 150;
 
-   TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
+   //for sample larger than 100
+   TString subname = Form("datamc_allv532_20170529_sam%d",isample);
    TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));//neut532.
    TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));//genie.
    TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));//neut5.14.2.  
@@ -19,7 +22,7 @@
     */
 
 	//to check neut 5.1.4.2 composition
-/*	TString subname = Form("tmp_sam%d",isample);
+	/*TString subname = Form("tmp_sam%d",isample);
    TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));
    TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));
    TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));
@@ -87,7 +90,7 @@
     atitle[44] = "Discriminant parameter (COH, no #mu-range)";
     atitle[45] = "Discriminant parameter (CCQE, no #mu-range)";
     atitle[46] = "Discriminant parameter (RES, no #mu-range)";
-  
+   
 
     //if cut is sepecified
     /*atitle[0] = "Number of tracks";
@@ -340,47 +343,24 @@
     TH1F* hmcv532[NVARIABLES][NINTERACTION];
     TH1F* hmcgenie[NVARIABLES][NINTERACTION];
     TH1F* hmcen[NINTERACTION];
-    double pidcut = 0.08;
-    double pidcutlong = 0.3;
-    double veractcut = 36;//475*7.6634e-2;
-    double veractcutlong = 5;
-        for (Int_t ivar=0; ivar<NVARIABLES; ++ivar) {
-            TString subsubname = Form("_var%d",ivar);
-            hdata[ivar] = (TH1F*)pfile->Get(Form("hdata_topo%d_var%d",isample,ivar));
-            hdata[ivar]->Rebin(NREBINVAR[ivar]);
-            for (Int_t iint=0; iint<NINTERACTION; ++iint) {
-                hmc[ivar][iint] = (TH1F*)pfile->Get(Form("hmc_topo%d_var%d_int%d",isample,ivar,iint));
-                hmc[ivar][iint]->Rebin(NREBINVAR[ivar]);
-		//neut v5.3.2
-		hmcv532[ivar][iint] = (TH1F*)pfilev532->Get(Form("hmc_topo%d_var%d_int%d",isample,ivar,iint));
-                hmcv532[ivar][iint]->Rebin(NREBINVAR[ivar]);	
-                //genie 2.8.0
-                hmcgenie[ivar][iint] = (TH1F*)pfilegenie->Get(Form("hmc_topo%d_var%d_int%d",isample,ivar,iint));
-                hmcgenie[ivar][iint]->Rebin(NREBINVAR[ivar]);
-            }
-            //addnue to nubar for plot
-            hmc[ivar][6]->Add(hmc[ivar][7]);
-	    hmcv532[ivar][6]->Add(hmcv532[ivar][7]);
-            hmcgenie[ivar][6]->Add(hmcgenie[ivar][7]);
-           
-		if(!((ivar>7 && ivar<16)||(ivar>20 && ivar<25) )){
-                if (ivar==17 || ivar==18){
-                plotbasicdataneutvsgenievsv532wratzoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                }
-                else if (ivar==39) plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                else if (ivar==36) plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                
-                else plotbasicdataneutvsgenievsv532wrat(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
-                
-	       /*plotbasicdataneutvsgenievsv532zoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-                }
-                else if (ivar==39) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-                else if (ivar==36) plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname+"_nocut",MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-                
-                else plotbasicdataneutvsgenievsv532(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],false);
-           */
-	 }
-        }//end ivar
-        //energy plots
-    
+
+	//TH2D
+	 TH2F* hdtveractvsmuang;
+    TH2F* hmcveractvsmuang[NINTERACTION];
+    TH2F* hdtveractvspang;
+    TH2F* hmcveractvspang[NINTERACTION];
+  	hdtveractvsmuang = (TH2F*)pfile->Get(Form("hdtveractvsmuang_topo%d",isample));
+        hdtveractvspang = (TH2F*)pfile->Get(Form("hdtveractvspang_topo%d",isample));
+        for (Int_t iint=0; iint<NINTERACTION; ++iint) {
+            hmcveractvsmuang[iint] = (TH2F*)pfile->Get(Form("hmcveractvsmuang_topo%d_int%d",isample,iint));
+            hmcveractvspang[iint] = (TH2F*)pfile->Get(Form("hmcveractvspang_topo%d_int%d",isample,iint));
+        }
+	
+ hmcveractvsmuang[0]->GetXaxis()->SetTitle("#mu-like track angle");
+    hmcveractvsmuang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
+    plot2dhist_comp0(hmcveractvsmuang[0],"MC",hdtveractvsmuang,"Data",subname+"veractvsmuang");
+
+ hmcveractvspang[0]->GetXaxis()->SetTitle("#pi-like track angle");
+    hmcveractvspang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
+    plot2dhist_comp0(hmcveractvspang[0],"MC",hdtveractvspang,"Data",subname+"veractvspang");
 }

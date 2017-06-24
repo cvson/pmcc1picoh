@@ -211,16 +211,16 @@ for (Int_t iint=0; iint<NINTERACTION; ++iint) {
 	hmcpthetatrue[iint] = (TH2F*)popfile->Get(Form("hmcpthetatrue_int%d", iint));
 	new TCanvas;
 	TString sub2d = Form("hmcpthetatrue_int%d", iint);
-	hmcpthetatrue[iint]->GetXaxis()->SetTitle("#mu Momentum [GeV]");
-	hmcpthetatrue[iint]->GetYaxis()->SetTitle("#mu Angle");
+	hmcpthetatrue[iint]->GetXaxis()->SetTitle("True #mu Momentum [GeV]");
+	hmcpthetatrue[iint]->GetYaxis()->SetTitle("True #mu Angle");
 	hmcpthetatrue[iint]->Rebin2D(4,3);
 	plot2dcolz(hmcpthetatrue[iint],subname+sub2d);
 	
 	hmcqsqpiangletrue[iint] = (TH2F*)popfile->Get(Form("hmcqsqpiangletrue_int%d", iint));
         new TCanvas;
         sub2d = Form("hmcqsqpiangletrue_int%d", iint);
-	hmcqsqpiangletrue[iint]->GetXaxis()->SetTitle("Q^{2} [GeV^{2}]");
-        hmcqsqpiangletrue[iint]->GetYaxis()->SetTitle("#pi Angle");
+	hmcqsqpiangletrue[iint]->GetXaxis()->SetTitle("True Q^{2} [GeV^{2}]");
+        hmcqsqpiangletrue[iint]->GetYaxis()->SetTitle("True #pi Angle");
         hmcqsqpiangletrue[iint]->Rebin2D(4,3);
 	plot2dcolz(hmcqsqpiangletrue[iint],subname+sub2d);
 	

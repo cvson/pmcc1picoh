@@ -22,8 +22,8 @@
     const char *nameSample_long[NSAMPLE]={"SIG", "SIDEBAND"};
     */
     const Int_t NSAMPLE = 4;
-    const char *nameSample[] = {"SIG", "SIDEBAND","CR-I","CR-II"};
-    const char *nameSample_long[]={"SIG", "SIDEBAND","CR-I","CR-II"};
+    const char *nameSample[] = {"SIG", "CR-I","CR-II","CR-III"};
+    const char *nameSample_long[]={"SIG", "CR-I","CR-II","CR-III"};
 
    
     const Int_t NINTERACTION = 6;
@@ -115,6 +115,14 @@ for (Int_t iinttype=0; iinttype<NINTERACTION; ++iinttype) {
            pgrccqe[ipara][1][iinttype][ibin]->SetMarkerStyle(imarker);
            pgrccqe[ipara][1][iinttype][ibin]->SetLineStyle(7);
            //pgrccqe[ipara][1][iinttype][ibin]->Draw("PL same");
+
+	  pgrccqe[ipara][2][iinttype][ibin]->SetLineColor(kRed);
+           pgrccqe[ipara][2][iinttype][ibin]->SetMarkerColor(kRed);
+           pgrccqe[ipara][2][iinttype][ibin]->SetMarkerStyle(kRed);
+
+		pgrccqe[ipara][3][iinttype][ibin]->SetLineColor(kBlue);
+           pgrccqe[ipara][3][iinttype][ibin]->SetMarkerColor(kBlue);
+           pgrccqe[ipara][3][iinttype][ibin]->SetMarkerStyle(kBlue);
 	}
       /*TLatex* tlx=new TLatex(0.42, 0.95,Form("%s-%s",namePara[isam],nameInteraction[iinttype]));
                 tlx->SetNDC(kTRUE); // <- use NDC coordinate
@@ -135,12 +143,16 @@ TLegend* leg0bin = new TLegend(.75, .21, 0.95, .55);
         leg0bin->AddEntry(pgrccqe[0][0][0][ibin], Form("Bin %d",ibin),"pl");
     }
   TH1F *h1 = new TH1F("h1","TLegend Example",200,-10,10);
-//h1->SetLineColor("kBlack");
  TH1F *h2 = new TH1F("h2","TLegend Example",200,-10,10);
-//h2->SetLineColor("kBlack");
 h2->SetLineStyle(7);
+TH1F *h3 = new TH1F("h3","TLegend Example",200,-10,10);
+h3->SetLineColor(2);//red
+TH1F *h4 = new TH1F("h4","TLegend Example",200,-10,10);
+h4->SetLineColor(4);//blue
 leg0bin->AddEntry(h1,"Signal","l");
-leg0bin->AddEntry(h2,"Sideband","l"); 
+leg0bin->AddEntry(h2,"CR-I","l");
+leg0bin->AddEntry(h3,"CR-II","l");  
+leg0bin->AddEntry(h4,"CR-III","l");   
     leg0bin->SetFillStyle(0);
 for (Int_t ipara=0; ipara<NPARAMETER; ++ipara){
 for (Int_t iinttype=0; iinttype<NINTERACTION; ++iinttype) {
@@ -154,6 +166,8 @@ titleStyle(pgrccqe[ipara][0][iinttype][ibin]);pgrccqe[ipara][0][iinttype][ibin]-
            else pgrccqe[ipara][0][iinttype][ibin]->Draw("PL same");
 
            pgrccqe[ipara][1][iinttype][ibin]->Draw("PL same");
+	  pgrccqe[ipara][2][iinttype][ibin]->Draw("PL same");
+	pgrccqe[ipara][3][iinttype][ibin]->Draw("PL same");
         }
       TLatex* tlx=new TLatex(0.42, 0.95,Form("%s-%s",namePara[ipara],nameInteraction[iinttype]));
                 tlx->SetNDC(kTRUE); // <- use NDC coordinate

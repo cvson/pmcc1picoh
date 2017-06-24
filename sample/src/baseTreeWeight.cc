@@ -110,7 +110,7 @@ void baseTreeWeight::MakeResponseFunctionAllElse(TString ipFile, char* treeName,
             for (Int_t ivari=0; ivari<NVARIATION; ++ivari) {
                 for (Int_t ipara=0; ipara<NPARAMETER; ++ipara) {
                     //ignore used parameter
-                    if (ipara==0 || ipara==1 || ipara==13 || ipara==14 || ipara==16 || ipara==22 || ipara==23 || ipara==15) continue;
+                    if (ipara==1 || ipara==3 || ipara==5 || ipara==13 || ipara==15 || ipara==16 || ipara==24) continue;
                     paraIndex = ipara*7+ivari;
                     if (!((reweight[paraIndex]>0&&reweight[paraIndex]<100))) {
                         continue;
