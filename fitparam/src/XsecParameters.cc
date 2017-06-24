@@ -15,10 +15,10 @@ XsecParameters::XsecParameters(const char *name)
     //parameter number, names & prior values
     //(Npar, values and ordering should be in agreement with input TFiles)
     //TODO: Group other remained to one?
-    Npar=7;//MAQE, MARES, CC1piE0, CC1piE1, CCothershape, pilessDcy, , all else//remove pi shape
+    Npar=6;//NEUt 5.3.2 MECNorm
     //Npar=9;
     //MAQE
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 0,"MACCQE"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 0,"MECNorm"));
     /*pars_prior.push_back(1.21);
     pars_step.push_back(0.45/5);
     pars_limlow.push_back(0.5);
@@ -29,7 +29,7 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
     
     //MARES
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 1,"MAres"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 1,"MACCQE"));
     /*pars_prior.push_back(1.41);
     pars_step.push_back(0.11);
     pars_limlow.push_back(0.5);
@@ -40,7 +40,7 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
     
     //CC1piE0
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 2,"CC1piE0"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 2,"CA5RES"));
     /*pars_prior.push_back(1.15);
     pars_step.push_back(0.43/5.);
     pars_limlow.push_back(-1.40);//why negative?
@@ -51,7 +51,7 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
     
     //CC1piE1
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 3,"CC1piE1"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 3,"MaNFFRES"));
     /*pars_prior.push_back(1.0);
     pars_step.push_back(0.40/5.);
     pars_limlow.push_back(-0.2);
@@ -62,7 +62,7 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
     
     //CCother
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 4,"CCoth"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 4,"BgSclRES"));
     /*pars_prior.push_back(0.0);
     pars_step.push_back(0.4/5);
     pars_limlow.push_back(-1.2);
@@ -73,11 +73,11 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
     
     //Pi-less delta decay
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 5,"PilessDcy"));
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 5,"dismpishp"));
     pars_prior.push_back(0.0);
     pars_step.push_back(0.4/5);
-    pars_limlow.push_back(-1.0);//
-    pars_limhigh.push_back(1.0);//
+    pars_limlow.push_back(-5.0);//
+    pars_limhigh.push_back(5.0);//
     
    //1pi Enu shape
     /*pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"1piEnuShape"));
@@ -87,12 +87,12 @@ XsecParameters::XsecParameters(const char *name)
     pars_limhigh.push_back(5.0);
    */
     //all else
-    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"AllElse"));
+   /* pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"AllElse"));
     pars_prior.push_back(0.0);
     pars_step.push_back(0.4/5);
     pars_limlow.push_back(-5.0);
     pars_limhigh.push_back(5.0);
-   
+   */
 
 
 }
