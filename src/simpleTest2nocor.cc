@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     //add data
     vector<AnaSample*> samples;
     double potData = 6.04193507503274721e20;
-    double potMC = 3950*1.e21;
+    double potMC = 3974*1.e21;
     //need to put in ORDER 0, 1, 4, 5, 2, 3
     //consistent with detector covariance matrix ../macros/plotAllDetUncertainty.C
     FitSample sam1(0, "SIG",v_pedges, v_cthedges,tdata);

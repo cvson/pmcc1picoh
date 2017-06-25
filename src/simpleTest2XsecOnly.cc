@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
     //add data
     vector<AnaSample*> samples;
     double potData = 6.04193507503274721e20;
-    double potMC = 3950*1.e21;
+    double potMC = 3974*1.e21;
     //need to put in ORDER 0, 1, 4, 5, 2, 3
     //consistent with detector covariance matrix ../macros/plotAllDetUncertainty.C
     FitSample sam1(0, "SIG",v_pedges, v_cthedges,tdata);
@@ -191,13 +191,8 @@ int main(int argc, char *argv[])
     TFile* PilessDcyrespfunc = new TFile("../inputs/responsefunction_dismpishp.root");
     responsefunctions.push_back(PilessDcyrespfunc);
     
-   // TFile* OnepiEnuShape = new TFile("../inputs/responsefunction_1piEnuShape.root");
-   // responsefunctions.push_back(OnepiEnuShape);
     
-    TFile* AllElse = new TFile("../inputs/responsefunction_AllElse.root");
-    responsefunctions.push_back(AllElse);
-    
-    TMatrixDSym cov_xsec(7);
+    TMatrixDSym cov_xsec(6);
     
     cov_xsec(0,0) = 1.0; //MACCQE
     cov_xsec(0,1) = 0;
@@ -205,43 +200,26 @@ int main(int argc, char *argv[])
     cov_xsec(0,3) = 0;//MARes-CC1piE0
     cov_xsec(0,4) = 0;
     cov_xsec(0,5) = 0;
-    cov_xsec(0,6) = 0;
-    //cov_xsec(0,7) = 0;
     
     cov_xsec(1,1) = 1.0; //THIS NOT update? 0.0121
-    cov_xsec(1,2) = -0.44;//MARES vs CC1piE0 Figure 20 TN 108
+    cov_xsec(1,2) = 0;//MARES vs CC1piE0 Figure 20 TN 108
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
-    cov_xsec(1,6) = 0;
-    //cov_xsec(1,7) = 0;
     
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
     cov_xsec(2,4) = 0;
     cov_xsec(2,5) = 0;
-    cov_xsec(2,6) = 0;
-    //cov_xsec(2,7) = 0;
     
     cov_xsec(3,3) = 1.0; //CC1piE1
     cov_xsec(3,4) = 0;
     cov_xsec(3,5) = 0;
-    cov_xsec(3,6) = 0;
-    //cov_xsec(3,7) = 0;
     
     cov_xsec(4,4) = 1.0; //CCother
     cov_xsec(4,5) = 0;
-    cov_xsec(4,6) = 0;
-    //cov_xsec(4,7) = 0;
     
     cov_xsec(5,5) = 1.0; //PilessDcy
-    cov_xsec(5,6) = 0;
-    //cov_xsec(5,7) = 0;
-    
-    cov_xsec(6,6) = 1.0;
-    //cov_xsec(6,7) = 0;
-    
-    //cov_xsec(7,7) = 1.0;
     
     
     
