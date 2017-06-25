@@ -678,13 +678,13 @@ Int_t    baseTreeDet::GetEventType(Long64_t entry){
     
 }
 Int_t    baseTreeDet::GetSampleType(Long64_t entry){
-    if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 0;
+    if (CutSignalR(entry)>0 ) return 0;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25) return 1;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<=0.25) return 2;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25) return 2;
    
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl<=0.6) return 3; 
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl<=0.6) return 3; 
     else return -1;
     
 }
