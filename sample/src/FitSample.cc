@@ -438,14 +438,15 @@ void FitSample::FillEventHisto(int datatype)
             for(int j=0; j<nccqebins; j++){
                 if((pmu_rec_tree > m_pedges[j].first) && (pmu_rec_tree  < m_pedges[j].second)  &&
                    (cthmu_rec_tree  > m_cthedges[j].first) && (cthmu_rec_tree  < m_cthedges[j].second)){
-                    if(pbaseTree->fileIndex>0) m_hdata->Fill(j+0.5,wght);
+                    if(topology==0) {if(pbaseTree->fileIndex>0) m_hdata->Fill(j+0.5,wght);}
+			else {if(pbaseTree->fileIndex==0) m_hdata->Fill(j+0.5,wght);}//use data for control sample
                     //cout<<"filling "<<pmu_rec_tree/1000<<" "<<wght_syst<<endl;
                     break;
                 }
             }//end j
             
         }//end for
-        m_hdata->Scale(m_norm);
+        if(topology==0) m_hdata->Scale(m_norm);//only scale topology when using simulation
          
         cout<<"sample "<<m_sampleid<<" Fake GENIE data"<<m_hdata->Integral()<<endl;
 
