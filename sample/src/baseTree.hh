@@ -238,6 +238,7 @@ class baseTree {
     virtual double   GetPrec(double rangeval);
     virtual double   GetErec(double p, double theta);
     virtual double   GetQsq(double p, double theta);
+    virtual double   GetWsq(double p, double theta);//newadd 20170703	
     virtual double   GetXbjorken(double p, double theta);
     virtual double   GetInelasticity(double p, double theta);
     
