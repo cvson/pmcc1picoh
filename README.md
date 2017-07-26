@@ -1,6 +1,7 @@
 2017-05-12
 this is based version to be managed by GIT
 Do we really need BINNING?
+This enable pion nu energy shape uncertainty
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_onebin
 1. fit on 1 bins of p-theta --> test binning
 2. Four sample maximum -Signal: from analysis I, veract <50 MeV -Sideband -Antipid with cc1pi-enhanced -Antipid with CC0pi-enhanced
