@@ -371,7 +371,7 @@ void FitSample::FillEventHisto(int datatype)
             pmu_rec_tree = pbaseTree->GetPrec(pbaseTree->range);
             cthmu_rec_tree = TMath::Cos(TMath::Pi()/180.*(pbaseTree->muang_t));
             //get weight
-            Float_t mcWeight = (pbaseTree->fileIndex==1)*1 +(pbaseTree->fileIndex==2)*SCALEBAR + (pbaseTree->fileIndex==3)*SCALEWALL + (pbaseTree->fileIndex==4)*SCALEINGRID + (pbaseTree->fileIndex==5)*SCALENUE;
+            Float_t mcWeight = (pbaseTree->fileIndex==1)*3974.0/3950.0 +(pbaseTree->fileIndex==2)*SCALEBAR + (pbaseTree->fileIndex==3)*SCALEWALL + (pbaseTree->fileIndex==4)*SCALEINGRID + (pbaseTree->fileIndex==5)*SCALENUE;
             
             Float_t totweight = (pbaseTree->norm)*(pbaseTree->totcrsne)*mcWeight*2.8647e-13;
             
