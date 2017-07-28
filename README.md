@@ -1,8 +1,9 @@
-2017-05-24
-this for neut 5.3.2, copied form noveract branch
-Use sample with no-vertex activity cut
+2017-07-28
+this for neut 5.3.2, copied form neut532 branch
+to make fake fit for old NEUT
+need to modify FitSample::FillEventHisto option 2
 
-0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
+0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532-fakeoldneut
 1. fit on 1 bins of p-theta --> test binning
 2. Four sample maximum -Signal (pidfsid>0.08 && mumucl>0.6 && pmucl>0.25), sideband (pidfsi<0.08 && mumucl>0.6 && pmucl>0.25), sideband (pidfsi<0.08 && mumucl>0.6 && pmucl<0.25) sideband (pidfsi<0.08 && mumucl<0.6)
 3. response function:use v1r25 t2kreweight, major parameter, CA5, axial mass, bkg. scale, DIS shape, MACCQE, MEC Norm, FSI
