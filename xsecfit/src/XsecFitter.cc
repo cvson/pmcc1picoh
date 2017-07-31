@@ -270,8 +270,8 @@ double XsecFitter::FillSamples(vector< vector<double> > new_pars,
         m_samples[s]->FillEventHisto(datatype);
         
         //calculate chi2 for each sample
-        chi2 += m_samples[s]->CalcChi2();
-        //if (s<2) chi2 += m_samples[s]->CalcChi2();//hack here to remove the chisq from control sample
+        //chi2 += m_samples[s]->CalcChi2();
+        if (s!=0) chi2 += m_samples[s]->CalcChi2();//hack here to remove the chisq from signal sample
 	}
     return chi2;
 }
