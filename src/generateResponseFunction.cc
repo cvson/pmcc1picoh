@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
     
     ithParameter = 6;
-    opFile = "../inputs/responsefunction_MECNorm.root";
+    opFile = "../inputs/responsefunction_MACCQE.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
     
     ithParameter = 7;
