@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
     cout<<"CC1picoh scale parameters DONE"<<endl;
     /*************************************** Scale end ********************************/
     /*************************************** FLUX start *******************************/
-    TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
+     TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
      Int_t nbinhistflux = 43;
      const Double_t xbinshistflux[]={0, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 30.0};
      //setup enu bins and covm for flux
@@ -193,37 +193,45 @@ int main(int argc, char *argv[])
     responsefunctions.push_back(PilessDcyrespfunc);
     
     
-    TMatrixDSym cov_xsec(6);
-    
+   TFile* CCCohrespfunc = new TFile("../inputs/responsefunction_cccoh.root");
+    responsefunctions.push_back(CCCohrespfunc);
+
+    TMatrixDSym cov_xsec(7);
+
     cov_xsec(0,0) = 1.0; //MACCQE
     cov_xsec(0,1) = 0;
     cov_xsec(0,2) = 0;
     cov_xsec(0,3) = 0;//MARes-CC1piE0
     cov_xsec(0,4) = 0;
     cov_xsec(0,5) = 0;
-    
+    cov_xsec(0,6) = 0;
+
     cov_xsec(1,1) = 1.0; //THIS NOT update? 0.0121
     cov_xsec(1,2) = 0;//MARES vs CC1piE0 Figure 20 TN 108
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
-    
+    cov_xsec(1,6) = 0;
+
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
     cov_xsec(2,4) = 0;
     cov_xsec(2,5) = 0;
-    
+    cov_xsec(2,6) = 0;
+
     cov_xsec(3,3) = 1.0; //CC1piE1
     cov_xsec(3,4) = 0;
     cov_xsec(3,5) = 0;
-    
+    cov_xsec(3,6) = 0;
+
     cov_xsec(4,4) = 1.0; //CCother
     cov_xsec(4,5) = 0;
-    
+    cov_xsec(4,6) = 0;
+
     cov_xsec(5,5) = 1.0; //PilessDcy
-    
-    
-    //cov_xsec(7,7) = 1.0;
+    cov_xsec(5,6) = 1.0;
+
+    cov_xsec(6,6) = 1.0; 
     
     
     
@@ -237,10 +245,10 @@ int main(int argc, char *argv[])
     /*************************************** XSec end **********************************/
     
     /*************************************** Detector start **********************************/
-    string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
+     string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
      TFile *findetcov = TFile::Open(fdetcov.c_str()); //contains flux and det. systematics info
      
-     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case0");
+     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case3");
      TMatrixDSym cov_det(cov_det_in->GetNrows());
      for(size_t m=0; m<cov_det_in->GetNrows(); m++){
      for(size_t k=0; k<cov_det_in->GetNrows(); k++){
