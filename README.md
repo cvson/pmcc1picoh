@@ -1,6 +1,6 @@
-2017-05-24
-this for neut 5.3.2, copied form neut532 branch
-use sideband with low vertex activity 
+2017-08-02
+this for neut 5.3.2, copied form neut532-cohxsec branch
+use 2 sideband with low vertex activity and one with high vertex activity
 use xsec parameterization for cccoherent instead of scaling parameter
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
