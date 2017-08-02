@@ -37,19 +37,21 @@ enum SampleTypes { s_SIG = 0,
 // 3 - CC OTHER
 // 4 - NC & Anti-nu background
 // 5 - Wall & INGRID
-/*enum ReactionTypes { ReCC1picoh = 0,
+//if use Coh xsec parameter
+enum ReactionTypes { ReCC1picoh = 0,
     ReCCQE = 1,
     ReCC1pi = 2,
     ReCCDIS = 3,
     ReNCAntiNu = 4,
-    OutFGD = 5 };*/
+    OutFGD = 5 };//for OutFGD, default is 1, numubar and nue 1 as well
 //matching with baseTreeWeight:CutInteractionbyIDnew
-enum ReactionTypes { ReCCQE = 0,
+//if not use Coh xsec parameter
+/*enum ReactionTypes { ReCCQE = 0,
     ReCC1pi = 1,
     ReCCDIS = 2,
     ReNCAntiNu = 3,
     OutFGD = 4 };
-
+*/
 
 struct XsecBin
 {
