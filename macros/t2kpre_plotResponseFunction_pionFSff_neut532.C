@@ -4,8 +4,8 @@
     /*const Int_t NPARAMETER = 9;
     const char *namePara[NPARAMETER] = {"MECNorm","MACCQE","CA5RES","MaNFFRES","BgSclRES","dismpishp","FrAbs_pi","FrInelLow_pi","FrPiProd_pi"};
     */
-    const Int_t NPARAMETER = 6;
-    const char *namePara[NPARAMETER] = {"MECNorm","MACCQE","CA5RES","MaNFFRES","BgSclRES","dismpishp"};
+    const Int_t NPARAMETER = 7;
+    const char *namePara[NPARAMETER] = {"MECNorm","MACCQE","CA5RES","MaNFFRES","BgSclRES","dismpishp","cccoh"};
     const char *colorcode[] = {"#000000","#77BE89",
         "#C557BA",
         "#C14E4C",

@@ -63,6 +63,10 @@ int main(int argc, char *argv[])
     ithParameter = 14;
     opFile = "../inputs/responsefunction_dismpishp.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
+ 
+    ithParameter = 15;
+    opFile = "../inputs/responsefunction_cccoh.root";
+    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
    
     ithParameter = 18;
     opFile = "../inputs/responsefunction_FrAbs_pi.root";
