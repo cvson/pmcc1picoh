@@ -192,35 +192,45 @@ int main(int argc, char *argv[])
     responsefunctions.push_back(PilessDcyrespfunc);
     
     
-    TMatrixDSym cov_xsec(6);
-    
+    TFile* CCCohrespfunc = new TFile("../inputs/responsefunction_cccoh.root");
+    responsefunctions.push_back(CCCohrespfunc);
+
+    TMatrixDSym cov_xsec(7);
+
     cov_xsec(0,0) = 1.0; //MACCQE
     cov_xsec(0,1) = 0;
     cov_xsec(0,2) = 0;
     cov_xsec(0,3) = 0;//MARes-CC1piE0
     cov_xsec(0,4) = 0;
     cov_xsec(0,5) = 0;
-    
+    cov_xsec(0,6) = 0;
+
     cov_xsec(1,1) = 1.0; //THIS NOT update? 0.0121
     cov_xsec(1,2) = 0;//MARES vs CC1piE0 Figure 20 TN 108
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
-    
+    cov_xsec(1,6) = 0;
+
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
     cov_xsec(2,4) = 0;
     cov_xsec(2,5) = 0;
-    
+    cov_xsec(2,6) = 0;
+
     cov_xsec(3,3) = 1.0; //CC1piE1
     cov_xsec(3,4) = 0;
     cov_xsec(3,5) = 0;
-    
+    cov_xsec(3,6) = 0;
+
     cov_xsec(4,4) = 1.0; //CCother
     cov_xsec(4,5) = 0;
-    
+    cov_xsec(4,6) = 0;
+
     cov_xsec(5,5) = 1.0; //PilessDcy
-    
+    cov_xsec(5,6) = 1.0;
+
+    cov_xsec(6,6) = 1.0; 
     
     
     
