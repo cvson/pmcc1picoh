@@ -15,7 +15,7 @@ XsecParameters::XsecParameters(const char *name)
     //parameter number, names & prior values
     //(Npar, values and ordering should be in agreement with input TFiles)
     //TODO: Group other remained to one?
-    Npar=6;//NEUt 5.3.2 MECNorm
+    Npar=7;//NEUt 5.3.2 MECNorm
     //Npar=9;
     //MAQE
     pars_name.push_back(Form("%s%d%s", m_name.c_str(), 0,"MECNorm"));
@@ -79,13 +79,13 @@ XsecParameters::XsecParameters(const char *name)
     pars_limlow.push_back(-5.0);//
     pars_limhigh.push_back(5.0);//
     
-   //1pi Enu shape
-    /*pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"1piEnuShape"));
+   //CC coherent
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"cccoh"));
     pars_prior.push_back(0.0);
     pars_step.push_back(0.4/5);
     pars_limlow.push_back(-5.0);
     pars_limhigh.push_back(5.0);
-   */
+   
     //all else
    /* pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"AllElse"));
     pars_prior.push_back(0.0);
@@ -222,11 +222,10 @@ void XsecParameters::InitEventMap(std::vector<AnaSample*> &sample)
             //HACK HERE
             int code = PASSEVENT;
             //if(ev->GetReaction() < 9){
-            if(ev->GetReaction() == 0){
-            //if(ev->GetReaction() != 2){
+           /* if(ev->GetReaction() == 0){
                 row.push_back(code);
                 continue;
-            }
+            }*/
             //get event info
             /*int binn = GetBinIndex(static_cast<SampleTypes>(ev->GetSampleType()),
                                    static_cast<ReactionTypes>(ev->GetReaction()),
