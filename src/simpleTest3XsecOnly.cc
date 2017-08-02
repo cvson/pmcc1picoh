@@ -28,7 +28,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
-    //string fdtInputFile = "../../datafsicornorange/mc_genie_merged_ccqe_addpidFFnew_addnue.root";
     string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fccqebin = "../inputs/cc1picohbins.txt";
     string fnameout = "../outputs/testFit_onesample_statfluc.root";
@@ -138,11 +137,11 @@ int main(int argc, char *argv[])
     vector<AnaFitParameters*> fitpara;
     /*************************************** Scale start *****************************/
     //CC1picoh scale parameters
-    /*ScaleParameters scalepara(fccqebin.c_str());
+    ScaleParameters scalepara(fccqebin.c_str());
     scalepara.InitEventMap(samples);
     fitpara.push_back(&scalepara);
+    
     cout<<"CC1picoh scale parameters DONE"<<endl;
-	*/
     /*************************************** Scale end ********************************/
     /*************************************** FLUX start *******************************/
     /*TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
@@ -191,12 +190,13 @@ int main(int argc, char *argv[])
     
     TFile* PilessDcyrespfunc = new TFile("../inputs/responsefunction_dismpishp.root");
     responsefunctions.push_back(PilessDcyrespfunc);
+    
+    
+    TFile* CCCohrespfunc = new TFile("../inputs/responsefunction_cccoh.root");
+    responsefunctions.push_back(CCCohrespfunc);
 
-   TFile* CCCohrespfunc = new TFile("../inputs/responsefunction_cccoh.root");
-    responsefunctions.push_back(CCCohrespfunc);    
-    
     TMatrixDSym cov_xsec(7);
-    
+
     cov_xsec(0,0) = 1.0; //MACCQE
     cov_xsec(0,1) = 0;
     cov_xsec(0,2) = 0;
@@ -204,33 +204,33 @@ int main(int argc, char *argv[])
     cov_xsec(0,4) = 0;
     cov_xsec(0,5) = 0;
     cov_xsec(0,6) = 0;
-    
+
     cov_xsec(1,1) = 1.0; //THIS NOT update? 0.0121
     cov_xsec(1,2) = 0;//MARES vs CC1piE0 Figure 20 TN 108
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
     cov_xsec(1,6) = 0;
-    
+
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
     cov_xsec(2,4) = 0;
     cov_xsec(2,5) = 0;
     cov_xsec(2,6) = 0;
-    
+
     cov_xsec(3,3) = 1.0; //CC1piE1
     cov_xsec(3,4) = 0;
     cov_xsec(3,5) = 0;
     cov_xsec(3,6) = 0;
-    
+
     cov_xsec(4,4) = 1.0; //CCother
     cov_xsec(4,5) = 0;
     cov_xsec(4,6) = 0;
-    
+
     cov_xsec(5,5) = 1.0; //PilessDcy
-    cov_xsec(5,6) = 1.0; 
-    
-    cov_xsec(6,6) = 1.0;
+    cov_xsec(5,6) = 1.0;
+
+    cov_xsec(6,6) = 1.0; 
     
     
     
@@ -243,7 +243,7 @@ int main(int argc, char *argv[])
     /*************************************** XSec end **********************************/
     
     /*************************************** Detector start **********************************/
-    /*string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
+    /*string fdetcov = "../inputs/detectorAll_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
      TFile *findetcov = TFile::Open(fdetcov.c_str()); //contains flux and det. systematics info
      
      TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case0");
@@ -274,8 +274,8 @@ int main(int argc, char *argv[])
     //do fit: 1 = generate toy dataset from nuisances (WITH stat fluct)
     //        2 = fake data from MC or real data (+ stat fluct)
     //        3 = no nuisance sampling only stat fluctuation
-    //xsecfit.Fit(samples, 1);
-    xsecfit.Fit(samples, 2);
+    xsecfit.Fit(samples, 1);
+    //xsecfit.Fit(samples, 2);
     
     //xsecfit.Fit(samples, 3);
     

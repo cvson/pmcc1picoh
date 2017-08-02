@@ -15,7 +15,7 @@ XsecParameters::XsecParameters(const char *name)
     //parameter number, names & prior values
     //(Npar, values and ordering should be in agreement with input TFiles)
     //TODO: Group other remained to one?
-    Npar=6;//NEUt 5.3.2 MECNorm
+    Npar=7;//NEUt 5.3.2 MECNorm
     //Npar=9;
     //MAQE
     pars_name.push_back(Form("%s%d%s", m_name.c_str(), 0,"MECNorm"));
@@ -79,13 +79,13 @@ XsecParameters::XsecParameters(const char *name)
     pars_limlow.push_back(-5.0);//
     pars_limhigh.push_back(5.0);//
     
-   //1pi Enu shape
-    /*pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"1piEnuShape"));
+   //CC coherent
+    pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"cccoh"));
     pars_prior.push_back(0.0);
     pars_step.push_back(0.4/5);
     pars_limlow.push_back(-5.0);
     pars_limhigh.push_back(5.0);
-   */
+   
     //all else
    /* pars_name.push_back(Form("%s%d%s", m_name.c_str(), 6,"AllElse"));
     pars_prior.push_back(0.0);
@@ -107,8 +107,10 @@ void XsecParameters::StoreResponseFunctions(vector<TFile*> respfuncs, std::vecto
     for ( int stInt = s_SIG; stInt != s_CRIII+1; stInt++ ){
      // for ( int stInt = s_SIG; stInt != s_CRII+1; stInt++ ){
          SampleTypes sampletype = static_cast <SampleTypes> (stInt);
-        //for ( int rtInt = ReCC1picoh; rtInt != OutFGD+1; rtInt++){
-        for ( int rtInt = ReCCQE; rtInt != OutFGD+1; rtInt++){
+	//if use Coh Xsec parameter
+        for ( int rtInt = ReCC1picoh; rtInt != OutFGD+1; rtInt++){
+	//if not use Coh Xsec parameter
+        //for ( int rtInt = ReCCQE; rtInt != OutFGD+1; rtInt++){
             ReactionTypes reactype = static_cast<ReactionTypes>(rtInt);
             cout<<"reading response functions for topology "<<stInt<<"  reaction "<<rtInt<<endl;
             int nccqebins=v_pedges.size();
@@ -133,7 +135,8 @@ void XsecParameters::StoreResponseFunctions(vector<TFile*> respfuncs, std::vecto
                             //sprintf(name,"topology_%d/RecBin_%d_trueBin_%d_topology_%d_reac_%d",stInt,br,bt,stInt,rtInt);
                             //sprintf(name,"sample_%d/RecBin_%d_sample_%d_reac_%d",stInt,br,stInt,rtInt);
                             //in the response function file, signal included
-                            sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt+1,br);
+                        sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt,br);    
+			//sprintf(name,"response_sample%d_reaction%d_bin%d",stInt,rtInt+1,br);
                             //cout<<respfuncs[i]->GetName()<<" "<<name<<endl;
                             TGraph* g=(TGraph*)respfuncs[i]->Get(name);
                             //cout<<g<<endl;
@@ -222,11 +225,10 @@ void XsecParameters::InitEventMap(std::vector<AnaSample*> &sample)
             //HACK HERE
             int code = PASSEVENT;
             //if(ev->GetReaction() < 9){
-            if(ev->GetReaction() == 0){
-            //if(ev->GetReaction() != 2){
+           /* if(ev->GetReaction() == 0){
                 row.push_back(code);
                 continue;
-            }
+            }*/
             //get event info
             /*int binn = GetBinIndex(static_cast<SampleTypes>(ev->GetSampleType()),
                                    static_cast<ReactionTypes>(ev->GetReaction()),
@@ -235,11 +237,20 @@ void XsecParameters::InitEventMap(std::vector<AnaSample*> &sample)
             //in baseTree.hh, reaction is from 0 -to 8
             //here is combined nc,numubar, nue into 4 and ingrid-wall into 5
             int fakeIDforResponseFunction =0;
-            if (ev->GetReaction()<4) {
+		//if use XSEC coherent parmeter
+		if (ev->GetReaction()<5) {
+                fakeIDforResponseFunction = ev->GetReaction();
+            }
+		else fakeIDforResponseFunction = 5;//fix for numubar, nue, INGRID, wall background
+            //else if (ev->GetReaction()==4 || ev->GetReaction()==5 || ev->GetReaction()==6)fakeIDforResponseFunction = 4;
+            //else if (ev->GetReaction()==7 || ev->GetReaction()==8) fakeIDforResponseFunction = 5;
+		//if not use XSEC coherent parameter
+            /*if (ev->GetReaction()<4) {
                 fakeIDforResponseFunction = ev->GetReaction()-1;
             }
             else if (ev->GetReaction()==4 || ev->GetReaction()==5 || ev->GetReaction()==6)fakeIDforResponseFunction = 3;
             else if (ev->GetReaction()==7 || ev->GetReaction()==8) fakeIDforResponseFunction = 4;
+		*/
             int binn = GetBinIndex(static_cast<SampleTypes>(ev->GetSampleType()),
                                    //static_cast<ReactionTypes>(ev->GetReaction()),
                                    static_cast<ReactionTypes>(fakeIDforResponseFunction),
