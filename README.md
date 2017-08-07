@@ -1,5 +1,5 @@
-2017-08-03
-this for neut 5.3.2, copied form neut532 branch
+2017-08-037
+this for neut 5.3.2, copied form neut532-fixresfunc branch, for no signal contribution
 Use sample with low vertex activity cut and skipp repsonse function for numubar, nue, wall and ingrid
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
