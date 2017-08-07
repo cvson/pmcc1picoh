@@ -1,6 +1,8 @@
 2017-07-28
-this for neut 5.3.2, copied form neut532 branch
+this for neut 5.3.2, copied form neut532-fakeoldneut branch
 to make fake fit for old NEUT
+fix response function
+using no signal sample
 need to modify FitSample::FillEventHisto option 2
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532-fakeoldneut
