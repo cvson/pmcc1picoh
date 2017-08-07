@@ -438,8 +438,11 @@ void FitSample::FillEventHisto(int datatype)
             for(int j=0; j<nccqebins; j++){
                 if((pmu_rec_tree > m_pedges[j].first) && (pmu_rec_tree  < m_pedges[j].second)  &&
                    (cthmu_rec_tree  > m_cthedges[j].first) && (cthmu_rec_tree  < m_cthedges[j].second)){
-                    if(pbaseTree->fileIndex>0) m_hdata->Fill(j+0.5,wght);
-                    //cout<<"filling "<<pmu_rec_tree/1000<<" "<<wght_syst<<endl;
+                    //for simulation
+			//if(pbaseTree->fileIndex>0) m_hdata->Fill(j+0.5,wght);
+                	//for data
+			if(pbaseTree->fileIndex==0) m_hdata->Fill(j+0.5,wght);   
+		 //cout<<"filling "<<pmu_rec_tree/1000<<" "<<wght_syst<<endl;
                     break;
                 }
             }//end j
