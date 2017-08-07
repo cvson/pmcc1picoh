@@ -28,7 +28,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
-    string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
+    string fdtInputFile = "../../datafsipionFS/mconly_neut5d1d4d2_20170529.root";
     string fccqebin = "../inputs/cc1picohbins.txt";
     string fnameout = "../outputs/testFit_onesample_statfluc.root";
     

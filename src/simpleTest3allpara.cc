@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
     string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     //string fdtInputFile = "../../datafsicornorange/mc_genie_merged_ccqe_addpidFFnew_addnue.root";
-    string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
+    string fdtInputFile = "../../datafsipionFS/mconly_neut5d1d4d2_20170529.root";
     string fccqebin = "../inputs/cc1picohbins.txt";
     string fnameout = "../outputs/testFit_onesample_statfluc.root";
     
@@ -238,7 +238,7 @@ int main(int argc, char *argv[])
      string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
      TFile *findetcov = TFile::Open(fdetcov.c_str()); //contains flux and det. systematics info
      
-     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case0");
+     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case2");
      TMatrixDSym cov_det(cov_det_in->GetNrows());
      for(size_t m=0; m<cov_det_in->GetNrows(); m++){
      for(size_t k=0; k<cov_det_in->GetNrows(); k++){
