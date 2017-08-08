@@ -201,24 +201,29 @@ int main(int argc, char *argv[])
     cov_xsec(0,3) = 0;//MARes-CC1piE0
     cov_xsec(0,4) = 0;
     cov_xsec(0,5) = 0;
+    //cov_xsec(0,7) = 0;
     
     cov_xsec(1,1) = 1.0; //THIS NOT update? 0.0121
     cov_xsec(1,2) = 0;//MARES vs CC1piE0 Figure 20 TN 108
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
+   // cov_xsec(1,7) = 0;
     
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
     cov_xsec(2,4) = 0;
     cov_xsec(2,5) = 0;
+    //cov_xsec(2,7) = 0;
     
     cov_xsec(3,3) = 1.0; //CC1piE1
     cov_xsec(3,4) = 0;
     cov_xsec(3,5) = 0;
+    //cov_xsec(3,7) = 0;
     
     cov_xsec(4,4) = 1.0; //CCother
     cov_xsec(4,5) = 0;
+    //cov_xsec(4,7) = 0;
     
     cov_xsec(5,5) = 1.0; //PilessDcy
     
@@ -236,7 +241,7 @@ int main(int argc, char *argv[])
     /*************************************** XSec end **********************************/
     
     /*************************************** Detector start **********************************/
-    string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
+    /*string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
      TFile *findetcov = TFile::Open(fdetcov.c_str()); //contains flux and det. systematics info
      
      TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case0");
@@ -252,7 +257,7 @@ int main(int argc, char *argv[])
      DetParameters detpara(samples,"../inputs/cc1picohbins.txt","par_det");
      detpara.SetCovarianceMatrix(&cov_det);
      detpara.InitEventMap(samples);
-     fitpara.push_back(&detpara);
+     fitpara.push_back(&detpara);*/
     /*************************************** Detector end **********************************/
     /********************************************************************************/
     /*  FITTER                                                                      */
@@ -261,7 +266,7 @@ int main(int argc, char *argv[])
     XsecFitter xsecfit(seed);
     //init w/ para vector
     xsecfit.InitFitter(fitpara);
-    
+    xsecfit.FixParameter("par_scale0",1.0);//fix scaling parameter     
     xsecfit.SetSaveMode(fout, 1);
     
     //do fit: 1 = generate toy dataset from nuisances (WITH stat fluct)
