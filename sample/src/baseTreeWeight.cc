@@ -59,7 +59,7 @@ void baseTreeWeight::MakeResponseFunctionAllElse(TString ipFile, char* treeName,
     if (fChain == 0) return;
     
     //this is consistent with XsecParameters
-    const Int_t NSAMPLE = 4;//change from 4
+    const Int_t NSAMPLE = 6;//change from 4
     
     //T2K reweight parameter
     const Int_t NPARAMETER = 25;
@@ -223,7 +223,7 @@ void baseTreeWeight::MakeResponseFunction(TString ipFile, char* treeName, TStrin
     if (fChain == 0) return;
     
     //this is consistent with XsecParameters
-    const Int_t NSAMPLE = 4;//change from 4
+    const Int_t NSAMPLE = 6;//change from 4
     
     //T2K reweight parameter
     const Int_t NPARAMETER = 25;

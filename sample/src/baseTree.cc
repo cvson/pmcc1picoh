@@ -59,7 +59,7 @@ void baseTree::GenerateDetSyst(TString ipFile, char* treeName, TString opFile, s
     if (fChain == 0) return;
     
     //this is consistent with XsecParameters
-    const Int_t NSAMPLE = 4;
+    const Int_t NSAMPLE = 6;
     //follow kikawa-scheme
     const Int_t NCUTTIMING = 3;
     const Int_t NCUTFV = 7;//4
