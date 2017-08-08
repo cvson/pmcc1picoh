@@ -222,7 +222,7 @@ void XsecParameters::InitEventMap(std::vector<AnaSample*> &sample)
             //HACK HERE
             int code = PASSEVENT;
             //if(ev->GetReaction() < 9){
-            if(ev->GetReaction() == 0){
+            if(ev->GetReaction() == 0 || ev->GetReaction()>4){
             //if(ev->GetReaction() != 2){
                 row.push_back(code);
                 continue;
@@ -235,11 +235,11 @@ void XsecParameters::InitEventMap(std::vector<AnaSample*> &sample)
             //in baseTree.hh, reaction is from 0 -to 8
             //here is combined nc,numubar, nue into 4 and ingrid-wall into 5
             int fakeIDforResponseFunction =0;
-            if (ev->GetReaction()<4) {
+            if (ev->GetReaction()<5) {
                 fakeIDforResponseFunction = ev->GetReaction()-1;
             }
-            else if (ev->GetReaction()==4 || ev->GetReaction()==5 || ev->GetReaction()==6)fakeIDforResponseFunction = 3;
-            else if (ev->GetReaction()==7 || ev->GetReaction()==8) fakeIDforResponseFunction = 4;
+            //else if (ev->GetReaction()==4 || ev->GetReaction()==5 || ev->GetReaction()==6)fakeIDforResponseFunction = 3;
+            //else if (ev->GetReaction()==7 || ev->GetReaction()==8) fakeIDforResponseFunction = 4;
             int binn = GetBinIndex(static_cast<SampleTypes>(ev->GetSampleType()),
                                    //static_cast<ReactionTypes>(ev->GetReaction()),
                                    static_cast<ReactionTypes>(fakeIDforResponseFunction),
