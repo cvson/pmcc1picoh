@@ -448,7 +448,7 @@ void FitSample::FillEventHisto(int datatype)
             }//end j
             
         }//end for
-        m_hdata->Scale(m_norm);
+        //m_hdata->Scale(m_norm);//for data should turn off
          
         cout<<"sample "<<m_sampleid<<" Fake GENIE data"<<m_hdata->Integral()<<endl;
 
