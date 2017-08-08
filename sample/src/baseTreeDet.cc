@@ -31,7 +31,7 @@ void baseTreeDet::MakeHitEfficiencySyst(TObjArray* paFile, TObjArray* paHitEffFi
     ////////////////////////////////////////////////////////////////////
     ////output
     TFile *popfile = new TFile(opFile,"RECREATE");
-    const Int_t NSAMPLE = 4;
+    const Int_t NSAMPLE = 6;
     //init histogram
     TH1F *hbinccqe[NSAMPLE][NFILE];
     TH1F *hbinccqe_sig[NSAMPLE][NFILE];
@@ -181,7 +181,7 @@ void baseTreeDet::MakeMPPCNoiseSyt(TObjArray* paFile, char* treeName, TString op
     ////////////////////////////////////////////////////////////////////
     ////output
     TFile *popfile = new TFile(opFile,"RECREATE");
-    const Int_t NSAMPLE = 4;
+    const Int_t NSAMPLE = 6;
     //init histogram
     TH1F *hbinccqe[NSAMPLE][NFILE];
     TH1F *hbinccqe_sig[NSAMPLE][NFILE];
@@ -321,7 +321,7 @@ void baseTreeDet::MakeResponseFunctionReco(TObjArray* paFile, TObjArray* paFiled
     ////////////////////////////////////////////////////////////////////
     ////output
     TFile *popfile = new TFile(opFile,"RECREATE");
-    const Int_t NSAMPLE = 4;
+    const Int_t NSAMPLE = 6;
     //init histogram
     TH1F *hbinccqe[NSAMPLE][NFILE];
     TH1F *hdatabinccqe[NSAMPLE][NFILE];
@@ -673,7 +673,7 @@ void baseTreeDet::MakeResponseFunction(TObjArray* paFile, char* treeName, TStrin
     ////////////////////////////////////////////////////////////////////
     ////output
     TFile *popfile = new TFile(opFile,"RECREATE");
-     const Int_t NSAMPLE = 4;
+     const Int_t NSAMPLE = 6;
     //init histogram
     TH1F *hbinccqe[NSAMPLE][NFILE];
     TH1F *hbinccqe_bkg[NSAMPLE][NFILE];
@@ -804,7 +804,7 @@ void baseTreeDet::MakeSingleHisto(TString ipFile, char* treeName, TString opFile
         ////////////////////////////////////////////////////////////////////
         ////output
         TFile *popfile = new TFile(opFile,"RECREATE");
-        const Int_t NSAMPLE = 4;
+        const Int_t NSAMPLE = 6;
         //init histogram
         TH1F *hbinccqe[NSAMPLE];
         TH1F *hbinccqe_bkg[NSAMPLE];

@@ -27,7 +27,9 @@
 enum SampleTypes { s_SIG = 0,
     s_CRI = 1,
     s_CRII = 2,
-    s_CRIII = 3};
+    s_CRIII = 3,
+    s_CRIV = 4,
+    s_CRV = 5	};
 
 // Reaction and backgrounds
 // the indices should match with ntuples

@@ -104,7 +104,7 @@ XsecParameters::~XsecParameters()
 // store response functions in vector of Xsec "bins" (Ereco, Etrue, reac, topo)
 void XsecParameters::StoreResponseFunctions(vector<TFile*> respfuncs, std::vector<std::pair <double,double> > v_pedges, std::vector<std::pair <double,double> > v_cthedges)
 {
-    for ( int stInt = s_SIG; stInt != s_CRIII+1; stInt++ ){
+    for ( int stInt = s_SIG; stInt != s_CRV+1; stInt++ ){
      // for ( int stInt = s_SIG; stInt != s_CRII+1; stInt++ ){
          SampleTypes sampletype = static_cast <SampleTypes> (stInt);
         //for ( int rtInt = ReCC1picoh; rtInt != OutFGD+1; rtInt++){
