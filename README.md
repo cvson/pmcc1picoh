@@ -1,6 +1,9 @@
-2017-05-24
-this for neut 5.3.2, copied form noveract branch
-Use sample with no-vertex activity cut
+2017-08-09
+this for neut 5.3.2, copied form neut532-5bin branch
+Use one sideband with high vertex
+Use two control sample with low PID
+include cut on muon angle
+add parameter to take care of migration of CC0pi, CC1pi
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
 1. fit on 5 bins of p-theta 
