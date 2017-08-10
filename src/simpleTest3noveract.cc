@@ -108,9 +108,9 @@ int main(int argc, char *argv[])
     samples.push_back(&sam2);
     
     
-   /* FitSample sam3(2, "CRII",v_pedges, v_cthedges,tdata);
+    FitSample sam3(2, "CRII",v_pedges, v_cthedges,tdata);
     sam3.SetNorm(potData/potMC);
-    samples.push_back(&sam3);*/
+    samples.push_back(&sam3);
     
     
     /*FitSample sam4(3, "CRIII",v_pedges, v_cthedges,tdata);
@@ -145,28 +145,27 @@ int main(int argc, char *argv[])
     fitpara.push_back(&scalepara);
     
     cout<<"CC1picoh scale parameters DONE"<<endl;
-    
     /*************************************** Scale end ********************************/
-    
-    /*************************************** Vertex0pi start *****************************/
+
+	 /*************************************** Vertex0pi start *****************************/
     //CC0pi migration parameters
-    Vertex0piParameters vertex0pipara(fccqebin.c_str());
+    /*Vertex0piParameters vertex0pipara(fccqebin.c_str());
     vertex0pipara.InitEventMap(samples);
     fitpara.push_back(&vertex0pipara);
 
-    cout<<"Vertex 0pi parameters DONE"<<endl;
+    cout<<"Vertex 0pi parameters DONE"<<endl;*/
 
     /*************************************** Vertex0pi end ********************************/
 
-      /*************************************** Vertex0pi start *****************************/
-    //CC0pi migration parameters
-    Vertex1piParameters vertex1pipara(fccqebin.c_str());
+      /*************************************** Vertex1pi start *****************************/
+    //CC1pi migration parameters
+    /*Vertex1piParameters vertex1pipara(fccqebin.c_str());
     vertex1pipara.InitEventMap(samples);
     fitpara.push_back(&vertex1pipara);
 
-    cout<<"Vertex 1pi parameters DONE"<<endl;
+    cout<<"Vertex 1pi parameters DONE"<<endl;*/
 
-    /*************************************** Vertex0pi end ********************************/
+    /*************************************** Vertex1pi end ********************************/
 
     /*************************************** FLUX start *******************************/
     /*TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
@@ -217,8 +216,7 @@ int main(int argc, char *argv[])
     responsefunctions.push_back(PilessDcyrespfunc);
     
     
-    
-    TMatrixDSym cov_xsec(6);//8
+    TMatrixDSym cov_xsec(6);
     
     cov_xsec(0,0) = 1.0; //MACCQE
     cov_xsec(0,1) = 0;
@@ -233,7 +231,7 @@ int main(int argc, char *argv[])
     cov_xsec(1,3) = 0;
     cov_xsec(1,4) = 0;
     cov_xsec(1,5) = 0;
-    //cov_xsec(1,7) = 0;
+   // cov_xsec(1,7) = 0;
     
     cov_xsec(2,2) = 1.0; //CC1piE0
     cov_xsec(2,3) = 0;
