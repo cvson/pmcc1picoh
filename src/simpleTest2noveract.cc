@@ -150,22 +150,22 @@ int main(int argc, char *argv[])
     
     /*************************************** Vertex0pi start *****************************/
     //CC0pi migration parameters
-    Vertex0piParameters vertex0pipara(fccqebin.c_str());
+    /*Vertex0piParameters vertex0pipara(fccqebin.c_str());
     vertex0pipara.InitEventMap(samples);
     fitpara.push_back(&vertex0pipara);
 
     cout<<"Vertex 0pi parameters DONE"<<endl;
-
+*/
     /*************************************** Vertex0pi end ********************************/
 
       /*************************************** Vertex0pi start *****************************/
     //CC0pi migration parameters
-    Vertex1piParameters vertex1pipara(fccqebin.c_str());
+   /* Vertex1piParameters vertex1pipara(fccqebin.c_str());
     vertex1pipara.InitEventMap(samples);
     fitpara.push_back(&vertex1pipara);
 
     cout<<"Vertex 1pi parameters DONE"<<endl;
-
+*/
     /*************************************** Vertex0pi end ********************************/
 
     /*************************************** FLUX start *******************************/

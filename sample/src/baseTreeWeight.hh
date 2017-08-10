@@ -583,36 +583,25 @@ Int_t baseTreeWeight::CutSamplebyID(Long64_t entry, Int_t myid)
 {
     
     //signal region
-    if (myid==0){
-        if (CutSignalR(entry)>0) return 1;
+     if (myid==0){
+        if (CutSignalR(entry)>0 && muang_t<30) return 1;
         else return -1;
     }
-    //merging all
-    
-    //two-track sample
-    /*else if (myid==1){
-        if (CutCR1(entry)>0) return 1;
-        else return -1;
-    }*/
+
     else if (myid==1){
-        //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25 ) return 1;
+        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
         else return -1;
     }
-    //More than two-track
     else if (myid==2){
-        //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25 ) return 1;
-	else return -1;
-    }
-    
-   
-    else if (myid==3){
-        //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl<=0.6  ) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 1;
         else return -1;
-    } 
-    
+    }
+
+     else if (myid==3){
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 1;
+        else return -1;
+    }
+ 
     else return -1;
     
 }
@@ -689,14 +678,13 @@ Int_t    baseTreeWeight::GetEventType(Long64_t entry){
     
 }
 Int_t    baseTreeWeight::GetSampleType(Long64_t entry){
-    if (CutSignalR(entry)>0) return 0;
+	if (CutSignalR(entry)>0 && muang_t<30) return 0;
     
-    //else if (CutCR1(entry)>0 || CutCR23Comb(entry)>0) return 1;
+    else if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25) return 1;
-    //else if (CutCR23Comb(entry)>0) return 2;
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25) return 2;
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl<=0.6 ) return 3;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 2;
+
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 3;
 	else return -1;
     
 }

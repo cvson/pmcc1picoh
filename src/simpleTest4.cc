@@ -21,6 +21,8 @@
 #include "ScaleParameters.hh"
 #include "XsecParameters.hh"
 #include "DetParameters.hh"
+#include "Vertex0piParameters.hh"
+#include "Vertex1piParameters.hh"
 #include "XsecFitter.hh"
 
 using namespace std;
@@ -144,6 +146,26 @@ int main(int argc, char *argv[])
     
     cout<<"CC1picoh scale parameters DONE"<<endl;
     /*************************************** Scale end ********************************/
+
+	 /*************************************** Vertex0pi start *****************************/
+    //CC0pi migration parameters
+    Vertex0piParameters vertex0pipara(fccqebin.c_str());
+    vertex0pipara.InitEventMap(samples);
+    fitpara.push_back(&vertex0pipara);
+
+    cout<<"Vertex 0pi parameters DONE"<<endl;
+
+    /*************************************** Vertex0pi end ********************************/
+
+      /*************************************** Vertex1pi start *****************************/
+    //CC1pi migration parameters
+    Vertex1piParameters vertex1pipara(fccqebin.c_str());
+    vertex1pipara.InitEventMap(samples);
+    fitpara.push_back(&vertex1pipara);
+
+    cout<<"Vertex 1pi parameters DONE"<<endl;
+
+    /*************************************** Vertex1pi end ********************************/
     /*************************************** FLUX start *******************************/
     /*TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
      Int_t nbinhistflux = 43;
