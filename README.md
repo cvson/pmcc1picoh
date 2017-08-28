@@ -1,6 +1,5 @@
 2017-05-24
-this for neut 5.3.2, copied form noveract branch
-Use sample with no-vertex activity cut
+this for neut 5.3.2 numubar, copied form neut532 branch
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
 1. fit on 1 bins of p-theta --> test binning
