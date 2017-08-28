@@ -1,5 +1,5 @@
 #!/bin/bash 
-source /home/cvson/rootv5r34_setup.sh
+source /home/cvson/rootv5r34_raw.sh
 scriptFile=`printf "/home/cvson/scraid2/cc1picoh/FIT/versionfsicombstat/bin/simpleTest4allpara.exe"`
 let "shift=$1 +1"
 let "seed=${shift} *87"

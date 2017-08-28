@@ -1391,6 +1391,97 @@ else if (topoID==214) {
         if (Ntrack==2 ) return 1;
         else return -1;
     }
+
+   else if (topoID==216) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && pang<90 && !(mufc==0 && pene<9) && pidfsi>0.05 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+    else if (topoID==217) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && pang<90 && !(mufc==0 && pene<9) && pidfsi<=0.05 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==218) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+   else if (topoID==219) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==220) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==221) {
+        if (CutSignalR(entry)>0 && muang_t<30) return 1;
+        else return -1;
+    }
+
+  else if (topoID==222) {
+        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+else if (topoID==223) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==224) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==225) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+ else if (topoID==226) {
+        if (Ntrack==2 && pang<90 && pidfsi>0.05 && veract*7.6634e-2<50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+  else if (topoID==227) {
+        if (Ntrack==2 && pang<90 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+else if (topoID==228) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==229) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==230) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+
+else if (topoID==231) {
+        if (Ntrack==1 && mufc==1 && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==232) {
+        if (Ntrack==1 && (mufc==0 && pene==9) && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==233) {
+        if (Ntrack==1 && mufc==1 && mumucl<0.25) return 1;
+        else return -1;
+    }
+else if (topoID==234) {
+        if (Ntrack==1 && (mufc==0 && pene==9) && mumucl<0.25) return 1;
+        else return -1;
+    }
+
   else return -1;
     
     

@@ -2,7 +2,7 @@
     gROOT->ProcessLine(".x ../../rootlogon.C");
     gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
     //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-   Int_t isample = 215;
+   Int_t isample = 234;
    //TString subname = Form("basicdataneutvsgeniewrat_allv532_sam%d",isample);
 
    TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
@@ -16,7 +16,7 @@
    TFile *pfilegenie = new TFile(Form("../outputs/basicHisto_neut5d1d4d2_20170529_sam%d.root",isample));
    TFile *pfile = new TFile(Form("../outputs/basicHisto_genie_20170529_sam%d.root",isample));
    TFile *pfilev532 = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));
-    */
+   */
 
 	//to check neut 5.1.4.2 composition
 /*	TString subname = Form("tmp_sam%d",isample);

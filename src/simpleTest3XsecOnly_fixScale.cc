@@ -28,7 +28,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
-    //string fdtInputFile = "../../datafsicornorange/mc_genie_merged_ccqe_addpidFFnew_addnue.root";
     string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fccqebin = "../inputs/cc1picohbins.txt";
     string fnameout = "../outputs/testFit_onesample_statfluc.root";
@@ -145,7 +144,7 @@ int main(int argc, char *argv[])
     cout<<"CC1picoh scale parameters DONE"<<endl;
     /*************************************** Scale end ********************************/
     /*************************************** FLUX start *******************************/
-     TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
+    /*TFile *finfluxcov = TFile::Open(ffluxcov.c_str());
      Int_t nbinhistflux = 43;
      const Double_t xbinshistflux[]={0, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 30.0};
      //setup enu bins and covm for flux
@@ -169,7 +168,7 @@ int main(int argc, char *argv[])
      fluxpara.SetCovarianceMatrix(&cov_flux);
      fluxpara.InitEventMap(samples);
      fitpara.push_back(&fluxpara);
-     cout<<"Flux parameters DONE"<<endl;
+     cout<<"Flux parameters DONE"<<endl;*/
     /*************************************** FLUX end **********************************/
     
     /*************************************** XSec start *******************************/
@@ -225,7 +224,6 @@ int main(int argc, char *argv[])
     
     
     
-    
     XsecParameters xsecpara;
     xsecpara.SetCovarianceMatrix(&cov_xsec);
     xsecpara.StoreResponseFunctions(responsefunctions, v_pedges, v_cthedges);
@@ -235,10 +233,10 @@ int main(int argc, char *argv[])
     /*************************************** XSec end **********************************/
     
     /*************************************** Detector start **********************************/
-     string fdetcov = "../inputs/detectorAll_5bptheta_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
+    /*string fdetcov = "../inputs/detectorAll_covariance_matrix.root";  //USING NEW BINNING DET MATRIX
      TFile *findetcov = TFile::Open(fdetcov.c_str()); //contains flux and det. systematics info
      
-     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case2");
+     TMatrixDSym *cov_det_in   = (TMatrixDSym*)findetcov->Get("detector_covmat_case0");
      TMatrixDSym cov_det(cov_det_in->GetNrows());
      for(size_t m=0; m<cov_det_in->GetNrows(); m++){
      for(size_t k=0; k<cov_det_in->GetNrows(); k++){
@@ -251,7 +249,7 @@ int main(int argc, char *argv[])
      DetParameters detpara(samples,"../inputs/cc1picohbins.txt","par_det");
      detpara.SetCovarianceMatrix(&cov_det);
      detpara.InitEventMap(samples);
-     fitpara.push_back(&detpara);
+     fitpara.push_back(&detpara);*/
     /*************************************** Detector end **********************************/
     /********************************************************************************/
     /*  FITTER                                                                      */
@@ -260,14 +258,15 @@ int main(int argc, char *argv[])
     XsecFitter xsecfit(seed);
     //init w/ para vector
     xsecfit.InitFitter(fitpara);
-    
+    xsecfit.FixParameter("par_scale0",1.0);//fix scaling parameter 
     xsecfit.SetSaveMode(fout, 1);
     
     //do fit: 1 = generate toy dataset from nuisances (WITH stat fluct)
     //        2 = fake data from MC or real data (+ stat fluct)
     //        3 = no nuisance sampling only stat fluctuation
-    //xsecfit.Fit(samples, 1);
-    xsecfit.Fit(samples, 2);
+    //        check stat. flux or not in FitSample::FillEventHisto
+    xsecfit.Fit(samples, 1);
+    //xsecfit.Fit(samples, 2);
     
     //xsecfit.Fit(samples, 3);
     
