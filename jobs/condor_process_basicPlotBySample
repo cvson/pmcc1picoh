@@ -1,0 +1,45 @@
+######################################################################
+# A sample of condor script
+#  usage :
+#   condor_submit 
+#   simple generateBasicPlotBySample.exe
+#
+######################################################################
+
+Executable      = /home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532/bin/generateBasicPlotBySample.exe
+
+Universe        = vanilla
+Rank            = kflops
+Requirements    = CpuIsBusy == FALSE && \
+                  (machine != "scbn00" && \
+                   machine != "scbn01.hepnet.scphys.kyoto-u.ac.jp" )
+Getenv          = True
+Arguments      =  $(Process)
+#Arguments      =  $(RUN1)
+Output          = ./outfile/test_basicPlotBySample_$(RUN1).out
+#Error           = /dev/null
+Error           = ./outfile/test_basicPlotBySample_$(RUN1).err
+Notification	= Never 
+
+QUEUE 5
+#QUEUE 100
+
+#RUN1 = 132
+#QUEUE
+
+#RUN1 = 133
+#QUEUE
+
+#RUN1 = 144
+#QUEUE
+
+#RUN1 = 145
+#QUEUE
+
+#RUN1 = 146
+#QUEUE
+
+
+
+
+

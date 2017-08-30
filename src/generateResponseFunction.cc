@@ -35,46 +35,51 @@ int main(int argc, char *argv[])
     }
     fin.close();
     //TString ipFile = "../../datafsicornorange/merged_ccqe_forResponseFunction.root";
-    TString ipFile = "../../datafsipionFS/merged_ccqe_forResponseFunction_pionFS.root";
-
+    //TString ipFile = "../../datafsipionFS/merged_ccqe_forResponseFunction_pionFS.root";
+	TString ipFile = "../../datafsipionFS/all_merged_rwv1r25_neut5d3d2_coh_byorder.root";
     //TString opFile = Form("../outputs/testResponseFunction_para%d.root",ithParameter);
    
     baseTreeWeight *pbaseTreeWeight = new baseTreeWeight();
-    int ithParameter = 0;
-    TString opFile = "../inputs/responsefunction_MACCQE.root";
+    int ithParameter = 4;
+    TString opFile = "../inputs/responsefunction_MECNorm.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
     
-    ithParameter = 1;
-    opFile = "../inputs/responsefunction_MARES.root";
+    ithParameter = 6;
+    opFile = "../inputs/responsefunction_MACCQE.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
     
-    ithParameter = 13;
-    opFile = "../inputs/responsefunction_CC1piE0.root";
+    ithParameter = 7;
+    opFile = "../inputs/responsefunction_CA5RES.root";
+    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
+    
+    ithParameter = 8;
+    opFile = "../inputs/responsefunction_MaNFFRES.root";
+    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
+    
+    ithParameter = 9;
+    opFile = "../inputs/responsefunction_BgSclRES.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
     
     ithParameter = 14;
-    opFile = "../inputs/responsefunction_CC1piE1.root";
-    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
-    
-    ithParameter = 16;
-    opFile = "../inputs/responsefunction_CCother.root";
-    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
-    
-    ithParameter = 22;
-    opFile = "../inputs/responsefunction_PilessDcy.root";
+    opFile = "../inputs/responsefunction_dismpishp.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
    
-    ithParameter = 23;
-    opFile = "../inputs/responsefunction_1piEnuShape.root";
+    ithParameter = 18;
+    opFile = "../inputs/responsefunction_FrAbs_pi.root";
     pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
 
-    opFile = "../inputs/responsefunction_AllElse.root";
+   ithParameter = 20;
+    opFile = "../inputs/responsefunction_FrInelLow_pi.root";
+    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
+
+ithParameter = 21;
+    opFile = "../inputs/responsefunction_FrPiProd_pi.root";
+    pbaseTreeWeight->MakeResponseFunction(ipFile,"tree",opFile,v_pedges,v_cthedges,ithParameter);
+    /*opFile = "../inputs/responsefunction_AllElse.root";
     pbaseTreeWeight->MakeResponseFunctionAllElse(ipFile,"tree",opFile,v_pedges,v_cthedges);
+    */
     //TODO: INCLUDE NuE sample
     
-    /*baseTreeWeight *pbaseTreeWeight = new baseTreeWeight();
-    std::cout<<" DATA "<<std::endl;
-    pbaseTreeWeight->MakeBasicHisto("/home/t2k/cvson/gpfs/ingrid/backup/dataProcess/fix20150420/data_merged_ccqe_addpidFFnew.root","../outputs/basicHisto_data.root");*/
     //pm
 
     std::cout<<"Processing successfully"<<std::endl;

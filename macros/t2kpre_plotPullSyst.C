@@ -4,7 +4,9 @@ void t2kpre_plotPullSyst()
     gROOT->ProcessLine(".L ../../basicPlotUtil.C");
     //TString subSaveName = "checkpull_statonly_2sam";
     //TString subSaveName = "checkpull_fluxonlystatfluc_1sam";
-    //TString subSaveName = "checkpull_fluxonlynostat_2sam";
+    // TString subSaveName = "checkpull_fluxonlynostat_1sam";    
+	TString subSaveName = "checkpull_fluxonlynostat_1sam_deco"; 
+//TString subSaveName = "checkpull_fluxonlynostat_2sam";
     //TString subSaveName = "checkpull_xseconlynostat_2sam";
    // TString subSaveName = "checkpull_detonlynostat_1sam";
    // TString subSaveName = "checkpull_allsystnostat_2sam";
@@ -12,20 +14,20 @@ void t2kpre_plotPullSyst()
    //TString subSaveName = "checkpullpiless02cor_xseconlynostat_2sam";
    // TString subSaveName = "checkpullpiless02cor_allsystnostat_2sam";
   // TString subSaveName = "checkpullpiless02cor_allsyststatfluc_1sam";
-     TString subSaveName = "checkpullpiless02cor_xsecfluxnostat_2sam";
-    const Bool_t isXsecInclude = true;
+   //  TString subSaveName = "checkpullpiless02cor_xsecfluxnostat_2sam";
+    const Bool_t isXsecInclude = false;
     const Bool_t isDetInclude = false;
     const Bool_t isFluxInclude = true;
 
-    const Int_t NPTHETABIN = 5;
-    const Int_t NXSECPARA = 7;//8;
-    const Int_t NDETPARA = 10;//10;//5x2 samples
+    const Int_t NPTHETABIN = 1;
+    const Int_t NXSECPARA = 6;//8;
+    const Int_t NDETPARA = 1;//10;//5x2 samples
     const Int_t NFLUXPARA = 43;
     
     const Int_t NTOYFIT = 500;
-    const Int_t NSAMPLE = 2;
+    const Int_t NSAMPLE = 1;
     const char *m_name[] = {"SIG", "CRI"};
-    const char *m_namelong[] = {"Signal", "Sideband"};
+    const char *m_namelong[] = {"Signal", "CR-I"};
     TFile *pFile[NTOYFIT];
     string tagnom = "nominal";
     string tagthro = "thrown";
@@ -35,7 +37,7 @@ void t2kpre_plotPullSyst()
     const char *names[] = {"sig", "ccqe", "cc1pi", "ccother", "nc", "numubar", "nue", "ingrid", "wall"};
     //
     for (Int_t itoy=0; itoy<NTOYFIT; ++itoy) {
-        pFile[itoy] = new TFile(Form("../outputs/XsecFlux/twopiless02cor/fittoy_result_%d.root",itoy+1));
+        //pFile[itoy] = new TFile(Form("../outputs/XsecFlux/twopiless02cor/fittoy_result_%d.root",itoy+1));
 	//pFile[itoy] = new TFile(Form("../outputs/AllSystStatFluc/onepiless02cor/fittoy_result_%d.root",itoy+1));
         //pFile[itoy] = new TFile(Form("../outputs/AllSystStatFluc/one/fittoy_result_%d.root",itoy+1));
         //pFile[itoy] = new TFile(Form("../outputs/AllSyst/twopiless02cor/fittoy_result_%d.root",itoy+1));
@@ -43,8 +45,10 @@ void t2kpre_plotPullSyst()
         //pFile[itoy] = new TFile(Form("../outputs/DetOnly/one/fittoy_result_%d.root",itoy+1));
         //pFile[itoy] = new TFile(Form("../outputs/XsecOnly/two/fittoy_result_%d.root",itoy+1));
 	//pFile[itoy] = new TFile(Form("../outputs/FluxOnlyStatFluc/one/fittoy_result_%d.root",itoy+1));
-   	 // pFile[itoy] = new TFile(Form("../outputs/FluxOnly/two/fittoy_result_%d.root",itoy+1));
-         //pFile[itoy] = new TFile(Form("../outputs/XsecOnly/twopiless02cor/fittoy_result_%d.root",itoy+1));
+   	  //pFile[itoy] = new TFile(Form("../outputs/FluxOnly/two/fittoy_result_%d.root",itoy+1));
+       // pFile[itoy] = new TFile(Form("../outputs/FluxOnly/one/fittoy_result_%d.root",itoy+1)); 
+	pFile[itoy] = new TFile(Form("../outputs/FluxOnly/one_deco/fittoy_result_%d.root",itoy+1)); 
+	//pFile[itoy] = new TFile(Form("../outputs/XsecOnly/twopiless02cor/fittoy_result_%d.root",itoy+1));
     }
     //fit result
     TH1D *hscalepara_thro[NTOYFIT];

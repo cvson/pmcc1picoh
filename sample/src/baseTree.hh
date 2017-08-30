@@ -656,7 +656,7 @@ Int_t baseTree::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //signal region
     if (myid==0){
-        if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        if (CutSignalR(entry)>0 ) return 1;
         else return -1;
     }
     //CR1
@@ -667,19 +667,19 @@ Int_t baseTree::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //CR1
     else if (myid==1){
-        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25) return 1;
         else return -1;
     }
     //CR2
     else if (myid==2){
         //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<=0.25) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25) return 1;
 	else return -1;
     }
    
      else if (myid==3){
         //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl<=0.6) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl<=0.6) return 1;
         else return -1;
     } 
     
@@ -846,7 +846,7 @@ Int_t baseTree::CutTopologybyID(Long64_t entry, Int_t topoID)
     //2trk 1mu +1pi
     else if (topoID==25) {
         //if (Ntrack==2 && Ningtrack==1 && mumucl>0.6 && pmucl>0.6 ) return 1;
-       if (CutPreselection(entry)>0 && !(CutSignalRHiVeract(entry)>0||Cut1picohKikawaHiVeract(entry)>0)) return 1;
+       if (CutPreselection(entry)>0 && veract*7.6634e-2>50 && !(CutSignalRHiVeract(entry)>0||Cut1picohKikawaHiVeract(entry)>0)) return 1;
         else return -1;
     }
     //2trk 1mu + 1pi + nonveract
@@ -1057,7 +1057,432 @@ Int_t baseTree::CutTopologybyID(Long64_t entry, Int_t topoID)
         else return -1;
     }
 
-    else return -1;
+
+	//add20170515
+else if (topoID==140) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08) return 1;
+        else return -1;
+    }
+else if (topoID==141) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08) return 1;
+        else return -1;
+    }
+else if (topoID==142) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && pidfsi1prescor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==143) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && pidfsiccqecor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==144) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==145) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==146) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<0.25) return 1;
+        else return -1;
+    }
+
+        //add20170602
+else if (topoID==150) {
+        if (CutPreselection(entry)>0 && pidfsi>0.0 && veract*7.6634e-2>50) return 1;
+        else return -1;
+    }
+else if (topoID==151) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0) return 1;
+        else return -1;
+    }
+else if (topoID==152) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0 && pidfsi1prescor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==153) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0 && pidfsiccqecor>0.1) return 1;
+        else return -1;
+    }
+else if (topoID==154) {
+        if (CutPreselection(entry)>0 && pidfsi>0.0 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+else if (topoID==155) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==156) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0 && mumucl>0.6 && pmucl<0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==157) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.0 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+
+   else if (topoID==158) {//1mu + 1pro + proton can be background
+        if (Ntrack>2) return 1;
+        else return -1;
+    }
+
+  else if (topoID==159) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && pidfsi>0.0) return 1;
+        else return -1;
+    }
+
+   else if (topoID==160) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && pidfsi<=0.0) return 1;
+        else return -1;
+    }
+
+
+  else if (topoID==161) {//1mu + 1pro + proton can be background
+        if (Ntrack>2 && !(mufc==0 && pene<9)) return 1;
+        else return -1;
+    }
+
+  else if (topoID==162) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pidfsi>0.0) return 1;
+        else return -1;
+    }
+
+   else if (topoID==163) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pidfsi<=0.0) return 1;
+        else return -1;
+    }
+ 
+   else if (topoID==164) {//1mu + 1pro + proton can be background
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pang_t<90) return 1;
+        else return -1;
+    }
+
+  else if (topoID==165) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pang_t<90 && pidfsi>0.0) return 1;
+        else return -1;
+    }
+
+   else if (topoID==166) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pang_t<90 && pidfsi<=0.0) return 1;
+        else return -1;
+    }
+
+
+   else if (topoID==167) {
+        if (CutPreselection(entry)>0 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==168) {
+        if (Ntrack==2 && pang<90 && (mufc==0 && pene<9)) return 1;
+        else return -1;
+    }
+   else if (topoID==169) {
+        if (Ntrack==2) return 1;
+        else return -1;
+    }
+
+//for analysis II
+    else if (topoID==170) {
+        if (CutPreselection(entry)>0 && pidfsi>0.08 && veract*7.6634e-2<36) return 1;
+        else return -1;
+    }
+//CutCCQEKikawa2trk
+    else if (topoID==171) {
+        if (CutCCQEKikawa2trk(entry)>0) return 1;
+        else return -1;
+    }
+//
+else if (topoID==172) {
+        if (CutPreselection(entry)>0 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+
+else if (topoID==173) {
+        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>50) return 1;
+        else return -1;
+    }
+
+else if (topoID==174) {
+        if (CutPreselection(entry)>0 && muang_t<15 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2>50) return 1;
+        else return -1;
+    }
+
+else if (topoID==175) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+else if (topoID==176) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==177) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+
+else if (topoID==178) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+else if (topoID==179) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+else if (topoID==180) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl<=0.6 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+else if (topoID==181) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+else if (topoID==182) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+
+else if (topoID==183) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && mumucl<=0.6 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+	
+else if (topoID==184) {
+        if (Ntrack==1 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }    
+else if (topoID==185) {
+        if (Ntrack==1 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+else if (topoID==186) {
+        if (Ntrack==1 && veract*7.6634e-2<50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==187) {
+        if (Ntrack==1 && veract*7.6634e-2>=50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+
+else if (topoID==188) {
+        if (Ntrack>2 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+else if (topoID==189) {
+        if (Ntrack>2 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+else if (topoID==190) {
+        if (Ntrack>2 && veract*7.6634e-2<50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==191) {
+        if (Ntrack>2 && veract*7.6634e-2>=50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+   else if (topoID==192) {//1mu + 1pro + proton can be background
+        if (Ntrack>2) return 1;
+        else return -1;
+    }
+
+  else if (topoID==193) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && pidfsi>0.05) return 1;
+        else return -1;
+    }
+
+   else if (topoID==194) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && pidfsi<=0.05) return 1;
+        else return -1;
+    }
+	    else if (topoID==195) {
+        if (Ntrack==1 && !(mufc==0 && pene<9) && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+    else if (topoID==196) {
+        if (Ntrack==1 && !(mufc==0 && pene<9) && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+    else if (topoID==197) {
+        if (Ntrack==1 && !(mufc==0 && pene<9) && veract*7.6634e-2<50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+    else if (topoID==198) {
+        if (Ntrack==1 && !(mufc==0 && pene<9) && veract*7.6634e-2>=50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+    
+    else if (topoID==199) {
+        if (Ntrack>2 && !(mufc==0 && pene<9) && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+    else if (topoID==200) {
+        if (Ntrack>2 && !(mufc==0 && pene<9) && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+    else if (topoID==201) {
+        if (Ntrack>2 && !(mufc==0 && pene<9) && veract*7.6634e-2<50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+    else if (topoID==202) {
+        if (Ntrack>2 && !(mufc==0 && pene<9) && veract*7.6634e-2>=50 && mumucl>0.6) return 1;
+        else return -1;
+    }
+    else if (topoID==203) {//1mu + 1pro + proton can be background
+        if (Ntrack>2 && !(mufc==0 && pene<9)) return 1;
+        else return -1;
+    }
+    
+    else if (topoID==204) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pidfsi>0.05) return 1;
+        else return -1;
+    }
+    
+    else if (topoID==205) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && !(mufc==0 && pene<9) && pidfsi<=0.05) return 1;
+        else return -1;
+    }
+
+   else if (topoID==206) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+   else if (topoID==207) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+else if (topoID==208) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl<=0.6 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+else if (topoID==209) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+else if (topoID==210) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+
+else if (topoID==211) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl<=0.6 && veract*7.6634e-2>=50) return 1;
+        else return -1;
+    }
+else if (topoID==212) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi>0.05 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+else if (topoID==213) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9) && pidfsi>0.05 && veract*7.6634e-2>50) return 1;
+	else return -1;
+    }
+
+else if (topoID==214) {
+        if (Ntrack==2 &&  !(mufc==0 && pene<9)) return 1;
+        else return -1;
+    }
+ else if (topoID==215) {
+        if (Ntrack==2 ) return 1;
+        else return -1;
+    }
+
+   else if (topoID==216) {//1mu + 1pro + X antipid
+        if (Ntrack>2 && pang<90 && !(mufc==0 && pene<9) && pidfsi>0.05 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+    else if (topoID==217) {//1mu + 1pion + X antipid
+        if (Ntrack>2 && pang<90 && !(mufc==0 && pene<9) && pidfsi<=0.05 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==218) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl>0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+   else if (topoID==219) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && pmucl<0.25 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==220) {
+        if (Ntrack>2 && pang<90 &&  !(mufc==0 && pene<9) && pidfsi<=0.05 && mumucl>0.6 && veract*7.6634e-2<50) return 1;
+        else return -1;
+    }
+
+   else if (topoID==221) {
+        if (CutSignalR(entry)>0 && muang_t<30) return 1;
+        else return -1;
+    }
+
+  else if (topoID==222) {
+        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+else if (topoID==223) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==224) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==225) {
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && muang_t<30 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+ else if (topoID==226) {
+        if (Ntrack==2 && pang<90 && pidfsi>0.05 && veract*7.6634e-2<50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+  else if (topoID==227) {
+        if (Ntrack==2 && pang<90 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
+        else return -1;
+    }
+
+else if (topoID==228) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl>0.6 && pmucl>0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==229) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl>0.6 && pmucl<=0.25) return 1;
+        else return -1;
+    }
+
+else if (topoID==230) {
+        if (Ntrack==2 && pang<90 && pidfsi<=0.05 && veract*7.6634e-2<50 && muang_t<30 && mumucl<=0.6) return 1;
+        else return -1;
+    }
+
+else if (topoID==231) {
+        if (Ntrack==1 && mufc==1 && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==232) {
+        if (Ntrack==1 && (mufc==0 && pene==9) && mumucl>0.6) return 1;
+        else return -1;
+    }
+else if (topoID==233) {
+        if (Ntrack==1 && mufc==1 && mumucl<0.25) return 1;
+        else return -1;
+    }
+else if (topoID==234) {
+        if (Ntrack==1 && (mufc==0 && pene==9) && mumucl<0.25) return 1;
+        else return -1;
+    }
+
+  else return -1;
     
     
 }
@@ -1499,15 +1924,15 @@ Int_t    baseTree::CutVetobyIndex(Long64_t entry, Int_t index){
 }
 //this can be removed
 Int_t    baseTree::GetSampleType(Long64_t entry){
-    if (CutPreselection(entry)>0 && pidfsi>0.08 && mumucl>0.6 && pmucl>0.25) return 0;
+    if (CutSignalR(entry)>0) return 0;
 
     //else if (CutCR1(entry)>0 || CutCR23Comb(entry)>0) return 1;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl>0.25) return 1;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25) return 1;
     //else if (CutCR23Comb(entry)>0) return 2;
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl>0.6 && pmucl<=0.25) return 2;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25) return 2;
 
-    else if (CutPreselection(entry)>0 && pidfsi<=0.08 && mumucl<=0.6) return 3;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl<=0.6) return 3;
     else return -1;
     
 }

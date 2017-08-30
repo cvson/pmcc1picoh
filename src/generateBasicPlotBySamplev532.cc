@@ -36,9 +36,10 @@ int isample;
 
 
      //pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_merged_pmmc_ccqe_bugfix_3974files.root","../outputs/basicHisto_datamcfsi_finalcomb_sam4testv2_addnue_morepid_ana1x_pionFSnewBD_50mevff_antipid_neut5d3d2_all",isample);
-
-       pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_20170307.root","../outputs/basicHisto_neut5d3d2_20170307",isample);
-
+	//datamc_neut5d3d2_20170307.root only change on numu
+       //pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_20170307.root","../outputs/basicHisto_neut5d3d2_20170307",isample);
+      //datamc_neut5d3d2_20170529.root --> include change in numubar, nue, ingrid as well, except wall
+	pbaseTree->MakeBasicHistoBySamplev532("../../datafsipionFS/datamc_neut5d3d2_20170529.root","../outputs/basicHisto_neut5d3d2_20170529",isample);
     
     std::cout<<"Processing successfully"<<std::endl;
     return 0;

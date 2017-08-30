@@ -1,0 +1,12 @@
+#!/bin/sh
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(171)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(223)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(224)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(235)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(238)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(241)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(242)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(243)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(244)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(245)'
+root -b -q 't2kpre_plotdataneutvsgeniefsi_shift.C(246)'

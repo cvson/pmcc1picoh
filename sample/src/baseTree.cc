@@ -778,7 +778,8 @@ void baseTree::MakeBasicHistoBySample(TString ipFile, TString opFile, Int_t itht
         if (ientry < 0) break;
         nb = fChain->GetEntry(jentry);   nbytes += nb;
         if (jentry%iprintProcess == 0) std::cout<<"Processing "<<int(jentry*100./nentries)<<"% of events"<<std::endl;
-        Float_t mcWeight = (fileIndex==1)*1 +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
+        //this is for NEUT 5.1.4.2
+        Float_t mcWeight = (fileIndex==1)*NMCFILE/3950. +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         //for birk study
         //Float_t mcWeight = (fileIndex==1)*NMCFILE/986. +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         //for me birk process study
@@ -1350,7 +1351,8 @@ void baseTree::MakeBasicHistoBySamplev532(TString ipFile, TString opFile, Int_t 
         if (ientry < 0) break;
         nb = fChain->GetEntry(jentry);   nbytes += nb;
         if (jentry%iprintProcess == 0) std::cout<<"Processing "<<int(jentry*100./nentries)<<"% of events"<<std::endl;
-        //Float_t mcWeight = (fileIndex==1)*1 +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
+        //for this version using NEUT 5.3.2 as nominal
+	Float_t mcWeight = (fileIndex==1)*1 +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         //for birk study
         //Float_t mcWeight = (fileIndex==1)*NMCFILE/986. +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         //for me birk process study
@@ -1359,7 +1361,7 @@ void baseTree::MakeBasicHistoBySamplev532(TString ipFile, TString opFile, Int_t 
         //for PE variation study
         //Float_t mcWeight = (fileIndex==1)*NMCFILE/1974. +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         //NEUT 5.3.2
-        Float_t mcWeight = (fileIndex==1)*NMCFILE/(3974.) +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
+        //Float_t mcWeight = (fileIndex==1)*NMCFILE/(3974.) +(fileIndex==2)*SCALEBAR + (fileIndex==3)*SCALEWALL + (fileIndex==4)*SCALEINGRID + (fileIndex==5)*SCALENUE;
         
         Float_t totweight = norm*totcrsne*mcWeight*2.8647e-13;
         

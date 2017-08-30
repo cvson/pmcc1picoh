@@ -32,13 +32,13 @@ int main(int argc, char *argv[])
     
     //string fnameout = "../outputs/neutvsgenie_sample_newbin2_fsicomb.root";
     
-    /*string fmcInputFile = "../../datafsipionFS/mconly_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
-    string fdtInputFile = "../../datafsipionFS/mconly_genie_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
+    /*string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
+    string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fnameout = "../outputs/neutvsgenie_sample_ana1x50mepionFS_5binsptheta.root";
     */
     //should change baseTree::GetInteractionType 
-    string fmcInputFile = "../../datafsipionFS/mconly_genie_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
-    string fdtInputFile = "../../datafsipionFS/mconly_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
+    string fmcInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
+    string fdtInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     string fnameout = "../outputs/genievsneut_sample_ana1x50mepionFS_5binsptheta_x10stat.root";
 
     //systematics
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
     vector<AnaSample*> samples;
     //double potData = 6.04193507503274721e20;
     double potData = 6.0e21;
-    double potMC = 3950*1.e21;
+    double potMC = 3974*1.e21;
     //double potGENIE = potMC;
     FitSample sam1(0, "SIG",v_pedges, v_cthedges,tdata);
     sam1.SetNorm(potData/potMC);

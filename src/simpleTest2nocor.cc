@@ -27,9 +27,9 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    string fmcInputFile = "../../datafsipionFS/mconly_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
+    string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     //string fdtInputFile = "../../datafsicornorange/mc_genie_merged_ccqe_addpidFFnew_addnue.root";
-    string fdtInputFile = "../../datafsipionFS/mconly_genie_pionFSpm_merged_ccqe_addpidFFnew_addnue.root";
+    string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fccqebin = "../inputs/cc1picohbins.txt";
     string fnameout = "../outputs/testFit_onesample_statfluc.root";
     
@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     //add data
     vector<AnaSample*> samples;
     double potData = 6.04193507503274721e20;
-    double potMC = 3950*1.e21;
+    double potMC = 3974*1.e21;
     //need to put in ORDER 0, 1, 4, 5, 2, 3
     //consistent with detector covariance matrix ../macros/plotAllDetUncertainty.C
     FitSample sam1(0, "SIG",v_pedges, v_cthedges,tdata);
@@ -174,22 +174,22 @@ int main(int argc, char *argv[])
     
     /*************************************** XSec start *******************************/
     vector<TFile*> responsefunctions;
-    TFile* MACCQErespfunc = new TFile("../inputs/responsefunction_MACCQE.root");
+    TFile* MACCQErespfunc = new TFile("../inputs/responsefunction_MECNorm.root");
     responsefunctions.push_back(MACCQErespfunc);
     
-    TFile* MAResrespfunc = new TFile("../inputs/responsefunction_MARES.root");
+    TFile* MAResrespfunc = new TFile("../inputs/responsefunction_MACCQE.root");
     responsefunctions.push_back(MAResrespfunc);
     
-    TFile* CC1piE0respfunc = new TFile("../inputs/responsefunction_CC1piE0.root");
+    TFile* CC1piE0respfunc = new TFile("../inputs/responsefunction_CA5RES.root");
     responsefunctions.push_back(CC1piE0respfunc);
     
-    TFile* CC1piE1respfunc = new TFile("../inputs/responsefunction_CC1piE1.root");
+    TFile* CC1piE1respfunc = new TFile("../inputs/responsefunction_MaNFFRES.root");
     responsefunctions.push_back(CC1piE1respfunc);
     
-    TFile* CCOthrespfunc = new TFile("../inputs/responsefunction_CCother.root");
+    TFile* CCOthrespfunc = new TFile("../inputs/responsefunction_BgSclRES.root");
     responsefunctions.push_back(CCOthrespfunc);
     
-    TFile* PilessDcyrespfunc = new TFile("../inputs/responsefunction_PilessDcy.root");
+    TFile* PilessDcyrespfunc = new TFile("../inputs/responsefunction_dismpishp.root");
     responsefunctions.push_back(PilessDcyrespfunc);
     
    // TFile* OnepiEnuShape = new TFile("../inputs/responsefunction_1piEnuShape.root");

@@ -1,32 +1,206 @@
-cccoh_trueveract.C				    plotdatamcfsi_ana1.C				  plotOptimizeTrueID.C
-checkpidcorrelation.C				    plotdatamcfsi.C					  plotpid1d.C
-checkT2KReweight.C				    plotdatamcfsi_mvavalidate.C				  plotPullScale.C
-compareFitToyResult.C				    plotdatamcfsi_veract.C				  plotPullSyst.C
-compareFitToyResult_fluxonly.C			    plotdatamcfsi_veractvsangle.C			  plotPullSystNew.C
-compareFitToyResult_scaleonly.C			    plotdataneutvsgeniefsi_ana1x_morepid_4veract.C	  plotPullSystNewSigOnly.C
-compareFitToyResult_wxsecparaAll.C		    plotdataneutvsgeniefsi_ana1x_morepid.C		  plotPullSystNoFlux.C
-compareFitToyResult_wxsecparaAll_fixcov.C	    plotdataneutvsgeniefsi_ana1x_morepid_sigvssideband.C  plotResponseFunction.C
-compareFitToyResult_wxsecparaAll_statfluc.C	    plotdataneutvsnewneutfsi_ana1x_morepid_4veract.C	  plotSamples.C
-compareFitToyResult_wxsecparaAll_statfluc_fixcov.C  plotDetResponse_FVTime.C				  plotSamplesGENIEvsNEUT.C
-compareFitToyResult_wxsecpara.C			    plotDetResponse_hiteff.C				  plotSampleswData.C
-compareFitToyResult_xseconly.C			    plotDetResponse_noise.C				  plotSampleswDataMergeBkg.C
-compseleff_ana1x.C				    plotDetResponse_pe.C				  plotSampleswDataMergeBkgFake.C
-Draw_Result_revrev_ana1x_bkgonly.C		    plotDetResponseReco.C				  plotSampleswDataMergeBkgFakeFromFit4Sam.C
-Draw_Result_revrev_ana1x.C			    plotFluxCovarianceMatrix.C				  plotSampleswDataMergeBkgFakeFromFit4Sam_wnofit.C
-Draw_Result_revrev.C				    plotFSI.C						  plotSampleswDataMergeBkgFakeFromFit5sam.C
-Draw_Result_revrev_nomcheck_bkgonly.C		    plotgenievsneut_bytype.C				  plotSampleswDataMergeBkgFakeFromFitAll.C
-Draw_Result_revrev_nomcheck.C			    plotgenievsneut_sigonly.C				  plotSampleswDataMergeBkgFakeFromFitAllStatFluc.C
-findpeak.C					    plotgenievsneutvsfit.C				  plotSampleswDataMergeBkgFakeFromFit.C
-FluxErr_ana1x.C					    plotneutvsgeniefsi_ana1x_morepid.C			  plotVeract.C
-FluxErr.C					    plotneutvsgeniefsi_ana2_morepid.C			  quantiles.C
-FluxErrCCcoh.C					    plotneutvsgeniefsi.C				  T2KReWeightGetCCcohRev_ana1x.C
-FluxErr_nomcheck.C				    plotneutvsgeniefsi_veract.C				  T2KReWeightGetCCcohRev.C
-generateDataPlot.C				    plotOptimizeCutFSI.C				  T2KReWeightSysOutCCcohrevrev_ana1x_bkgonly.C
-MkEnuHist_ana1x.C				    plotOptimizeCutFSI_CC1pres.C			  T2KReWeightSysOutCCcohrevrev_ana1x.C
-MkEnuHist_mva.C					    plotOptimizeCutFSI_CCcoh_ana1x.C			  T2KReWeightSysOutCCcohrevrev.C
-MkEnuHist_nomcheck.C				    plotOptimizeCutFSI_CCcoh_ana1x_sideband.C		  T2KReWeightSysOutCCcohrevrev_nomcheck_bkgonly.C
-plotAllDetUncertainty.C				    plotOptimizeCutFSI_CCqe_ana2.C			  testStdNormRand.C
-plotAllDetUncertainty_Official.C		    plotOptimizeCutFSI_CCQERemoved.C			  validatepid.C
-plotControlSampleFitEffect.C			    plotOptimizeCutFSI_CCres_ana2.C			  validatepid_sig.C
-plotdatamc.C					    plotOptimizeTrueID2CCQE.C
+### Script list
 
+cccoh_trueveract.C
+checkpidcorrelation.C
+checkT2KReweight.C
+compareFitToyResult.C
+compareFitToyResult_fluxonly.C
+compareFitToyResult_scaleonly.C
+compareFitToyResult_wxsecparaAll.C
+compareFitToyResult_wxsecparaAll_fixcov.C
+compareFitToyResult_wxsecparaAll_statfluc.C
+compareFitToyResult_wxsecparaAll_statfluc_fixcov.C
+compareFitToyResult_wxsecpara.C
+compareFitToyResult_xseconly.C
+compseleff_ana1x.C
+Draw_Result_revrev_ana1x_bkgonly.C
+Draw_Result_revrev_ana1x.C
+Draw_Result_revrev.C
+Draw_Result_revrev_nomcheck_bkgonly.C
+Draw_Result_revrev_nomcheck.C
+findpeak.C
+FluxErr_ana1x.C
+FluxErr.C
+FluxErrCCcoh.C
+FluxErr_nomcheck.C
+generateDataPlot.C
+MkEnuHist_ana1x.C
+MkEnuHist_mva.C
+MkEnuHist_nomcheck.C
+plotAllDetUncertainty.C
+plotAllDetUncertainty_Official.C
+plotControlSampleFitEffect.C
+plotdatamc.C
+plotdatamcfsi_ana1.C
+plotdatamcfsi_ana1_pionFS.C
+plotdatamcfsi.C
+plotdatamcfsi_mvavalidate.C
+plotdatamcfsi_veract.C
+plotdatamcfsi_veractvsangle.C
+plotdataneutvsgeniefsi_ana1x_morepid_4veract.C
+plotdataneutvsgeniefsi_ana1x_morepid.C
+plotdataneutvsgeniefsi_ana1x_morepid_pionFS.C
+plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBD.C
+plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff.C
+plotdataneutvsnewneutfsi_ana1x_morepid_4veract.C
+plotDetResponse_FVTime.C
+plotDetResponse_hiteff.C
+plotDetResponse_noise.C
+plotDetResponse_pe.C
+plotDetResponseReco.C
+plotenmc_4hayato.C
+plotflux.C
+plotFluxCovarianceMatrix.C
+plotFSI.C
+plotgenievsneut_bytype.C
+plotgenievsneut_sigonly.C
+plotgenievsneutvsfit.C
+plotneutvsgeniefsi_ana1x_morepid.C
+plotneutvsgeniefsi_ana1x_morepid_pionFS.C
+plotneutvsgeniefsi_ana1x_morepid_pionFSff.C
+plotneutvsgeniefsi_ana1x_morepid_sigvssideband.C
+plotneutvsgeniefsi_ana1x_morepid_sigvssideband_pionFS.C
+plotneutvsgeniefsi_ana1x_morepid_sigvssideband_pionFSff.C
+plotneutvsgeniefsi_ana2_morepid.C
+plotneutvsgeniefsi.C
+plotneutvsgeniefsi_veract.C
+plotneutvsgeniefsi_veract_pionFS.C
+plotOptimizeCutFSI.C
+plotOptimizeCutFSI_CC1pres.C
+plotOptimizeCutFSI_CCcoh_ana1x.C
+plotOptimizeCutFSI_CCcoh_ana1x_sideband.C
+plotOptimizeCutFSI_CCqe_ana2.C
+plotOptimizeCutFSI_CCQERemoved.C
+plotOptimizeCutFSI_CCres_ana2.C
+plotOptimizeTrueID2CCQE.C
+plotOptimizeTrueID.C
+plotpid1d.C
+plotPullScale.C
+plotPullSyst.C
+plotPullSystNew.C
+plotPullSystNewSigOnly.C
+plotPullSystNoFlux.C
+plotResponseFunction.C
+plotResponseFunction_pionFSff.C
+plotSamples.C
+plotSamplesGENIEvsNEUT_ana1x50mev_pionFSff_10binsptheta.C
+plotSamplesGENIEvsNEUT_ana1x50mev_pionFSff_5binsptheta.C
+plotSamplesGENIEvsNEUT.C
+plotSampleswData.C
+plotSampleswDataMergeBkg.C
+plotSampleswDataMergeBkgFake.C
+plotSampleswDataMergeBkgFakeFromFit_2sam_pionFS.C
+plotSampleswDataMergeBkgFakeFromFit4Sam.C
+plotSampleswDataMergeBkgFakeFromFit4Sam_wnofit.C
+plotSampleswDataMergeBkgFakeFromFit5sam.C
+plotSampleswDataMergeBkgFakeFromFitAll.C
+plotSampleswDataMergeBkgFakeFromFitAllStatFluc.C
+plotSampleswDataMergeBkgFakeFromFit.C
+plotVeract.C
+quantiles.C
+t2kpre_allsystsummary.C
+t2kpre_basicTrueInfo.C
+t2kpre_basicTrueInfo_comp.C
+t2kpre_basicTrueInfo_comp_genie.C
+t2kpre_basicTrueInfo_efficiency.C --> check final efficiency
+t2kpre_basicTrueInfo_neut532.C
+t2kpre_basicTrueInfo_neut532_eff.C --> final efficiency 
+t2kpre_birk_plotneutvsgeniefsi_ana1x_morepid_pionFSff.C
+t2kpre_checkT2KReweight.C
+t2kpre_detsyst_birk_getevt_cccoh_ana1xsig.C
+t2kpre_detsyst_else.C
+t2kpre_detsyst_hiteff_draw_cccoh_ana1xsig.C
+t2kpre_detsyst_hiteff_draw_cccoh_nom.C
+t2kpre_detsyst_hiteff_getevt_cccoh_ana1xsig.C
+t2kpre_detsyst_hiteff_getevt_cccoh_nom.C
+t2kpre_detsyst_noise_draw_cccoh_ana1xsig.C
+t2kpre_detsyst_noise_draw_cccoh_nom.C
+t2kpre_detsyst_noise_getevt_cccoh_ana1xsig.C
+t2kpre_detsyst_noise_getevt_cccoh_nom.C
+t2kpre_detsyst_pe_draw_cccoh_ana1xsig.C
+t2kpre_detsyst_pe_draw_cccoh_nom.C
+t2kpre_detsyst_pe_getevt_cccoh_ana1xsig.C
+t2kpre_detsyst_pe_getevt_cccoh_nom.C
+t2kpre_Draw_Result_revrev_ana1x_bkgonly.C
+t2kpre_Draw_Result_revrev_ana1x.C
+t2kpre_Draw_Result_revrev_nomcheck_bkgonly.C
+t2kpre_Draw_Result_revrev_nomcheck.C
+t2kpre_effpur_v532.C --> to plot efficiency purity for NEUT 5.3.2
+t2kpre_FluxErr_ana1x.C
+t2kpre_FluxErr_nomcheck.C
+t2kpre_MkEnuHist_ana1x.C
+t2kpre_MkEnuHist_nomcheck.C
+t2kpre_pevar_plotneutvsgeniefsi_ana1x_morepid_pionFSff.C
+t2kpre_plotAllDetUncertainty.C
+t2kpre_plotAllDetUncertaintyNew.C
+t2kpre_plotControlSampleFitEffect.C
+t2kpre_plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff_allv532_bysample.C --> to make data/MC comparison 
+t2kpre_plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff.C
+t2kpre_plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff_compKikawa.C
+t2kpre_plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff_wbirk.C
+t2kpre_plotdataneutvsgeniefsi_ana1x_morepid_pionFSnewBDff_wpevar.C
+t2kpre_plotDetResponse_birk.C
+t2kpre_plotDetResponse_FVTime.C
+t2kpre_plotDetResponse_FVTime_nosb.C
+t2kpre_plotDetResponse_FVTime_nosig.C
+t2kpre_plotDetResponse_hiteff.C
+t2kpre_plotDetResponse_hiteff_nosb.C
+t2kpre_plotDetResponse_noise.C
+t2kpre_plotDetResponse_noise_nosb.C
+t2kpre_plotDetResponse_pe.C
+t2kpre_plotDetResponse_pe_nosb.C
+t2kpre_plotDetResponse_pevar.C
+t2kpre_plotDetResponseReco.C
+t2kpre_plotDetResponseReco_nosb.C
+t2kpre_plotDetResponseReco_nosig.C
+t2kpre_plotgenievsneut_bytype.C
+t2kpre_plotgenievsneutvsfit.C
+t2kpre_plotneut532vsneutvsfit_x10stat.C
+t2kpre_plotneutvsgeniefsi_ana1x_morepid_pionFSff.C
+t2kpre_plotneutvsgeniefsi_ana1x_morepid_sigvssideband_pionFS.C
+t2kpre_plotOptimizeCutFSI_CCcoh_ana1x.C
+t2kpre_plotOptimizeCutFSI_CCcoh_ana1x_neut532.C
+t2kpre_plotOptimizeCutFSI_CCcoh_ana1x_noveractcut.C
+t2kpre_plotOptimizeCutFSI_CCqe_antipid.C
+t2kpre_plotOptimizeCutFSI_CCres_antipid.C
+t2kpre_plotpid1d.C
+t2kpre_plotPullScale.C
+t2kpre_plotPullSyst.C
+t2kpre_plotResponseFunction_pionFSff.C
+t2kpre_plotResponseFunction_pionFSff_neut532.C
+t2kpre_plotSamplesGENIEvsNEUT_ana1x50mev_pionFSff_5binsptheta.C
+t2kpre_plotSampleswDataMergeBkgFakeFromFit_2sam_pionFS.C
+t2kpre_plotSampleswDataMergeBkgFakeFromFit_3sam_pionFS.C
+t2kpre_plotSampleswDataMergeBkgFakeFromFit_4sam_pionFS.C
+t2kpre_plotSampleswDataMergeBkgFakeFromFit_varcheck.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_allme.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_allmepiless02.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_plusmin.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_v1r25.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_v1r25_newcut.C
+t2kpre_T2KReWeightGetCCcohRev_ana1x_weightsm10.C
+t2kpre_T2KReWeightGetCCcohRev.C
+t2kpre_T2KReWeightGetCCcohRev_v1r25.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_ana1x_bkgonly.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_ana1x.C
+t2kpre_T2KReWeightSysOutCCcohrevrev.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_mvacheck_v1r25_bkgonly.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_mvanewcutcheck_v1r25_bkgonly.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_nomcheck_bkgonly.C
+t2kpre_T2KReWeightSysOutCCcohrevrev_nomcheck_v1r25_bkgonly.C
+t2kpre_validatepid.C
+t2kpre_validatepid_dataHiVeract.C
+t2kpre_validatepid_dataHiVeract_v532.C
+t2kpre_validatepidnoveract.C
+t2kpre_validatepidnoveract_sig.C
+t2kpre_validatepid_sig.C
+T2KReWeightGetCCcohRev_ana1x.C
+T2KReWeightGetCCcohRev.C
+T2KReWeightSysOutCCcohrevrev_ana1x_bkgonly.C
+T2KReWeightSysOutCCcohrevrev_ana1x.C
+T2KReWeightSysOutCCcohrevrev.C
+T2KReWeightSysOutCCcohrevrev_nomcheck_bkgonly.C
+testStdNormRand.C
+validatepid.C
+validatepid_sig.C
