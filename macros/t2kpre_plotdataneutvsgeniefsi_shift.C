@@ -1,8 +1,8 @@
-{
+void t2kpre_plotdataneutvsgeniefsi_shift( Int_t isample){
     gROOT->ProcessLine(".x ../../rootlogon.C");
     gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
     //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-   Int_t isample = 224;
+   //Int_t isample = 171;
    //TString subname = Form("basicdataneutvsgeniewrat_allv532_sam%d",isample);
 
    TString subname = Form("basicdataneutvsgenie_allv532_20170529_sam%d",isample);
@@ -363,7 +363,7 @@
 	    hmcv532[ivar][6]->Add(hmcv532[ivar][7]);
             hmcgenie[ivar][6]->Add(hmcgenie[ivar][7]);
            
-		if(!((ivar>7 && ivar<16)||(ivar>20 && ivar<25) )){
+		if(!((ivar>7 && ivar<16)||(ivar>20 && ivar<25)) && ivar==36){
                 if (ivar==17 || ivar==18){
                 plotbasicdataneutvsgenievsv532wratzoom(hdata[ivar],hmcv532[ivar][0],hmcgenie[ivar][0],hmc[ivar][1],hmc[ivar][2],hmc[ivar][3],hmc[ivar][4],hmc[ivar][5],hmc[ivar][6],hmc[ivar][9],hmc[ivar][8],TString(atitle[ivar]),subname+subsubname,MINCUTVAR[ivar],MAXCUTVAR[ivar],XLEGSHIFT[ivar],YLEGSHIFT[ivar],true);
                 }
@@ -382,19 +382,20 @@
 	 }
         }//end ivar
         //energy plots
-    const Int_t nquantile=3;
-    Double_t xqt[nquantile]={0.33,0.66,1.0};
+
+    const Int_t nquantile=4;
+    Double_t xqt[nquantile]={0.25,0.5,0.75,1.0};
     Double_t yqt[nquantile];
     //Double_t yqtgenie[nquantile];
     //Double_t yqtQsq[nquantile];
     //Double_t yqtgenieQsq[nquantile];
-    hmcv532[37][0]->GetQuantiles(nquantile,yqt,xqt);
+    hmcv532[20][0]->GetQuantiles(nquantile,yqt,xqt);
     //hmcgenie[3][19][0]->GetQuantiles(nquantile,yqtgenie,xqt);
     //hmc[3][37][0]->GetQuantiles(nquantile,yqtQsq,xqt);
     //hmcgenie[3][37][0]->GetQuantiles(nquantile,yqtgenieQsq,xqt);
     for (int ii=0;ii<nquantile;++ii){
-        cout<<"NEUT theta proton bin "<<ii<<" value "<<yqt[ii]/*<<" costheta "<<TMath::Cos(TMath::Pi()/180.*yqt[ii])*/<<endl;
-   
- }
- 
+        cout<<"NEUT theta proton bin "<<ii<<" value "<<yqt[ii]<<" costheta "<<TMath::Cos(TMath::Pi()/180.*yqt[ii])<<endl;
+    }
+
+    
 }

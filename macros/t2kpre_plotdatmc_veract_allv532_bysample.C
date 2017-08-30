@@ -5,8 +5,11 @@ To plot veract vs. angle
     gROOT->ProcessLine(".x ../../rootlogon.C");
     gROOT->ProcessLine(".L ../../basicPlotUtil_v532.C");
     //gROOT->ProcessLine(".L ../../basicPlotUtil.C");
-   Int_t isample = 150;
+   Int_t isample = 171;
 
+   Bool_t isNewVersion=false;//lazy to reproduce all sample with pang vs. muang
+   Bool_t isMuon=true;//first track
+   Bool_t isPion=false;//second track
    //for sample larger than 100
    TString subname = Form("datamc_allv532_20170529_sam%d",isample);
    TFile *pfile = new TFile(Form("../outputs/basicHisto_neut5d3d2_20170529_sam%d.root",isample));//neut532.
@@ -345,22 +348,32 @@ To plot veract vs. angle
     TH1F* hmcen[NINTERACTION];
 
 	//TH2D
-	 TH2F* hdtveractvsmuang;
+    TH2F* hdtveractvsmuang;
     TH2F* hmcveractvsmuang[NINTERACTION];
     TH2F* hdtveractvspang;
     TH2F* hmcveractvspang[NINTERACTION];
-  	hdtveractvsmuang = (TH2F*)pfile->Get(Form("hdtveractvsmuang_topo%d",isample));
+    TH2F* hdtpangvsmuang;
+    TH2F* hmcpangvsmuang[NINTERACTION];
+	if(isNewVersion)hdtpangvsmuang = (TH2F*)pfile->Get(Form("hdtpangvsmuang_topo%d",isample));
+    	hdtveractvsmuang = (TH2F*)pfile->Get(Form("hdtveractvsmuang_topo%d",isample));
         hdtveractvspang = (TH2F*)pfile->Get(Form("hdtveractvspang_topo%d",isample));
         for (Int_t iint=0; iint<NINTERACTION; ++iint) {
+	    if(isNewVersion)hmcpangvsmuang[iint] = (TH2F*)pfile->Get(Form("hmcpangvsmuang_topo%d_int%d",isample,iint));
             hmcveractvsmuang[iint] = (TH2F*)pfile->Get(Form("hmcveractvsmuang_topo%d_int%d",isample,iint));
             hmcveractvspang[iint] = (TH2F*)pfile->Get(Form("hmcveractvspang_topo%d_int%d",isample,iint));
         }
 	
- hmcveractvsmuang[0]->GetXaxis()->SetTitle("#mu-like track angle");
-    hmcveractvsmuang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
-    plot2dhist_comp0(hmcveractvsmuang[0],"MC",hdtveractvsmuang,"Data",subname+"veractvsmuang");
+ 	if(isMuon)hmcveractvsmuang[0]->GetXaxis()->SetTitle("#mu-like track angle");
+	else hmcveractvsmuang[0]->GetXaxis()->SetTitle("p-like track angle");
+    	hmcveractvsmuang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
+    	plot2dhist_comp0(hmcveractvsmuang[0],"MC",hdtveractvsmuang,"Data",subname+"veractvsmuang",150);
 
- hmcveractvspang[0]->GetXaxis()->SetTitle("#pi-like track angle");
-    hmcveractvspang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
-    plot2dhist_comp0(hmcveractvspang[0],"MC",hdtveractvspang,"Data",subname+"veractvspang");
+ 	if(isPion)hmcveractvspang[0]->GetXaxis()->SetTitle("#pi-like track angle");
+	else hmcveractvspang[0]->GetXaxis()->SetTitle("p-like track angle");
+    	hmcveractvspang[0]->GetYaxis()->SetTitle("Energy deposit at vertex (MeV)");
+    	plot2dhist_comp0(hmcveractvspang[0],"MC",hdtveractvspang,"Data",subname+"veractvspang",150);
+
+        if(isNewVersion){hmcpangvsmuang[0]->GetXaxis()->SetTitle("#mu-like track angle");
+        hmcpangvsmuang[0]->GetYaxis()->SetTitle("#pi-like track angle");
+        plot2dhist_comp0(hmcpangvsmuang[0],"MC",hdtpangvsmuang,"Data",subname+"pangvsmuang",90);}
 }
