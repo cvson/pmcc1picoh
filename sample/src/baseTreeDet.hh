@@ -574,7 +574,7 @@ Int_t baseTreeDet::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //signal region
     if (myid==0){
-        if (CutSignalR(entry)>0 && muang_t>30) return 1;
+        if (CutSignalR(entry)>0 && muang_t<30) return 1;
         else return -1;
     }
     //CR1
@@ -585,28 +585,28 @@ Int_t baseTreeDet::CutSamplebyID(Long64_t entry, Int_t myid)
     
     //CR1
     else if (myid==1){
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25 && muang_t>30) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25 && muang_t<30) return 1;
         else return -1;
     }
     //CR2
     else if (myid==2){
         //if (CutCR23Comb(entry)>0) return 1;
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25 && muang_t>30) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25 && muang_t<30) return 1;
 	else return -1;
     }
     
     else if (myid==3){
-        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t>30) return 1;
+        if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 1;
         else return -1;
     }
 
      else if (myid==4){
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl>0.25 && muang_t>30) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl>0.25 && muang_t<30) return 1;
         else return -1;
     }
 
          else if (myid==5){
-        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl<=0.25 && muang_t>30) return 1;
+        if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl<=0.25 && muang_t<30) return 1;
         else return -1;
     } 
     
@@ -686,17 +686,17 @@ Int_t    baseTreeDet::GetEventType(Long64_t entry){
     
 }
 Int_t    baseTreeDet::GetSampleType(Long64_t entry){
-    if (CutSignalR(entry)>0 && muang_t>30 ) return 0;
+    if (CutSignalR(entry)>0 && muang_t<30 ) return 0;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25 && muang_t>30) return 1;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl>0.25 && muang_t<30) return 1;
     
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25 && muang_t>30) return 2;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2<50 && mumucl>0.6 && pmucl<=0.25 && muang_t<30) return 2;
 
-    else if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t>30) return 3;
+    else if (CutPreselection(entry)>0 && pidfsi>0.05 && veract*7.6634e-2>=50 && muang_t<30) return 3;
 
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl>0.25 && muang_t>30) return 4;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl>0.25 && muang_t<30) return 4;
 
-    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl<=0.25 && muang_t>30) return 5;
+    else if (CutPreselection(entry)>0 && pidfsi<=0.05 && veract*7.6634e-2>=50 && mumucl>0.6 && pmucl<=0.25 && muang_t<30) return 5;
     else return -1;
     
 }
