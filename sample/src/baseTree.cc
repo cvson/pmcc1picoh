@@ -1951,7 +1951,17 @@ void baseTree::GetEvents(std::vector<AnaSample*> ana_samples)
             
             //for Data
             if (fileIndex==0) totweight = 1.0;
-            
+
+		//-----add proton
+	    if (fileIndex==1) {
+         	if (inttype==1 ||inttype==12 || inttype==13) {
+         		double randProb = 4.0*gRandom->Uniform(0,1.0);
+         		if(randProb>3.0){
+                	veract += gRandom->Uniform(0,100)/7.6634e-2;//
+                	}
+         	}
+            }
+         //-------end add proton   
             //create and fill event structure
             AnaEvent ev(jentry);
             ev.SetEvType(GetEventType(ientry));//newadd
