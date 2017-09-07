@@ -32,15 +32,15 @@ int main(int argc, char *argv[])
     
     //string fnameout = "../outputs/neutvsgenie_sample_newbin2_fsicomb.root";
     
-    /*string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
+    string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fnameout = "../outputs/neutvsgenie_sample_ana1x50mepionFS_5binsptheta.root";
-    */
+    
     //should change baseTree::GetInteractionType 
-    string fmcInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
+   /* string fmcInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fdtInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     string fnameout = "../outputs/genievsneut_sample_ana1x50mepionFS_5binsptheta.root";
-
+    */
     //systematics
     string ffluxcov     = "../inputs/flux_cov_full.root";
     
@@ -91,14 +91,21 @@ int main(int argc, char *argv[])
     sam3.SetNorm(potData/potMC);
     samples.push_back(&sam3);
     
-    /*FitSample sam4(3, "CRIII",v_pedges, v_cthedges,tdata);
+    FitSample sam4(3, "CRIII",v_pedges, v_cthedges,tdata);
     sam4.SetNorm(potData/potMC);
     samples.push_back(&sam4);
-    */
+    
+    FitSample sam5(4, "CRIV",v_pedges, v_cthedges,tdata);
+    sam5.SetNorm(potData/potMC);
+    samples.push_back(&sam5);
+
+    FitSample sam6(5, "CRV",v_pedges, v_cthedges,tdata);
+    sam6.SetNorm(potData/potMC);
+    samples.push_back(&sam6);
 
     
     //Make it Manually
-    const char *bsnameTag[3] = {"SIG", "CRI", "CRII"/*, "CRIII"*/};
+    const char *bsnameTag[6] = {"SIG", "CRI", "CRII", "CRIII","CRIV","CRV"};
     
     //THIS IS RELOAD SAMPLE from MC tree
     baseTree *pbaseTree = new baseTree();
