@@ -16,9 +16,9 @@ Requirements    = CpuIsBusy == FALSE && \
 Getenv          = True
 #Arguments      =  $(Process)
 #Arguments      =  $(RUN1)
-Output          = ./outfile/test_two.out
+Output          = ./outfile/test_threelo_neut.out
 #Error           = /dev/null
-Error           = ./outfile/test_two.err
+Error           = ./outfile/test_threelo_neut.err
 Notification	= Never 
 
 QUEUE

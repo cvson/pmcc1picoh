@@ -396,7 +396,17 @@ void FitSample::FillEventHisto(int datatype)
             if (pbaseTree->fileIndex==0) totweight = 1.0;
             
             wght = totweight;//this is for data
-            
+           //-------add proton to make fake data here
+	 if (pbaseTree->fileIndex==1) {
+                if (pbaseTree->inttype==1 ||pbaseTree->inttype==12 || pbaseTree->inttype==13) {
+                        double randProb = 4.0*gRandom->Uniform(0,1.0);
+                        if(randProb>3.0){
+                        pbaseTree->veract += gRandom->Uniform(0,100)/7.6634e-2;//
+                        }
+                }
+            }
+
+		//------end  
             /////////////////////////
             if(topology != m_sampleid) continue;
 		//fill some basic plots
