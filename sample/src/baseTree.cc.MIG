@@ -1927,14 +1927,14 @@ void baseTree::GetEvents(std::vector<AnaSample*> ana_samples)
             nb = fChain->GetEntry(jentry);   nbytes += nb;
             if (jentry%iprintProcess == 0) std::cout<<"Processing "<<int(jentry*100./nentries)<<"% of events"<<std::endl;
             //----------migration by add proton energy around the vertex
-	    /*if (fileIndex==1 || fileIndex==10) {
+	    if (fileIndex==1 || fileIndex==10) {
                 if (inttype==1 ||inttype==12 || inttype==13) {
                         double randProb = 4.0*gRandom->Uniform(0,1.0);
                         if(randProb>3.0){
                         veract += gRandom->Uniform(0,100)/7.6634e-2;//
                         }
                 }
-            }*/
+            }
 
 		//------end migration
 		if(GetSampleType(ientry)<0) continue;
