@@ -1,7 +1,8 @@
 2017-09-07
-this for neut 5.3.2, copied form neut532-fixresf-fin5bin branch
+this for neut 5.3.2, copied form neut532-fixresf-fin3bin branch
 Use sample with low vertex activity cut and skipp repsonse function for numubar, nue, wall and ingrid
 Using 6 samples, three low vertex and three high vertex
+For data in sideband, can stat. fluctuate
 
 0. pull to scbn:/home/cvson/cc1picoh/FIT/pmcc1picoh_git_neut532
 1. fit on 3 bins of p-theta 
