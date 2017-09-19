@@ -34,12 +34,13 @@ int main(int argc, char *argv[])
     
     string fmcInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
     string fdtInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
-    string fnameout = "../outputs/neutvsgenie_sample_ana1x50mepionFS_5binsptheta.root";
+    string fnameout = "../outputs/neutvsgenie_sample_ana1x50mepionFS_3binsptheta.root";
     
+
     //should change baseTree::GetInteractionType 
    /* string fmcInputFile = "../../datafsipionFS/mconly_genie_20170529.root";
     string fdtInputFile = "../../datafsipionFS/mconly_neut5d3d2_20170529.root";
-    string fnameout = "../outputs/genievsneut_sample_ana1x50mepionFS_5binsptheta.root";
+    string fnameout = "../outputs/genievsneut_sample_ana1x50mepionFS_3binsptheta.root";
     */
     //systematics
     string ffluxcov     = "../inputs/flux_cov_full.root";
